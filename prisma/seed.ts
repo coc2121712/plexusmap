@@ -1,13 +1,15 @@
-// PlexusMap — Seed Script (v3 — dual mode: development / production)
+// PlexusMap — Seed Script (v4 — triple mode: development / production / google-places)
 // Run: npx tsx prisma/seed.ts
-// Mode: SEED_MODE=development (default) | SEED_MODE=production
+// Mode: SEED_MODE=development (default) | SEED_MODE=production | SEED_MODE=google-places
 
 import { PrismaClient } from '@prisma/client';
 import { hashSync } from 'bcryptjs';
+import * as fs from 'fs';
+import * as path from 'path';
 
 const prisma = new PrismaClient();
 
-const SEED_MODE = (process.env.SEED_MODE || 'development') as 'development' | 'production';
+const SEED_MODE = (process.env.SEED_MODE || 'development') as 'development' | 'production' | 'google-places';
 
 // ═══════════════════════════════════════════
 // SPECIALTIES — Normalized taxonomy (shared)
@@ -26,6 +28,10 @@ const specialties = [
   { slug: 'traumatologia', name: 'Traumatología y Ortopedia', icon: '🦴' },
   { slug: 'psicologia', name: 'Psicología Clínica', icon: '🧠' },
   { slug: 'urologia', name: 'Urología', icon: '🏥' },
+  { slug: 'nutricion', name: 'Nutrición y Dietética', icon: '🥗' },
+  { slug: 'fisioterapia', name: 'Fisioterapia y Rehabilitación', icon: '🏃' },
+  { slug: 'ortopedia', name: 'Ortopedia', icon: '🦿' },
+  { slug: 'neurologia', name: 'Neurología', icon: '🧬' },
 ];
 
 // ═══════════════════════════════════════════
@@ -821,6 +827,23 @@ const productionProfessionals: ProfSeed[] = [
 ];
 
 // ═══════════════════════════════════════════
+// GOOGLE PLACES DATA INTERFACE
+// ═══════════════════════════════════════════
+interface GooglePlaceEntry {
+  name: string;
+  specialty: string;
+  address: string;
+  lat: number;
+  lng: number;
+  phone: string;
+  website?: string;
+  googleMapsUrl?: string;
+  rating: number;
+  reviewCount: number;
+  placeId: string;
+}
+
+// ═══════════════════════════════════════════
 // SLUG GENERATOR
 // ═══════════════════════════════════════════
 function generateSlug(name: string): string {
@@ -832,11 +855,26 @@ function generateSlug(name: string): string {
     .replace(/^-|-$/g, '');
 }
 
+function generateUniqueSlug(name: string, usedSlugs: Set<string>): string {
+  let slug = generateSlug(name);
+  if (!usedSlugs.has(slug)) {
+    usedSlugs.add(slug);
+    return slug;
+  }
+  let counter = 2;
+  while (usedSlugs.has(`${slug}-${counter}`)) {
+    counter++;
+  }
+  const unique = `${slug}-${counter}`;
+  usedSlugs.add(unique);
+  return unique;
+}
+
 // ═══════════════════════════════════════════
 // MAIN
 // ═══════════════════════════════════════════
 async function main() {
-  console.log(`🌱 Seeding PlexusMap database (v3 — ${SEED_MODE} mode)...\n`);
+  console.log(`🌱 Seeding PlexusMap database (v4 — ${SEED_MODE} mode)...\n`);
 
   // Clear (FK order)
   await prisma.appointment.deleteMany();
@@ -865,76 +903,130 @@ async function main() {
   console.log(`  ✓ Created ${insRecords.length} insurance companies`);
 
   // 3. Professionals (mode-dependent)
-  const profList = SEED_MODE === 'production' ? productionProfessionals : developmentProfessionals;
+  let totalProfessionals = 0;
   let totalReviews = 0;
   let totalSchedules = 0;
 
-  for (const prof of profList) {
-    const slug = generateSlug(prof.name);
-    const specialtyId = specMap.get(prof.specialtySlug);
-    if (!specialtyId) {
-      console.error(`  ✗ Specialty not found: ${prof.specialtySlug}`);
-      continue;
+  if (SEED_MODE === 'google-places') {
+    // ── GOOGLE PLACES MODE ──
+    // Load 464 real professionals from Google Places data
+    const dataPath = path.resolve(__dirname, '..', 'scripts', 'google-places-data.json');
+    const rawData = fs.readFileSync(dataPath, 'utf-8');
+    const placesData: GooglePlaceEntry[] = JSON.parse(rawData);
+    const usedSlugs = new Set<string>();
+
+    console.log(`  ℹ Loaded ${placesData.length} entries from google-places-data.json`);
+
+    for (const place of placesData) {
+      const specialtySlug = place.specialty;
+      const specialtyId = specMap.get(specialtySlug);
+      if (!specialtyId) {
+        console.error(`  ✗ Specialty not found: ${specialtySlug} (${place.name})`);
+        continue;
+      }
+
+      const slug = generateUniqueSlug(place.name, usedSlugs);
+      const isFounder = place.name === 'Clínica Óptica Central';
+
+      await prisma.professional.create({
+        data: {
+          slug,
+          name: place.name,
+          specialtyId,
+          address: place.address,
+          lat: place.lat,
+          lng: place.lng,
+          phone: place.phone || null,
+          email: null,
+          bio: null,
+          rating: place.rating,
+          reviewCount: place.reviewCount,
+          isVerified: place.rating >= 4.0,
+          isClaimed: isFounder,
+          photos: [],
+        },
+      });
+
+      totalProfessionals++;
+      if (totalProfessionals % 50 === 0) {
+        console.log(`  ... ${totalProfessionals} professionals created`);
+      }
     }
 
-    const created = await prisma.professional.create({
-      data: {
-        slug,
-        name: prof.name,
-        specialtyId,
-        address: prof.address,
-        lat: prof.lat,
-        lng: prof.lng,
-        phone: prof.phone,
-        email: prof.email || null,
-        bio: prof.bio,
-        rating: prof.rating,
-        reviewCount: prof.reviewCount,
-        isVerified: prof.isVerified,
-        isClaimed: prof.isClaimed || false,
-        photos: prof.photos,
-        insurances: {
-          create: prof.insuranceNames
-            .filter((name) => insMap.has(name))
-            .map((name) => ({ insuranceId: insMap.get(name)! })),
-        },
-        schedules: {
-          create: prof.schedule.map((s) => ({
-            dayOfWeek: s.dayOfWeek,
-            startTime: s.startTime,
-            endTime: s.endTime,
-            slotDuration: s.slotDuration,
-          })),
-        },
-        reviews: {
-          create: prof.reviews.map((r) => ({
-            rating: r.rating,
-            comment: r.comment,
-            patientName: r.patientName,
-            patientPhone: r.patientPhone,
-            source: 'PLEXUSMAP' as const,
-          })),
-        },
-      },
-    });
+    console.log(`  ✓ Created ${totalProfessionals} professionals from Google Places data`);
 
-    totalReviews += prof.reviews.length;
-    totalSchedules += prof.schedule.length;
-    console.log(`  ✓ ${created.name} → ${prof.specialtySlug}${prof.isClaimed ? ' (CLAIMED)' : ''}`);
+  } else {
+    // ── DEVELOPMENT / PRODUCTION MODE ──
+    const profList = SEED_MODE === 'production' ? productionProfessionals : developmentProfessionals;
+
+    for (const prof of profList) {
+      const slug = generateSlug(prof.name);
+      const specialtyId = specMap.get(prof.specialtySlug);
+      if (!specialtyId) {
+        console.error(`  ✗ Specialty not found: ${prof.specialtySlug}`);
+        continue;
+      }
+
+      const created = await prisma.professional.create({
+        data: {
+          slug,
+          name: prof.name,
+          specialtyId,
+          address: prof.address,
+          lat: prof.lat,
+          lng: prof.lng,
+          phone: prof.phone,
+          email: prof.email || null,
+          bio: prof.bio,
+          rating: prof.rating,
+          reviewCount: prof.reviewCount,
+          isVerified: prof.isVerified,
+          isClaimed: prof.isClaimed || false,
+          photos: prof.photos,
+          insurances: {
+            create: prof.insuranceNames
+              .filter((name) => insMap.has(name))
+              .map((name) => ({ insuranceId: insMap.get(name)! })),
+          },
+          schedules: {
+            create: prof.schedule.map((s) => ({
+              dayOfWeek: s.dayOfWeek,
+              startTime: s.startTime,
+              endTime: s.endTime,
+              slotDuration: s.slotDuration,
+            })),
+          },
+          reviews: {
+            create: prof.reviews.map((r) => ({
+              rating: r.rating,
+              comment: r.comment,
+              patientName: r.patientName,
+              patientPhone: r.patientPhone,
+              source: 'PLEXUSMAP' as const,
+            })),
+          },
+        },
+      });
+
+      totalProfessionals++;
+      totalReviews += prof.reviews.length;
+      totalSchedules += prof.schedule.length;
+      console.log(`  ✓ ${created.name} → ${prof.specialtySlug}${prof.isClaimed ? ' (CLAIMED)' : ''}`);
+    }
   }
 
   // 4. Users
-  if (SEED_MODE === 'production') {
-    // Admin user
-    await prisma.user.create({
-      data: {
-        email: 'admin@plexusmap.com',
-        password: hashSync('admin123', 10),
-        name: 'Admin PlexusMap',
-        role: 'ADMIN',
-      },
-    });
+  // Admin user (all modes)
+  await prisma.user.create({
+    data: {
+      email: 'admin@plexusmap.com',
+      password: hashSync('admin123', 10),
+      name: 'Admin PlexusMap',
+      role: 'ADMIN',
+    },
+  });
 
+  if (SEED_MODE === 'production' || SEED_MODE === 'google-places') {
     // Founder user — linked to Clínica Óptica Central
     const founder = await prisma.professional.findFirst({
       where: { slug: FOUNDER_SLUG },
@@ -950,19 +1042,9 @@ async function main() {
         },
       });
     }
-
     console.log('  ✓ Created users (admin + founder professional)');
   } else {
-    // Development mode — admin + demo professional
-    await prisma.user.create({
-      data: {
-        email: 'admin@plexusmap.com',
-        password: hashSync('admin123', 10),
-        name: 'Admin PlexusMap',
-        role: 'ADMIN',
-      },
-    });
-
+    // Development mode — demo professional
     const gabriela = await prisma.professional.findFirst({
       where: { slug: 'dra-gabriela-ponce' },
     });
@@ -981,17 +1063,16 @@ async function main() {
         data: { isClaimed: true },
       });
     }
-
     console.log('  ✓ Created users (admin + demo professional)');
   }
 
   console.log(`\n✅ Seed complete! (${SEED_MODE} mode)`);
   console.log(`   ${specialties.length} specialties`);
-  console.log(`   ${profList.length} professionals`);
+  console.log(`   ${totalProfessionals} professionals`);
   console.log(`   ${insRecords.length} insurance companies`);
   console.log(`   ${totalSchedules} schedule slots`);
   console.log(`   ${totalReviews} reviews`);
-  console.log(`   ${SEED_MODE === 'production' ? '2 users (admin + founder)' : '2 users (admin + demo)'}`);
+  console.log(`   2 users (admin + ${SEED_MODE === 'development' ? 'demo' : 'founder'})`);
 }
 
 main()
