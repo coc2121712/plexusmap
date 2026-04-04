@@ -1,0 +1,45 @@
+# Dependencies (installed fresh in container)
+node_modules
+npm-debug.log*
+
+# Build output
+.next
+out
+build
+dist
+
+# Version control
+.git
+.gitignore
+
+# Environment files
+.env
+.env.*
+!.env.production.example
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Docs & scripts
+*.md
+scripts/
+nginx/
+CLAUDE.md
+
+# Misc
+coverage/
+.vercel
+*.tsbuildinfo
+next-env.d.ts

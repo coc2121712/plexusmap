@@ -1,0 +1,236 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ═══════════════════════════════════════════
+// AUTH & ACCOUNTS
+// ═══════════════════════════════════════════
+
+model User {
+  id             String   @id @default(uuid())
+  email          String   @unique
+  password       String   // bcrypt hash
+  name           String
+  role           UserRole @default(PROFESSIONAL)
+
+  professionalId String?  @unique
+  professional   Professional? @relation(fields: [professionalId], references: [id])
+
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+enum UserRole {
+  ADMIN
+  PROFESSIONAL
+}
+
+// ═══════════════════════════════════════════
+// SPECIALTIES (normalized taxonomy)
+// ═══════════════════════════════════════════
+
+model Specialty {
+  id       String  @id @default(uuid())
+  slug     String  @unique  // "optometria", "odontologia-general"
+  name     String  @unique  // "Optometría", "Odontología General"
+  icon     String?          // emoji or icon name for UI
+  parentId String?
+  parent   Specialty?  @relation("SpecialtyTree", fields: [parentId], references: [id])
+  children Specialty[] @relation("SpecialtyTree")
+
+  professionals Professional[]
+
+  @@index([slug])
+}
+
+// ═══════════════════════════════════════════
+// CORE — PROFESSIONALS
+// ═══════════════════════════════════════════
+
+model Professional {
+  id              String    @id @default(uuid())
+  slug            String    @unique
+  name            String
+  specialtyId     String
+  specialty       Specialty @relation(fields: [specialtyId], references: [id])
+  address         String
+  lat             Float
+  lng             Float
+  phone           String?
+  email           String?            // public contact email (NOT auth)
+  bio             String?
+  rating          Float              @default(0)
+  reviewCount     Int                @default(0)
+  isVerified      Boolean            @default(false)
+  isClaimed       Boolean            @default(false)
+  kairosEnabled   Boolean            @default(false)
+  kairosTenantId  String?
+  cliniwebIcalUrl String?
+  photos          String[]
+
+  user            User?              // linked when claimed
+  insurances      ProfessionalInsurance[]
+  reviews         Review[]
+  appointments    Appointment[]
+  schedules       Schedule[]
+  claimRequests   ClaimRequest[]
+
+  createdAt       DateTime           @default(now())
+  updatedAt       DateTime           @updatedAt
+
+  @@index([specialtyId])
+  @@index([lat, lng])
+  @@index([slug])
+}
+
+// ═══════════════════════════════════════════
+// INSURANCE (many-to-many)
+// ═══════════════════════════════════════════
+
+model Insurance {
+  id     String  @id @default(uuid())
+  name   String  @unique
+  logo   String?
+
+  professionals ProfessionalInsurance[]
+}
+
+model ProfessionalInsurance {
+  professional   Professional @relation(fields: [professionalId], references: [id], onDelete: Cascade)
+  professionalId String
+  insurance      Insurance    @relation(fields: [insuranceId], references: [id], onDelete: Cascade)
+  insuranceId    String
+
+  @@id([professionalId, insuranceId])
+}
+
+// ═══════════════════════════════════════════
+// REVIEWS
+// ═══════════════════════════════════════════
+
+model Review {
+  id             String       @id @default(uuid())
+  professional   Professional @relation(fields: [professionalId], references: [id], onDelete: Cascade)
+  professionalId String
+  patientName    String?      // "María C." — display name
+  patientPhone   String?
+  rating         Int          // 1-5
+  comment        String?
+  reply          String?      // professional's response
+  source         ReviewSource @default(PLEXUSMAP)
+  isVerified     Boolean      @default(false) // true = patient had a real appointment
+  helpfulCount   Int          @default(0)
+
+  createdAt      DateTime     @default(now())
+
+  @@index([professionalId])
+}
+
+// ═══════════════════════════════════════════
+// APPOINTMENTS
+// ═══════════════════════════════════════════
+
+model Appointment {
+  id                  String            @id @default(uuid())
+  professional        Professional      @relation(fields: [professionalId], references: [id], onDelete: Cascade)
+  professionalId      String
+  patientName         String
+  patientPhone        String
+  dateTime            DateTime
+  status              AppointmentStatus @default(PENDING)
+  source              AppointmentSource @default(PLEXUSMAP)
+  kairosAppointmentId String?
+
+  createdAt           DateTime          @default(now())
+
+  @@index([professionalId, dateTime])
+  @@index([status])
+}
+
+// ═══════════════════════════════════════════
+// SCHEDULES
+// ═══════════════════════════════════════════
+
+model Schedule {
+  id             String       @id @default(uuid())
+  professional   Professional @relation(fields: [professionalId], references: [id], onDelete: Cascade)
+  professionalId String
+  dayOfWeek      Int          // 0=Sunday ... 6=Saturday
+  startTime      String       // "09:00"
+  endTime        String       // "17:00"
+  slotDuration   Int          @default(30) // minutes
+  isActive       Boolean      @default(true)
+
+  @@unique([professionalId, dayOfWeek])
+}
+
+// ═══════════════════════════════════════════
+// CLAIM REQUESTS
+// ═══════════════════════════════════════════
+
+model ClaimRequest {
+  id             String       @id @default(uuid())
+  professional   Professional @relation(fields: [professionalId], references: [id], onDelete: Cascade)
+  professionalId String
+  name           String       // applicant name
+  email          String       // applicant email
+  phone          String       // applicant phone
+  message        String?      // optional supporting info
+  status         ClaimStatus  @default(PENDING)
+  token          String       @unique // verification token
+  createdAt      DateTime     @default(now())
+  reviewedAt     DateTime?
+
+  @@index([professionalId])
+  @@index([status])
+}
+
+// ═══════════════════════════════════════════
+// PASSWORD RESETS
+// ═══════════════════════════════════════════
+
+model PasswordReset {
+  id        String   @id @default(uuid())
+  email     String
+  token     String   @unique
+  usedAt    DateTime?
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([email])
+  @@index([token])
+}
+
+// ═══════════════════════════════════════════
+// ENUMS
+// ═══════════════════════════════════════════
+
+enum ReviewSource {
+  PLEXUSMAP
+  WHATSAPP
+}
+
+enum AppointmentStatus {
+  PENDING
+  CONFIRMED
+  COMPLETED
+  NO_SHOW
+  CANCELLED
+}
+
+enum AppointmentSource {
+  PLEXUSMAP
+  WHATSAPP
+  PHONE
+}
+
+enum ClaimStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
