@@ -4,6 +4,9 @@ import { prisma } from '@/lib/prisma';
 import { SpecialtyLanding } from '@/components/search/SpecialtyLanding';
 import type { ProfessionalSummary, SpecialtySummary } from '@/types';
 
+// ISR: revalidate every 30 minutes
+export const revalidate = 1800;
+
 interface PageProps {
   params: Promise<{ slug: string }>;
 }

@@ -1,9 +1,12 @@
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import { prisma } from '@/lib/prisma';
-import { ProfessionalJsonLd } from '@/components/seo/JsonLd';
+import { ProfessionalJsonLd, BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 import { ProfilePage } from '@/components/professional/ProfilePage';
 import type { ProfessionalDetail } from '@/types';
+
+// ISR: revalidate every 30 minutes — professionals rarely change
+export const revalidate = 1800;
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -109,6 +112,7 @@ export default async function ProfessionalProfilePage({ params }: PageProps) {
   return (
     <>
       <ProfessionalJsonLd professional={professional} url={url} />
+      <BreadcrumbJsonLd professional={professional} url={url} />
       <ProfilePage professional={professional} />
     </>
   );

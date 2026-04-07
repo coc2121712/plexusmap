@@ -75,6 +75,46 @@ export function ProfessionalJsonLd({ professional, url }: JsonLdProps) {
   );
 }
 
+// Breadcrumb for professional pages: Home > Specialty > Professional
+interface BreadcrumbProps {
+  professional: ProfessionalDetail;
+  url: string;
+}
+
+export function BreadcrumbJsonLd({ professional, url }: BreadcrumbProps) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'PlexusMap',
+        item: 'https://plexusmap.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: professional.specialty.name,
+        item: `https://plexusmap.com/especialidad/${professional.specialty.slug}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: professional.name,
+        item: url,
+      },
+    ],
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+}
+
 // Home page — WebSite + MedicalOrganization
 export function HomeJsonLd() {
   const jsonLd = [
@@ -83,6 +123,7 @@ export function HomeJsonLd() {
       '@type': 'WebSite',
       name: 'PlexusMap',
       url: 'https://plexusmap.com',
+      logo: 'https://plexusmap.com/logo-plexusmap.png',
       description:
         'Directorio geolocalizado de profesionales de salud en Panamá. Busca doctores, dentistas, optómetras y más.',
       potentialAction: {
@@ -99,6 +140,7 @@ export function HomeJsonLd() {
       '@type': 'MedicalOrganization',
       name: 'PlexusMap',
       url: 'https://plexusmap.com',
+      logo: 'https://plexusmap.com/logo-plexusmap.png',
       description:
         'Directorio de profesionales de salud verificados en Panamá.',
       areaServed: {
