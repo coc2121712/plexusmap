@@ -50,7 +50,7 @@ async function getProfessional(slug: string): Promise<ProfessionalDetail | null>
     rating: p.rating,
     reviewCount: p.reviewCount,
     isVerified: p.isVerified,
-    isPriority: p.isPriority,
+    isPriority: p.isPriority ?? false,
     isClaimed: p.isClaimed,
     kairosEnabled: p.kairosEnabled,
     photos: p.photos,

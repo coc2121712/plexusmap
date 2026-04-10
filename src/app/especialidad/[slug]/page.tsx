@@ -44,7 +44,7 @@ async function getSpecialtyData(slug: string) {
     rating: p.rating,
     reviewCount: p.reviewCount,
     isVerified: p.isVerified,
-    isPriority: p.isPriority,
+    isPriority: p.isPriority ?? false,
     photos: p.photos,
     insurances: p.insurances.map((pi) => pi.insurance.name),
   }));
