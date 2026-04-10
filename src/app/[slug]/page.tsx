@@ -25,6 +25,12 @@ async function getProfessional(slug: string): Promise<ProfessionalDetail | null>
 
   if (!p) return null;
 
+  // Fire-and-forget profile view counter
+  prisma.professional.update({
+    where: { id: p.id },
+    data: { profileViews: { increment: 1 } },
+  }).catch(() => {});
+
   return {
     id: p.id,
     slug: p.slug,
@@ -44,6 +50,7 @@ async function getProfessional(slug: string): Promise<ProfessionalDetail | null>
     rating: p.rating,
     reviewCount: p.reviewCount,
     isVerified: p.isVerified,
+    isPriority: p.isPriority,
     isClaimed: p.isClaimed,
     kairosEnabled: p.kairosEnabled,
     photos: p.photos,

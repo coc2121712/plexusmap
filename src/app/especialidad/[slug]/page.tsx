@@ -24,7 +24,7 @@ async function getSpecialtyData(slug: string) {
       specialty: true,
       insurances: { include: { insurance: true } },
     },
-    orderBy: [{ isVerified: 'desc' }, { rating: 'desc' }],
+    orderBy: [{ isPriority: 'desc' }, { isVerified: 'desc' }, { rating: 'desc' }],
   });
 
   const mapped: ProfessionalSummary[] = professionals.map((p) => ({
@@ -44,6 +44,7 @@ async function getSpecialtyData(slug: string) {
     rating: p.rating,
     reviewCount: p.reviewCount,
     isVerified: p.isVerified,
+    isPriority: p.isPriority,
     photos: p.photos,
     insurances: p.insurances.map((pi) => pi.insurance.name),
   }));

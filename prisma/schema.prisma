@@ -30,6 +30,12 @@ enum UserRole {
   PROFESSIONAL
 }
 
+enum PlanType {
+  FREE
+  BASIC
+  PREMIUM
+}
+
 // ═══════════════════════════════════════════
 // SPECIALTIES (normalized taxonomy)
 // ═══════════════════════════════════════════
@@ -72,6 +78,12 @@ model Professional {
   kairosTenantId  String?
   cliniwebIcalUrl String?
   photos          String[]
+
+  // Premium plan
+  planType        PlanType           @default(FREE)
+  planExpiresAt   DateTime?
+  isPriority      Boolean            @default(false) // boosted in search results
+  profileViews    Int                @default(0)
 
   user            User?              // linked when claimed
   insurances      ProfessionalInsurance[]

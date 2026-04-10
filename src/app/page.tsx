@@ -49,7 +49,7 @@ async function getInitialProfessionals(): Promise<ProfessionalSummary[]> {
         specialty: true,
         insurances: { include: { insurance: true } },
       },
-      orderBy: [{ isVerified: 'desc' }, { rating: 'desc' }],
+      orderBy: [{ isPriority: 'desc' }, { isVerified: 'desc' }, { rating: 'desc' }],
       take: 50,
     });
 
@@ -70,6 +70,7 @@ async function getInitialProfessionals(): Promise<ProfessionalSummary[]> {
       rating: p.rating,
       reviewCount: p.reviewCount,
       isVerified: p.isVerified,
+      isPriority: p.isPriority,
       photos: p.photos,
       insurances: p.insurances.map((pi) => pi.insurance.name),
     }));

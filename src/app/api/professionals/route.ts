@@ -24,13 +24,32 @@ export async function GET(request: NextRequest) {
         const conditions: Prisma.ProfessionalWhereInput[] = [];
 
         if (query) {
-          conditions.push({
-            OR: [
-              { name: { contains: query, mode: 'insensitive' } },
-              { specialty: { name: { contains: query, mode: 'insensitive' } } },
-              { address: { contains: query, mode: 'insensitive' } },
-            ],
-          });
+          // Split query into tokens so "Karla Ng" matches "Karla Del Rosario Ng González"
+          // Each token must appear somewhere in name, specialty or address
+          const tokens = query.trim().split(/\s+/).filter(Boolean);
+          if (tokens.length <= 1) {
+            // Single word — simple contains
+            conditions.push({
+              OR: [
+                { name: { contains: query, mode: 'insensitive' } },
+                { specialty: { name: { contains: query, mode: 'insensitive' } } },
+                { address: { contains: query, mode: 'insensitive' } },
+              ],
+            });
+          } else {
+            // Multi-word: ALL tokens must match somewhere in the name
+            // (specialty/address as fallback for full query)
+            const tokenConditions = tokens.map(token => ({
+              name: { contains: token, mode: 'insensitive' as const },
+            }));
+            conditions.push({
+              OR: [
+                { AND: tokenConditions },
+                { specialty: { name: { contains: query, mode: 'insensitive' } } },
+                { address: { contains: query, mode: 'insensitive' } },
+              ],
+            });
+          }
         }
 
         if (specialty) {
@@ -67,7 +86,7 @@ export async function GET(request: NextRequest) {
                 include: { insurance: true },
               },
             },
-            orderBy: [{ isVerified: 'desc' }, { rating: 'desc' }],
+            orderBy: [{ isPriority: 'desc' }, { isVerified: 'desc' }, { rating: 'desc' }],
             skip: (page - 1) * pageSize,
             take: pageSize,
           }),
@@ -91,6 +110,7 @@ export async function GET(request: NextRequest) {
           rating: p.rating,
           reviewCount: p.reviewCount,
           isVerified: p.isVerified,
+          isPriority: p.isPriority,
           photos: p.photos,
           insurances: p.insurances.map((pi) => pi.insurance.name),
         }));

@@ -216,18 +216,44 @@ export function ProfilePage({ professional }: ProfilePageProps) {
 
               {/* Claim CTA */}
               {!professional.isClaimed && (
-                <div className="bg-amber-50 border border-amber-200 rounded-xl p-5">
-                  <h3 className="font-semibold text-amber-900 text-sm">
-                    ¿Eres este profesional?
-                  </h3>
-                  <p className="text-amber-700 text-xs mt-1">
-                    Reclama tu perfil para gestionar tu información, responder reseñas y recibir citas.
+                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-5">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-blue-600" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <h3 className="font-semibold text-gray-900 text-sm">
+                      ¿Eres este profesional?
+                    </h3>
+                  </div>
+                  <p className="text-gray-600 text-xs mb-3">
+                    Reclama tu perfil gratis y toma control de tu presencia en línea.
                   </p>
+                  <ul className="space-y-1.5 mb-4">
+                    {[
+                      'Editar tu biografía y fotos',
+                      'Agregar tu número de WhatsApp',
+                      'Responder reseñas de pacientes',
+                      'Recibir consultas de pacientes',
+                      'Aparecer más alto en búsquedas',
+                    ].map((benefit) => (
+                      <li key={benefit} className="flex items-start gap-2 text-xs text-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 text-green-500 shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                        {benefit}
+                      </li>
+                    ))}
+                  </ul>
                   <a
                     href={`/claim?professional=${professional.slug}`}
-                    className="mt-3 inline-block text-xs font-medium bg-amber-600 text-white px-4 py-2 rounded-lg hover:bg-amber-700 transition-colors"
+                    className="flex items-center justify-center gap-2 w-full text-sm font-medium bg-blue-600 text-white px-4 py-2.5 rounded-lg hover:bg-blue-700 transition-colors"
                   >
-                    Reclamar perfil
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    Reclamar mi perfil — Gratis
                   </a>
                 </div>
               )}

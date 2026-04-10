@@ -9,6 +9,8 @@ export interface SpecialtySummary {
   icon: string | null;
 }
 
+export type PlanType = 'FREE' | 'BASIC' | 'PREMIUM';
+
 export interface ProfessionalSummary {
   id: string;
   slug: string;
@@ -21,6 +23,7 @@ export interface ProfessionalSummary {
   rating: number;
   reviewCount: number;
   isVerified: boolean;
+  isPriority: boolean;
   photos: string[];
   insurances: string[];
   distance?: number; // km, calculated client-side
