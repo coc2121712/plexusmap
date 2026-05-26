@@ -415,6 +415,36 @@ Los tokens de claim no tienen expiración: no hay campo `expiresAt` en el modelo
 2. Validar `expiresAt` en ambos endpoints de verificación (`verify` y `verify/complete`).
 3. Job periódico o check en middleware para marcar como `REJECTED` los claims expirados.
 
+#### #7 — GET /api/claim/verify sin rate limiting específico
+
+**Severidad:** 🟡 Medio
+**Categoría:** Seguridad (claim flow)
+**Archivos:** `src/middleware.ts:55-60`
+**Estado:** OPEN
+**Vinculado a:** Hallazgo emergente durante verificación de bloque 4.A | Defense-in-depth para #1, #6
+
+**Evidencia:**
+
+```ts
+// middleware.ts:55-60 — solo POST endpoints tienen rate limiting estricto
+const STRICT_POST_PATHS = [
+  '/api/auth/forgot-password',
+  '/api/auth/reset-password',
+  '/api/claim',
+  '/api/claim/verify/complete',
+];
+// GET /api/claim/verify NO está en la lista → cae en límite general (100 req/min)
+```
+
+**Análisis:**
+
+El endpoint `GET /api/claim/verify?token=xxx` no tiene rate limiting estricto. Cae bajo el límite general de 100 req/min en lugar de los 10 req/min aplicados a los otros endpoints del claim flow. Aunque el token es de 256 bits (64 caracteres hex) y no es brute-forceable en la práctica, la inconsistencia debilita la postura defense-in-depth. Un atacante con un token parcialmente filtrado (e.g., truncado en logs) podría intentar completar los caracteres faltantes a 100 req/min.
+
+**Recomendación:**
+
+1. Agregar `/api/claim/verify` a `STRICT_ALL_PATHS` (rate limit estricto en GET y POST).
+2. Alternativamente, crear categoría `STRICT_GET_PATHS` si se quiere granularidad por método.
+
 ### 4.A Vector primario — claim flow
 
 - **[POR VERIFICAR]** Token de verificación enviado al email del **solicitante** en lugar de al email **publicado del Professional**. Si se confirma, permite takeover trivial: cualquiera con email arbitrario puede reclamar un perfil ajeno.
