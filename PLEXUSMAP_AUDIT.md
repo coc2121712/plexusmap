@@ -287,6 +287,52 @@ El modelo `Professional` registra el claim como un boolean sin metadata. No hay 
 1. Agregar `claimedAt DateTime?` y `claimedByUserId String?` al modelo `Professional`.
 2. Setear ambos campos en la transacción de `verify/complete`.
 
+#### #4 — Sin panel admin de aprobación de claims
+
+**Severidad:** 🟠 Alto
+**Categoría:** Seguridad (claim flow)
+**Archivos:** `src/app/api/claim/verify/complete/route.ts:64-84`, `src/app/` (no existen rutas admin)
+**Estado:** OPEN
+**Vinculado a:** Hipótesis 4.A.4 | Ver también issues del mismo bloque 4.A (#1, #2, #5)
+
+**Evidencia:**
+
+```ts
+// verify/complete/route.ts:64-84 — auto-aprobación en transacción, sin intervención humana
+await prisma.$transaction(async (tx) => {
+  await tx.user.create({
+    data: {
+      email: claim.email,
+      password: hashedPassword,
+      name: claim.name,
+      role: 'PROFESSIONAL',
+      professionalId: claim.professional.id,
+    },
+  });
+  await tx.professional.update({
+    where: { id: claim.professional.id },
+    data: { isClaimed: true },
+  });
+  await tx.claimRequest.update({
+    where: { id: claim.id },
+    data: { status: 'APPROVED', reviewedAt: new Date() },
+  });
+});
+
+// glob src/app/admin/**/* → 0 resultados
+// grep approve|reject en src/app/api/**/*.ts → solo aparece en auto-flow (verify, complete)
+```
+
+**Análisis:**
+
+No existen rutas `/admin` en la aplicación. El único uso del rol `ADMIN` es para autorizar la exportación CSV (`/api/export/csv`). Los estados `APPROVED` y `REJECTED` de `ClaimRequest` se setean exclusivamente de forma programática en el flujo auto-servicio — no hay endpoint de revisión manual. Para un directorio con 500+ perfiles reales importados de fuentes autoritativas (redes de aseguradoras, Google Places), la ausencia de gatekeeping humano amplifica el impacto de #1 y #2: cualquier vulnerabilidad en el flujo automático se traduce directamente en takeover sin recurso.
+
+**Recomendación:**
+
+1. Implementar panel admin con endpoints `PUT /api/admin/claims/[id]/approve` y `PUT /api/admin/claims/[id]/reject`.
+2. Alternativa mínima: auto-aprobación con grace period de 7 días + notificación al email publicado del profesional, permitiendo disputa.
+3. Casos donde `Professional.email` es null deben requerir aprobación admin obligatoria (ver #5).
+
 ### 4.A Vector primario — claim flow
 
 - **[POR VERIFICAR]** Token de verificación enviado al email del **solicitante** en lugar de al email **publicado del Professional**. Si se confirma, permite takeover trivial: cualquiera con email arbitrario puede reclamar un perfil ajeno.
