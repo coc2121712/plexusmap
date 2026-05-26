@@ -447,11 +447,16 @@ El endpoint `GET /api/claim/verify?token=xxx` no tiene rate limiting estricto. C
 
 ### 4.A Vector primario — claim flow
 
-- **[POR VERIFICAR]** Token de verificación enviado al email del **solicitante** en lugar de al email **publicado del Professional**. Si se confirma, permite takeover trivial: cualquiera con email arbitrario puede reclamar un perfil ajeno.
-- **[POR VERIFICAR]** `ClaimRequest.email` no se compara con `Professional.email` antes de aprobar. Sin matching, no hay validación de identidad.
-- **[POR VERIFICAR]** `Professional.isClaimed` se setea sin `claimedAt` ni `claimedByUserId`. Sin trazabilidad forense del reclamo.
-- **[POR VERIFICAR]** No existe panel admin de aprobación de claims (confirmado por Claude Code en inventario, pendiente promoción a issue formal).
-- **[POR VERIFICAR]** Sin verificación de identidad real para perfiles sin email publicado (caso común dada la heterogeneidad de fuentes Google Places / aseguradoras).
+- **[PROMOVIDA → #1]** Token de verificación nunca enviado al profesional. Peor que la hipótesis: no existe infraestructura de email. En dev, token retornado en respuesta HTTP. En prod, flujo muerto.
+- **[PROMOVIDA → #2]** `ClaimRequest.email` no se compara con `Professional.email`. Confirmado: `Professional.email` ni siquiera se fetch-ea en ninguno de los 3 endpoints.
+- **[PROMOVIDA → #3]** `Professional.isClaimed` sin `claimedAt` ni `claimedByUserId`. Confirmado. Trazabilidad indirecta vía User/ClaimRequest es frágil.
+- **[PROMOVIDA → #4]** No existe panel admin de aprobación de claims. Confirmado: 0 rutas admin, claims se auto-aprueban.
+- **[PROMOVIDA → #5]** Sin verificación de identidad para perfiles sin email publicado. Confirmado. Colapsa en #1/#2 hoy; se independiza al remediarlos.
+
+**Hallazgos emergentes promovidos durante verificación del bloque 4.A:**
+
+- **[EMERGENTE → #6]** `ClaimRequest` sin campo `expiresAt` ni validación de edad del token. Tokens permanentemente válidos amplifican todos los issues del claim flow.
+- **[EMERGENTE → #7]** `GET /api/claim/verify` sin rate limiting estricto (100 req/min general vs 10 req/min de los demás endpoints del flujo). Inconsistencia defense-in-depth.
 
 ### 4.B Auth y sesiones
 
