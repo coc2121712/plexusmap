@@ -655,6 +655,22 @@ El ecosistema Augur ya tiene infraestructura de email operativa: `noreply@joinau
 3. Aplicar a TODOS los flujos que generan tokens: claim (#1), forgot-password (este issue), futuras notificaciones.
 4. Eliminar leak de URL en dev mode en ambos endpoints — usar logs o fixtures de test en su lugar.
 
+### 4.0.5 Buenas prácticas reconocidas
+
+Durante la verificación del audit se identificaron prácticas correctamente implementadas que vale documentar como referencia para el ecosistema Augur:
+
+**Auth y sesiones:**
+
+- **Anti-enumeración en `/api/auth/forgot-password`**: el endpoint siempre retorna response de éxito independientemente de si el email existe en DB, previniendo enumeración de cuentas válidas. Evidencia: `forgot-password/route.ts:15-29`.
+
+- **Invalidación de tokens previos**: antes de crear un nuevo `PasswordReset`, se invalidan los pendientes del mismo email expirándolos inmediatamente. Evidencia: `forgot-password/route.ts:33-39`.
+
+- **Transacción atómica en password update**: el cambio de password + marca de token como usado se hace en una sola transacción de Prisma, evitando estados inconsistentes. Evidencia: `reset-password/route.ts:105-114`.
+
+- **bcrypt con cost factor 12**: balance razonable entre seguridad y latencia para login. Estándar industria 2026. Evidencia: `reset-password/route.ts:102`, `verify/complete/route.ts:62`.
+
+Estas prácticas son **replicables a otros productos del ecosistema** (Kairos auth, Praetor auth) durante las re-auditorías pendientes.
+
 ### 4.A Vector primario — claim flow
 
 - **[PROMOVIDA → #1]** Token de verificación nunca enviado al profesional. Peor que la hipótesis: no existe infraestructura de email. En dev, token retornado en respuesta HTTP. En prod, flujo muerto.
@@ -670,10 +686,14 @@ El ecosistema Augur ya tiene infraestructura de email operativa: `noreply@joinau
 
 ### 4.B Auth y sesiones
 
-- **[POR VERIFICAR]** `User.emailVerifiedAt` no existe en schema → registro sin verificación de email del propio User creado por claim.
-- **[POR VERIFICAR]** `PasswordReset.expiresAt` sin default a nivel schema → si la aplicación no setea expiración explícita, riesgo de tokens permanentes.
-- **[POR VERIFICAR]** `PasswordReset.usedAt` sin enforcement de DB constraint → prevención de reuse depende 100% de lógica aplicación.
-- **[POR VERIFICAR]** Cobertura de rate limiting fuera de `/api/claim` y `/api/auth/*` — verificar `/api/auth/forgot-password` específicamente, y endpoints públicos que disparan operaciones costosas (`/api/geocode/*`, `/api/export/csv`).
+- **[PROMOVIDA → #8]** `User.emailVerifiedAt` no existe en schema. Confirmado: modelo User sin campo de verificación de email. Cuenta creada via claim con email arbitrario no verificado. Severidad: 🟡 Medio (amplificada por #1/#2).
+- **[DEFERRED]** `PasswordReset.expiresAt` sin default a nivel schema. Justificación: campo required (non-nullable, sin @default) — Prisma enforce presencia a nivel de creación. App setea correctamente 1h en `forgot-password/route.ts:44`. Prisma no soporta `@default` para tiempos relativos. No hay gap de seguridad. Detalle en sección 5.4.
+- **[PROMOVIDA → #9]** `PasswordReset.usedAt` sin enforcement de DB constraint. Confirmado: check existe en app (GET y POST) pero es TOCTOU. Transacción atómica pero sin constraint de DB. Severidad: 🟢 Bajo (impacto práctico negligible).
+- **[PROMOVIDA → #10]** Cobertura de rate limiting. Cobertura general adecuada (geocode con triple protección, export/csv admin-only). Gap confirmado: exención blanket `GET /api/auth/*` en middleware.ts:77-79 incluye accidentalmente `GET /api/auth/reset-password`. Severidad: 🟢 Bajo.
+
+**Hallazgos emergentes promovidos durante verificación del bloque 4.B:**
+
+- **[EMERGENTE → #11]** Sistema completo sin infraestructura de email — bug sistémico que generaliza #1. Forgot-password muerto en producción + dev mode leak de resetUrl al solicitante. Severidad: 🔴 Crítico.
 
 ### 4.C Ecosistema Augur
 
@@ -735,7 +755,9 @@ Las entradas aquí se promueven a Sección 4 con número de issue. Esta tabla so
 
 ### 5.4 DEFERRED — Hallazgos no verificables hoy
 
-(Vacío al inicio. Las hipótesis de Sección 4 que Claude Code no logre verificar contra código actual se moverán aquí con razón documentada.)
+| Hipótesis | Razón del defer | Sesión |
+|---|---|---|
+| 4.B.2 — `PasswordReset.expiresAt` sin default a nivel schema | Campo es required (non-nullable). App setea 1h correctamente en `forgot-password/route.ts:44`. Ambos handlers de `reset-password/route.ts` verifican expiración. Prisma no soporta `@default` para tiempos relativos (now + offset). No hay gap de seguridad — el patrón actual (required sin default) es el correcto. | 4.B |
 
 ---
 
