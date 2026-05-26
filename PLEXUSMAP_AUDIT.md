@@ -181,6 +181,43 @@ NextAuth 4.24 con `CredentialsProvider` + bcryptjs para hashing local. JWT strat
 
 > **Estado de esta sección:** las entradas marcadas `[POR VERIFICAR]` son hipótesis preliminares derivadas del análisis estático del schema, el AUDIT-BRIEF, y el reporte de inventario de Claude Code. Claude Code irá verificándolas contra el código real y promoviéndolas a issues numerados (#1, #2, ...) en commits separados. Hipótesis que no se verifiquen se moverán a Sección 5.4 (DEFERRED).
 
+### 4.0 Issues verificados
+
+#### #1 — Token de claim sin envío al profesional (takeover trivial en dev)
+
+**Severidad:** 🔴 Crítico
+**Categoría:** Seguridad (claim flow)
+**Archivos:** `src/app/api/claim/route.ts:47-68`
+**Estado:** OPEN
+**Vinculado a:** Hipótesis 4.A.1 | Ver también issues del mismo bloque 4.A (#2, #4, #5)
+
+**Evidencia:**
+
+```ts
+// route.ts:47-48 — token generado pero nunca enviado
+const token = randomBytes(32).toString('hex');
+
+// route.ts:61-68 — en dev, token devuelto en respuesta al solicitante
+const isDev = process.env.NODE_ENV !== 'production';
+return NextResponse.json({
+  data: {
+    ...(isDev ? { verifyUrl: `/api/claim/verify?token=${token}` } : {}),
+  },
+});
+
+// grep nodemailer|sendgrid|resend|sendEmail → 0 resultados en todo el repo
+```
+
+**Análisis:**
+
+No existe infraestructura de envío de email en el codebase. El token de verificación se genera y almacena en DB, pero nunca se entrega al profesional dueño del perfil. En dev (`NODE_ENV !== 'production'`), el token URL se retorna directamente en el body de la respuesta al solicitante, permitiendo takeover inmediato. En producción, el flujo está efectivamente muerto — el token se crea pero nunca llega a nadie. El mensaje al usuario "Recibirás un correo de verificación" (línea 67) es falso en ambos entornos.
+
+**Recomendación:**
+
+1. Implementar envío de email del token de verificación a `Professional.email` (cuando existe).
+2. Eliminar retorno del token en respuesta API incluso en dev (usar logs o fixtures de test).
+3. Si `NODE_ENV` se misconfigura en prod, el token se filtra — agregar safeguard adicional (verificar explícitamente `NODE_ENV === 'production'` en serverside, no asumir).
+
 ### 4.A Vector primario — claim flow
 
 - **[POR VERIFICAR]** Token de verificación enviado al email del **solicitante** en lugar de al email **publicado del Professional**. Si se confirma, permite takeover trivial: cualquiera con email arbitrario puede reclamar un perfil ajeno.
