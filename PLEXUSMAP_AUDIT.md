@@ -189,7 +189,7 @@ NextAuth 4.24 con `CredentialsProvider` + bcryptjs para hashing local. JWT strat
 **Categoría:** Seguridad (claim flow)
 **Archivos:** `src/app/api/claim/route.ts:47-68`
 **Estado:** OPEN
-**Vinculado a:** Hipótesis 4.A.1 | Ver también issues del mismo bloque 4.A (#2, #4, #5)
+**Vinculado a:** Hipótesis 4.A.1 | Ver también issues del mismo bloque 4.A (#2, #4, #5) | Generalizado en #11 (bug sistémico)
 
 **Evidencia:**
 
@@ -209,6 +209,8 @@ return NextResponse.json({
 ```
 
 **Análisis:**
+
+**Nota cross-block (añadida en sesión 4.B):** Este hallazgo es parte de un bug sistémico — todo el codebase carece de infraestructura de envío de email. Ver issue #11 para el alcance completo y la remediación generalizada.
 
 No existe infraestructura de envío de email en el codebase. El token de verificación se genera y almacena en DB, pero nunca se entrega al profesional dueño del perfil. En dev (`NODE_ENV !== 'production'`), el token URL se retorna directamente en el body de la respuesta al solicitante, permitiendo takeover inmediato. En producción, el flujo está efectivamente muerto — el token se crea pero nunca llega a nadie. El mensaje al usuario "Recibirás un correo de verificación" (línea 67) es falso en ambos entornos.
 
