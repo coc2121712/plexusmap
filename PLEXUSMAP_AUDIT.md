@@ -600,6 +600,59 @@ La exención de rate limiting para `GET /api/auth/*` fue diseñada para evitar l
 1. Narrowar la exención de GET a solo los paths de NextAuth: `/api/auth/session`, `/api/auth/csrf`, `/api/auth/providers`, `/api/auth/callback`.
 2. Alternativamente, agregar `/api/auth/reset-password` a `STRICT_ALL_PATHS`.
 
+#### #11 — Sistema completo sin infraestructura de envío de email
+
+**Severidad:** 🔴 Crítico
+**Categoría:** Seguridad (sistémico) | DevOps (continuidad)
+**Archivos:** `src/app/api/auth/forgot-password/route.ts:54-67`, `src/app/api/claim/route.ts:47-68`, `src/` (grep completo)
+**Estado:** OPEN
+**Vinculado a:** Hallazgo emergente cross-block (sesión 4.B) | Generaliza #1 a sistema completo
+
+**Evidencia:**
+
+```ts
+// forgot-password/route.ts:54-67 — patrón idéntico a claim flow (#1)
+// Token creado pero nunca enviado. En dev, URL retornada en response body.
+const isDev = process.env.NODE_ENV !== 'production';
+return NextResponse.json({
+  ...successResponse,
+  ...(isDev
+    ? {
+        data: {
+          ...successResponse.data,
+          resetUrl: `/reset-password?token=${token}`,
+        },
+      }
+    : {}),
+});
+// En producción: token creado en DB, respuesta genérica, email nunca enviado.
+// En dev: resetUrl retornado al SOLICITANTE (no al dueño de la cuenta).
+```
+
+```bash
+# grep en todo src/ — 0 resultados para cualquier proveedor de email
+$ grep -rn "nodemailer\|sendgrid\|resend\|sendEmail\|send_email\|mailgun\|postmark\|ses\.send\|transporter\.send" src/
+# (sin resultados)
+```
+
+**Análisis:**
+
+No es un bug del claim flow ni del forgot-password individualmente — es un bug sistémico: el codebase completo carece de infraestructura de envío de email. No hay dependencia de email (nodemailer, resend, sendgrid, etc.) en `package.json`, no hay helper de envío, no hay templates. Ambos flujos que dependen de email (claim y forgot-password) siguen el mismo patrón: generan token en DB, en dev retornan la URL en el response body, en producción no entregan nada. Impacto en producción ahora mismo:
+
+- **Forgot-password no funciona.** Usuarios que olviden su contraseña no tienen mecanismo de recuperación.
+- **Víctimas de takeover sin recurso.** Si un perfil es tomado vía claim flow (#1-#5), la víctima no puede usar forgot-password para recuperar acceso.
+- **Dev mode leak.** Si `NODE_ENV` no es `'production'` (misconfigured en prod), el forgot-password endpoint retorna `resetUrl` al solicitante — quien puede no ser el dueño de la cuenta. Esto permitiría account takeover de cualquier cuenta existente.
+- **Comunicación transaccional muerta.** Welcome emails, confirmaciones de claim, notificaciones de password reset — todo inexistente.
+
+El ecosistema Augur ya tiene infraestructura de email operativa: `noreply@joinaugur.com` via Resend con DNS de Cloudflare verificado, usada por otros productos del ecosistema.
+
+**Recomendación:**
+
+1. Adoptar la infraestructura existente del ecosistema Augur: `noreply@joinaugur.com` via Resend (Cloudflare DNS verificado).
+2. Implementar helper compartido `src/lib/email.ts` con Resend SDK.
+3. Aplicar a TODOS los flujos que generan tokens: claim (#1), forgot-password (este issue), futuras notificaciones.
+4. Eliminar leak de URL en dev mode en ambos endpoints — usar logs o fixtures de test en su lugar.
+
 ### 4.A Vector primario — claim flow
 
 - **[PROMOVIDA → #1]** Token de verificación nunca enviado al profesional. Peor que la hipótesis: no existe infraestructura de email. En dev, token retornado en respuesta HTTP. En prod, flujo muerto.
