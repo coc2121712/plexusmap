@@ -1,0 +1,52 @@
+{
+  "totalExtracted": 1034,
+  "uniqueAfterDedup": 1010,
+  "skippedDuplicates": 24,
+  "matched": 46,
+  "matchedNeedingMapfre": 46,
+  "matchedAlreadyHaveMapfre": 0,
+  "newProfessionals": 964,
+  "similarityThreshold": 0.7,
+  "bySpecialty": {
+    "matched": {
+      "ALGIOLOGÍA": 1,
+      "ANESTESIOLOGÍA": 3,
+      "CIRUGÍA ONCOLÓGICA": 3,
+      "CIRUGÍA GENERAL PEDIÁTRICA": 2,
+      "GINECOLOGÍA": 5,
+      "INFECTOLOGÍA": 1,
+      "MEDICINA INTENSIVA": 1,
+      "MEDICINA INTERNA": 3,
+      "NEUROCIRUGÍA": 1,
+      "ORTOPEDAS DE COLUMNA": 3,
+      "OTORRINOLARINGOLOGÍA": 1,
+      "REUMATOLOGÍA": 1,
+      "PEDIATRÍA": 10,
+      "PEDIATRÍA / NEONATOLOGÍA": 11
+    },
+    "new": {
+      "ALGIOLOGÍA": 31,
+      "ANESTESIOLOGÍA": 305,
+      "CARDIOLOGÍA": 2,
+      "CIRUGÍA GENERAL": 34,
+      "CIRUGÍA MAXILO FACIAL": 2,
+      "CIRUGÍA ONCOLÓGICA": 31,
+      "CIRUGÍA GENERAL PEDIÁTRICA": 42,
+      "GINECOLOGÍA": 110,
+      "INFECTOLOGÍA": 39,
+      "MEDICINA INTENSIVA": 36,
+      "MEDICINA INTERNA": 35,
+      "NEUROCIRUGÍA": 36,
+      "ORTOPEDAS DE COLUMNA": 44,
+      "OTORRINOLARINGOLOGÍA": 43,
+      "PATOLOGÍA": 45,
+      "PEDIATRÍA/NEONATOLOGÍA": 37,
+      "PSIQUIATRÍA": 1,
+      "REUMATOLOGÍA": 12,
+      "UROGINECOLOGÍA": 1,
+      "GASTROENTEROLOGÍA": 47,
+      "PEDIATRÍA": 15,
+      "PEDIATRÍA / NEONATOLOGÍA": 16
+    }
+  }
+}

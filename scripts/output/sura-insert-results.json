@@ -1,0 +1,14 @@
+{
+  "inserted": 41,
+  "skipped": 5,
+  "geocoded": 22,
+  "defaultCoords": 19,
+  "errors": 0,
+  "specialtyMapping": {
+    "medicina-general": 33,
+    "ortopedia": 5,
+    "fisioterapia": 2,
+    "oftalmologia": 1
+  },
+  "insuranceAdded": 274
+}

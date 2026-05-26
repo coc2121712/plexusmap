@@ -1,0 +1,30 @@
+{
+  "totalExtracted": 1773,
+  "uniqueAfterDedup": 1673,
+  "skippedDuplicates": 100,
+  "matched": 1243,
+  "matchedNeedingPalig": 1243,
+  "matchedAlreadyHavePalig": 0,
+  "newProfessionals": 430,
+  "similarityThreshold": 0.7,
+  "byType": {
+    "MEDICOS": 357,
+    "CENTRO MEDICO": 25,
+    "LABORATORIOS": 9,
+    "CENTRO DE CIRUGIA AMBULATORIA": 1,
+    "FARMACIAS - DROGUERIAS": 24,
+    "IMAGENOLOGIA": 6,
+    "OTROS PROFESIONALES DE LA SALUD": 3,
+    "OTRAS EMPRESAS PRESTADORAS DE SALUD": 5
+  },
+  "byProvince": {
+    "PANAMÁ": 288,
+    "CHIRIQUÍ": 46,
+    "HERRERA": 31,
+    "PANAMÁ OESTE": 12,
+    "VERAGUAS": 14,
+    "COLÓN": 17,
+    "COCLÉ": 15,
+    "BOCAS DEL TORO": 7
+  }
+}

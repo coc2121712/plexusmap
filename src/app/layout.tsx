@@ -22,6 +22,10 @@ export const viewport: Viewport = {
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://plexusmap.com';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: '/',
+  },
   title: {
     default: 'PlexusMap — Encuentra profesionales de salud en Panamá',
     template: '%s | PlexusMap',
@@ -74,6 +78,16 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: [
+      { url: '/icons/plexusmap/plexusmap-favicon.svg', type: 'image/svg+xml' },
+      { url: '/icons/plexusmap/plexusmap-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icons/plexusmap/plexusmap-16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/icons/plexusmap/plexusmap-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/favicon.ico', sizes: '32x32', type: 'image/x-icon' },
+    ],
+    apple: [{ url: '/icons/plexusmap/plexusmap-180-apple-touch.png', sizes: '180x180' }],
+  },
 };
 
 export default function RootLayout({
@@ -88,8 +102,9 @@ export default function RootLayout({
     >
       <head>
         <HomeJsonLd />
-        <link rel="apple-touch-icon" href="/api/icon?size=192" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/icons/plexusmap/plexusmap-180-apple-touch.png" />
         <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="theme-color" content="#4A7C59" />
       </head>
       <body className="h-full">
         {children}

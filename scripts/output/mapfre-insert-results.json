@@ -1,0 +1,18 @@
+{
+  "inserted": 964,
+  "skipped": 0,
+  "geocoded": 0,
+  "defaultCoords": 964,
+  "errors": 0,
+  "specialtyMapping": {
+    "medicina-general": 658,
+    "cardiologia": 2,
+    "odontologia-general": 2,
+    "pediatria": 110,
+    "ginecologia": 111,
+    "neurologia": 36,
+    "ortopedia": 44,
+    "psicologia": 1
+  },
+  "insuranceAdded": 26
+}

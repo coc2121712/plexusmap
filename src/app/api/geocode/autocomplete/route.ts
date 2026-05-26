@@ -1,8 +1,9 @@
 // GET /api/geocode/autocomplete?input=xxx — proxy to Google Places Autocomplete
-// Requires authenticated session (prevents abuse from anonymous bots)
+// Requires authenticated session + rate limiting
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
+import { rateLimit } from '@/lib/rate-limit';
 
 const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
 
@@ -11,6 +12,15 @@ export async function GET(request: NextRequest) {
   const session = await getServerSession(authOptions);
   if (!session?.user) {
     return NextResponse.json({ error: 'No autorizado' }, { status: 401 });
+  }
+
+  // Rate limit: 30 requests per minute per user
+  const rl = rateLimit(`geocode-ac:${(session.user as { id: string }).id}`, { maxRequests: 30, windowMs: 60_000 });
+  if (!rl.allowed) {
+    return NextResponse.json(
+      { error: 'Demasiadas solicitudes' },
+      { status: 429, headers: { 'Retry-After': String(rl.retryAfter) } }
+    );
   }
 
   if (!API_KEY) {

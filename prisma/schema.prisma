@@ -68,6 +68,7 @@ model Professional {
   lat             Float
   lng             Float
   phone           String?
+  whatsappPhone   String?            // mobile number for WhatsApp (auto-classified)
   email           String?            // public contact email (NOT auth)
   bio             String?
   rating          Float              @default(0)

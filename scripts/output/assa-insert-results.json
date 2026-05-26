@@ -1,0 +1,12 @@
+{
+  "inserted": 82,
+  "skipped": 0,
+  "geocoded": 18,
+  "defaultCoords": 64,
+  "errors": 0,
+  "specialtyMapping": {
+    "medicina-general": 67,
+    "odontologia-general": 15
+  },
+  "insuranceAdded": 48
+}

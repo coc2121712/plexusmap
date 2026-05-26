@@ -1,0 +1,10 @@
+{
+  "totalExtracted": 138,
+  "uniqueAfterDedup": 138,
+  "skippedDuplicates": 0,
+  "matched": 56,
+  "matchedNeedingAssa": 56,
+  "matchedAlreadyHaveAssa": 0,
+  "newEntries": 82,
+  "similarityThreshold": 0.7
+}

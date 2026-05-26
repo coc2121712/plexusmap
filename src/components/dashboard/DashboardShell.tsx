@@ -2,6 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { signOut } from 'next-auth/react';
 import { SessionProvider } from '@/components/providers/SessionProvider';
 import type { ReactNode } from 'react';
@@ -34,15 +35,13 @@ export function DashboardShell({ user, children }: DashboardShellProps) {
           {/* Logo */}
           <div className="h-16 flex items-center px-6 border-b border-border">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
-                  <circle cx="12" cy="12" r="3" />
-                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
-                </svg>
-              </div>
-              <span className="text-lg font-bold text-gray-900">
-                Plexus<span className="text-primary">Map</span>
-              </span>
+              <Image
+                src="/logo-plexusmap.png"
+                alt="PlexusMap"
+                width={36}
+                height={36}
+                className="h-9 w-auto"
+              />
             </Link>
           </div>
 
@@ -105,9 +104,13 @@ export function DashboardShell({ user, children }: DashboardShellProps) {
         <div className="flex-1 flex flex-col overflow-hidden">
           {/* Mobile header */}
           <div className="md:hidden h-14 bg-white border-b border-border flex items-center justify-between px-4">
-            <span className="text-sm font-bold">
-              Plexus<span className="text-primary">Map</span>
-            </span>
+            <Image
+              src="/logo-plexusmap.png"
+              alt="PlexusMap"
+              width={28}
+              height={28}
+              className="h-7 w-auto"
+            />
             <button
               onClick={() => signOut({ callbackUrl: '/' })}
               className="text-xs text-gray-500"

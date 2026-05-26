@@ -1,0 +1,427 @@
+/**
+ * PlexusMap — Import ASSA Medical Network
+ *
+ * Extracts ASSA's medical network from their website pages and PDFs.
+ * Uses cheerio for HTML parsing and pdf-parse for PDFs.
+ *
+ * Data sources:
+ * - /servicio-al-cliente/red-de-hospitales-locales/
+ * - /servicio-al-cliente/red-de-clinicas-y-medicos-primarios/
+ * - /servicio-al-cliente/red-de-cobertura-dental/
+ * - /servicio-al-cliente/centros-de-radiologia/
+ * - /servicios-al-cliente/centros-de-cirugias-ambulatorias/
+ * - /formularios/Listado-medicos-examinadores-salud-individual.pdf
+ * - /formularios/Listado-medicos-examinadores-vida-individual.pdf
+ *
+ * Usage: npx tsx scripts/import-assa.ts
+ * Output: scripts/output/assa-raw.json
+ */
+
+import * as fs from 'fs';
+import * as path from 'path';
+
+const OUTPUT_DIR = path.join(process.cwd(), 'scripts', 'output');
+const OUTPUT_FILE = path.join(OUTPUT_DIR, 'assa-raw.json');
+
+interface AssaEntry {
+  name: string;
+  specialty: string;
+  location: string;
+  phone: string;
+  province: string;
+  website?: string;
+  source: string;
+}
+
+// ═══════════════════════════════════════════
+// Structured data from ASSA's website
+// (parsed manually from their HTML pages)
+// ═══════════════════════════════════════════
+
+function getHospitals(): AssaEntry[] {
+  return [
+    { name: 'The Panama Clinic', specialty: 'HOSPITAL', location: 'Complejo Pacif Center, Calle Ramón H. Jurado, Ciudad de Panamá', phone: '310-1111', province: 'PANAMÁ', website: 'thepanamaclinic.com', source: 'hospitales' },
+    { name: 'Clínica Hospital San Fernando', specialty: 'HOSPITAL', location: 'Vía España final, Urbanización Las Sabanas', phone: '305-6300', province: 'PANAMÁ', website: 'hospitalsanfernando.com', source: 'hospitales' },
+    { name: 'Clínica Hospital San Fernando Coronado', specialty: 'HOSPITAL', location: 'Calle Roberto Eisenmann, Coronado', phone: '240-1646', province: 'PANAMÁ OESTE', website: 'hospitalsanfernando.com', source: 'hospitales' },
+    { name: 'Hospital Brisas', specialty: 'HOSPITAL', location: 'Centro Comercial Plaza Signature, Nivel 200', phone: '309-2300', province: 'PANAMÁ', website: 'hospitalbrisas.com', source: 'hospitales' },
+    { name: 'Hospital Minimed', specialty: 'HOSPITAL', location: 'Vía Ricardo J. Alfaro, Tumba Muerto, Edificio Golden Point', phone: '263-6464', province: 'PANAMÁ', website: 'minimedpanama.com', source: 'hospitales' },
+    { name: 'Centro Médico Paitilla', specialty: 'HOSPITAL', location: 'Avenida 53, Marbella', phone: '265-8800', province: 'PANAMÁ', website: 'centromedicopaitilla.com', source: 'hospitales' },
+    { name: 'Pacífica Salud', specialty: 'HOSPITAL', location: 'Hospital Punta Pacífica, Boulevard Pacífica y Punta Darién', phone: '204-8000', province: 'PANAMÁ', website: 'pacificasalud.com', source: 'hospitales' },
+    { name: 'Hospital Nacional', specialty: 'HOSPITAL', location: 'Avenida Cuba, Calle 38 y 39', phone: '207-8100', province: 'PANAMÁ', website: 'hospitalnacional.com', source: 'hospitales' },
+    { name: 'Hospital Santa Fe', specialty: 'HOSPITAL', location: 'Avenida Frangipani y Vía Simón Bolívar', phone: '227-4733', province: 'PANAMÁ', website: 'hospitalsantafepanama.com', source: 'hospitales' },
+    { name: 'Centro Médico del Caribe', specialty: 'HOSPITAL', location: 'Calle 11 y 12, Avenida Roosevelt, Colón', phone: '441-4420', province: 'COLÓN', website: 'centromedicodelcaribe.com', source: 'hospitales' },
+    { name: 'Hospital Colón 4 Altos', specialty: 'HOSPITAL', location: 'Vía Boyd Roosevelt, Corredor sector cuatro altos, Colón', phone: '433-7400', province: 'COLÓN', website: 'hospitalcolon.com', source: 'hospitales' },
+    { name: 'Clínica Hospital Panamericano', specialty: 'HOSPITAL', location: 'Calle Santa Rita, Colón', phone: '253-3447', province: 'COLÓN', website: 'ch-panamericano.com', source: 'hospitales' },
+    { name: 'Policlínica Saturno', specialty: 'HOSPITAL', location: 'Avenida Las Américas, frente a panadería Cesarín, Colón', phone: '253-7272', province: 'COLÓN', source: 'hospitales' },
+    { name: 'Clínica Hospital Zaratí', specialty: 'HOSPITAL', location: 'Vía Interamericana, Penonomé', phone: '6630-7145', province: 'COCLÉ', source: 'hospitales' },
+    { name: 'Servicios Médicos de Aguadulce', specialty: 'HOSPITAL', location: 'Avenida Sebastián Sucre, cerca del estadio Remón Cantera, Aguadulce', phone: '997-0860', province: 'COCLÉ', source: 'hospitales' },
+    { name: 'Servicios Médicos de Azuero', specialty: 'HOSPITAL', location: 'Ave. Carmelo Spadafora, carretera Vía Los Santos, Chitré', phone: '996-2360', province: 'HERRERA', source: 'hospitales' },
+    { name: 'Centro Médico San Juan Bautista', specialty: 'HOSPITAL', location: 'Ave. Carmelo Spadafora, Chitré', phone: '996-4926', province: 'HERRERA', source: 'hospitales' },
+    { name: 'Clínica Hospital Especializada de Azuero', specialty: 'HOSPITAL', location: 'PH Medical Plaza, Chitré', phone: '915-0500', province: 'HERRERA', source: 'hospitales' },
+    { name: 'Clínica Hospital Jesús Nazareno', specialty: 'HOSPITAL', location: 'Vía Panamericana, Santiago', phone: '998-1581', province: 'VERAGUAS', source: 'hospitales' },
+    { name: 'Hospital Médica Norte Nuevo Santiago', specialty: 'HOSPITAL', location: 'Urb. Nuevo Santiago, Calle Principal, Santiago', phone: '950-0047', province: 'VERAGUAS', source: 'hospitales' },
+    { name: 'Clínica Hospital San Juan De Dios', specialty: 'HOSPITAL', location: 'Cl. 3era frente al parque Juan Demóstenes A., Santiago', phone: '998-5583', province: 'VERAGUAS', source: 'hospitales' },
+    { name: 'Centro Médico Mae Lewis', specialty: 'HOSPITAL', location: 'Carretera Interamericana, San Mateo, David', phone: '775-4616', province: 'CHIRIQUÍ', website: 'hospitalcmml.com', source: 'hospitales' },
+    { name: 'Clínica Hospital Cattán', specialty: 'HOSPITAL', location: 'Principal, David, Av. 4 Este Final', phone: '775-7099', province: 'CHIRIQUÍ', source: 'hospitales' },
+    { name: 'Hospital Chiriquí', specialty: 'HOSPITAL', location: 'Calle Central, avenida 3era. oeste, David', phone: '6774-0128', province: 'CHIRIQUÍ', website: 'hospitalchiriqui.com', source: 'hospitales' },
+  ];
+}
+
+function getPrimaryClinics(): AssaEntry[] {
+  return [
+    { name: 'Clínica Los Portales - El Dorado', specialty: 'CLÍNICA PRIMARIA', location: 'El Dorado, Calle Principal, local 3', phone: '236-3003', province: 'PANAMÁ', website: 'clinicaslosportales.com', source: 'clinicas-primarias' },
+    { name: 'Clínica Los Portales - Vía Porras', specialty: 'CLÍNICA PRIMARIA', location: 'Vía Porras y Santa Elena, cerca de estación Puma', phone: '270-3467', province: 'PANAMÁ', source: 'clinicas-primarias' },
+    { name: 'Clínica Los Portales - Ave. Las Mercedes', specialty: 'CLÍNICA PRIMARIA', location: 'Ave. Agustín Arango y Ave. Las Mercedes, Plaza Campo Limberg', phone: '217-6012', province: 'PANAMÁ', source: 'clinicas-primarias' },
+    { name: 'Clínica Los Portales - Cerro Viento', specialty: 'CLÍNICA PRIMARIA', location: 'Cerro Viento, Plaza Los Portales, local 6', phone: '220-2132', province: 'PANAMÁ', source: 'clinicas-primarias' },
+    { name: 'Centro de Medicina Preventiva - Brisas del Golf', specialty: 'CLÍNICA PRIMARIA', location: 'Brisas del Golf, Plaza las Arcas, locales 11-12', phone: '266-7319', province: 'PANAMÁ', source: 'clinicas-primarias' },
+    { name: 'Centro de Medicina Preventiva - Costa del Este', specialty: 'CLÍNICA PRIMARIA', location: 'Costa del Este, Plaza Emporio del Este, PB', phone: '381-5890', province: 'PANAMÁ', source: 'clinicas-primarias' },
+    { name: 'Clínica Clayton', specialty: 'CLÍNICA PRIMARIA', location: 'La Plaza, Ciudad del Saber, Clayton, Edificio 214 Local 1', phone: '317-0011', province: 'PANAMÁ', website: 'clinicaclayton.com', source: 'clinicas-primarias' },
+    { name: 'Clínica Premedic', specialty: 'CLÍNICA PRIMARIA', location: 'Brisas del Golf, Plaza Caja de Ahorros, Local 1', phone: '388-1711', province: 'PANAMÁ', website: 'premedicpanama.com', source: 'clinicas-primarias' },
+    { name: 'Minimed', specialty: 'CLÍNICA PRIMARIA', location: 'Vía Ricardo J. Alfaro, múltiples sucursales', phone: '263-6464', province: 'PANAMÁ', website: 'minimedpanama.com', source: 'clinicas-primarias' },
+    { name: 'Centro Médico Bernardette - Transístmica', specialty: 'CLÍNICA PRIMARIA', location: 'Camino Real de Bethania, Transístmica', phone: '261-5857', province: 'PANAMÁ', website: 'centromedicobernardette.com', source: 'clinicas-primarias' },
+    { name: 'Centro Médico Bernardette - Villa Lucre', specialty: 'CLÍNICA PRIMARIA', location: 'Villa Lucre, Calle Principal, Torre San Judas Tadeo, PB', phone: '277-5731', province: 'PANAMÁ', source: 'clinicas-primarias' },
+    { name: 'Clínica Vital Med', specialty: 'CLÍNICA PRIMARIA', location: 'Parque Lefevre, Calle 9°, Local 6', phone: '394-4794', province: 'PANAMÁ', website: 'clinicavitalmed.com', source: 'clinicas-primarias' },
+    { name: 'Centro Médico Albrook View', specialty: 'CLÍNICA PRIMARIA', location: 'Ave. Omar Torrijos Herrera, Plaza Terrazas de Albrook, PB Local 8', phone: '209-0658', province: 'PANAMÁ', source: 'clinicas-primarias' },
+    { name: 'North Medical Center', specialty: 'CLÍNICA PRIMARIA', location: 'Urb. Paseo Del Norte, Calle Manuel F. Zárate, Plaza Paseo Drive, PB Local 9', phone: '202-4041', province: 'PANAMÁ', source: 'clinicas-primarias' },
+    { name: 'Clínica Express', specialty: 'CLÍNICA PRIMARIA', location: 'Ciudad de Panamá', phone: '204-6584', province: 'PANAMÁ', website: 'clinica.express', source: 'clinicas-primarias' },
+    { name: 'Panamá Diagnostic Center - Coco del Mar', specialty: 'CLÍNICA PRIMARIA', location: 'Calle 50 final, Coco del Mar, San Francisco', phone: '398-8260', province: 'PANAMÁ', website: 'clinicapdc.com', source: 'clinicas-primarias' },
+    { name: 'Panamá Diagnostic Center - El Dorado', specialty: 'CLÍNICA PRIMARIA', location: 'El Dorado, Plaza Acuarela, Local 9', phone: '382-4958', province: 'PANAMÁ', source: 'clinicas-primarias' },
+    { name: 'CliniLab Panamá', specialty: 'CLÍNICA PRIMARIA', location: 'El Dorado / Calle 50 / Santa María', phone: '310-0680', province: 'PANAMÁ', website: 'clinilabpanama.com', source: 'clinicas-primarias' },
+    { name: 'Clínica Villa Zaita', specialty: 'CLÍNICA PRIMARIA', location: 'Villa Zaita, Centro Comercial OVNI, Local 3', phone: '231-9335', province: 'PANAMÁ', source: 'clinicas-primarias' },
+    { name: 'Clínica Famisalud', specialty: 'CLÍNICA PRIMARIA', location: 'Vía José Domingo Díaz, Plaza Galápago #2, Local 14', phone: '830-6514', province: 'PANAMÁ', source: 'clinicas-primarias' },
+    { name: 'Clínica La Condesa', specialty: 'CLÍNICA PRIMARIA', location: 'Don Bosco, Ave. Domingo Díaz, Plaza Cantabria, Local 32', phone: '374-2605', province: 'PANAMÁ', source: 'clinicas-primarias' },
+    { name: 'Clínica Hospital San Fernando - Primaria', specialty: 'CLÍNICA PRIMARIA', location: 'Vía España, Ciudad de Panamá', phone: '305-6300', province: 'PANAMÁ', source: 'clinicas-primarias' },
+    { name: 'Clínica Laboratorio Santillana - Condado del Rey', specialty: 'CLÍNICA PRIMARIA', location: 'Urb. Condado Del Rey, Plaza Mi Condado, PB Local 15', phone: '6571-0115', province: 'PANAMÁ', source: 'clinicas-primarias' },
+    { name: 'Clínica Nacional - Panamá', specialty: 'CLÍNICA PRIMARIA', location: 'Ave. Justo Arosemena, Calle 38, Centro Médico Nacional, Piso 4, Consultorio 403', phone: '307-2396', province: 'PANAMÁ', source: 'clinicas-primarias' },
+    { name: 'Clínica CEMSAB Sabanitas', specialty: 'CLÍNICA PRIMARIA', location: 'Atlantic Plaza, 4 Altos, PB Local 3, Sabanitas', phone: '6188-8274', province: 'COLÓN', website: 'cemsab.com', source: 'clinicas-primarias' },
+    { name: 'Clínica Unisalud - Colón', specialty: 'CLÍNICA PRIMARIA', location: 'Ciudad de Colón, Calle 11 Paseo Gorgas', phone: '474-5172', province: 'COLÓN', source: 'clinicas-primarias' },
+    { name: 'Clínica Unisalud - Sabanitas', specialty: 'CLÍNICA PRIMARIA', location: 'Sabanitas, Plaza Puerto Pilón, Local 2', phone: '439-8144', province: 'COLÓN', source: 'clinicas-primarias' },
+    { name: 'Clínica Unisalud - Buena Vista', specialty: 'CLÍNICA PRIMARIA', location: 'Buena Vista, Plaza Dos Ríos, Colón', phone: '448-0168', province: 'COLÓN', source: 'clinicas-primarias' },
+    { name: 'Minimed Colón - Margarita', specialty: 'CLÍNICA PRIMARIA', location: 'Margarita, Plaza El Sol, Colón', phone: '263-6464', province: 'COLÓN', source: 'clinicas-primarias' },
+    { name: 'Clínica San Felipe - La Chorrera', specialty: 'CLÍNICA PRIMARIA', location: 'Corregimiento de Puerto Caimito, Centro Comercial Mariano Rivera, Local 13', phone: '345-2880', province: 'PANAMÁ OESTE', source: 'clinicas-primarias' },
+    { name: 'Centro de Medicina Preventiva - Arraiján', specialty: 'CLÍNICA PRIMARIA', location: 'Brisas del Golf Arraiján, Centro Comercial junto a Super 99', phone: '389-3483', province: 'PANAMÁ OESTE', source: 'clinicas-primarias' },
+    { name: 'CliniLab Panamá - Costa Verde', specialty: 'CLÍNICA PRIMARIA', location: 'Plaza Paseo Costa Verde, PB, La Chorrera', phone: '310-0680', province: 'PANAMÁ OESTE', source: 'clinicas-primarias' },
+    { name: 'Minimed - Panamá Pacífico', specialty: 'CLÍNICA PRIMARIA', location: 'Panamá Pacífico, International Business Park, Edificio 3815, Local 108', phone: '263-6464', province: 'PANAMÁ OESTE', source: 'clinicas-primarias' },
+    { name: 'Clínica Médico Dental de Occidente', specialty: 'CLÍNICA PRIMARIA', location: 'Corregimiento Juan Demóstenes Arosemena, Calle Principal de Chapala', phone: '349-8221', province: 'PANAMÁ OESTE', source: 'clinicas-primarias' },
+    { name: 'Minimed Costa Verde - La Chorrera', specialty: 'CLÍNICA PRIMARIA', location: 'Costa Verde, Plaza Boulevard Costa Verde, Local 16, La Chorrera', phone: '263-6464', province: 'PANAMÁ OESTE', source: 'clinicas-primarias' },
+    { name: 'Clínica Laboratorio Santillana - La Chorrera', specialty: 'CLÍNICA PRIMARIA', location: 'La Chorrera, Vía hacia Puerto Caimito, Plaza Vista Mar, Local 21', phone: '349-0494', province: 'PANAMÁ OESTE', source: 'clinicas-primarias' },
+    { name: 'Clínica San Fernando - Coronado', specialty: 'CLÍNICA PRIMARIA', location: 'Coronado, Calle Roberto Eisenmann, Distrito de Chame', phone: '240-1646', province: 'PANAMÁ OESTE', source: 'clinicas-primarias' },
+    { name: 'Clínica Nacional - La Chorrera', specialty: 'CLÍNICA PRIMARIA', location: 'La Chorrera, Urb. Costa Verde, Plaza Central, Locales 3-4', phone: '343-9950', province: 'PANAMÁ OESTE', source: 'clinicas-primarias' },
+    { name: 'Clínica Laboratorio Clínico Azuero', specialty: 'CLÍNICA PRIMARIA', location: 'Chitré, Ave. Herrera, frente a mueblería El Arte Español', phone: '970-0477', province: 'HERRERA', source: 'clinicas-primarias' },
+    { name: 'Dr. Yanisa Del Carmen Ríos A.', specialty: 'MEDICINA GENERAL', location: 'Consultorio Popular, Ave. Herrera, Chitré', phone: '996-4163', province: 'HERRERA', source: 'clinicas-primarias' },
+    { name: 'CEMLAB - Centro Médico y Laboratorio de Salud Familiar', specialty: 'CLÍNICA PRIMARIA', location: 'Paseo Enrique Geenzier, Plaza Leonardo, Local 8, Chitré', phone: '970-4670', province: 'HERRERA', source: 'clinicas-primarias' },
+    { name: 'Dr. Agustín Solís', specialty: 'MEDICINA GENERAL', location: 'Centro Médico Los Santos, Las Tablas', phone: '994-7997', province: 'LOS SANTOS', source: 'clinicas-primarias' },
+    { name: 'Medicalab Centro Médico y Laboratorio Clínico', specialty: 'CLÍNICA PRIMARIA', location: 'Calle 3ra. Santiago, diagonal a Caja de Ahorros', phone: '950-8844', province: 'VERAGUAS', source: 'clinicas-primarias' },
+    { name: 'Clínica Orthopedics Plus', specialty: 'CLÍNICA PRIMARIA', location: 'Vía Panamericana, Penonomé, La Sorpresa Mall, Local 17', phone: '909-4990', province: 'COCLÉ', source: 'clinicas-primarias' },
+    { name: 'CliniLab Panamá - Penonomé', specialty: 'CLÍNICA PRIMARIA', location: 'Boulevard Penonomé, Ave. Interamericana', phone: '310-0608', province: 'COCLÉ', source: 'clinicas-primarias' },
+    { name: 'Clínica Santa Elena', specialty: 'CLÍNICA PRIMARIA', location: 'David, Doleguita, Calle 1era y Calle E Norte', phone: '775-0425', province: 'CHIRIQUÍ', source: 'clinicas-primarias' },
+    { name: 'Todo Salud Panamá - David', specialty: 'CLÍNICA PRIMARIA', location: 'David, Ave. Belisario Porras, Calle J Norte, PH Pacific Plaza', phone: '730-4290', province: 'CHIRIQUÍ', source: 'clinicas-primarias' },
+    { name: 'Clínica San José - Changuinola', specialty: 'CLÍNICA PRIMARIA', location: 'Changuinola, Bocas del Toro', phone: '758-6537', province: 'BOCAS DEL TORO', source: 'clinicas-primarias' },
+    { name: 'Clínica de Especialidades Médicas Darién', specialty: 'CLÍNICA PRIMARIA', location: 'Vía Panamericana, Pinogana, Metetí, Plaza Metetí, Local 2', phone: '299-5384', province: 'DARIÉN', source: 'clinicas-primarias' },
+  ];
+}
+
+function getDental(): AssaEntry[] {
+  return [
+    { name: 'Clínica Clayton Dental', specialty: 'DENTAL', location: 'Ancón, Ciudad del Saber, Edif. 214, local 1', phone: '317-0011', province: 'PANAMÁ', source: 'dental' },
+    { name: 'Clínica Dr. Ernesto Calvo', specialty: 'DENTAL', location: 'Urbanización, Calle 53', phone: '', province: 'PANAMÁ', source: 'dental' },
+    { name: 'Clínica Dental Ibarra - Balboa', specialty: 'DENTAL', location: 'Ave. Balboa, Balboa Office Center, PH Interplus', phone: '', province: 'PANAMÁ', source: 'dental' },
+    { name: 'Clínica Dental Sousa-Lennox', specialty: 'DENTAL', location: 'Consultorios Médicos Paitilla, 6to. piso, consultorio 620', phone: '', province: 'PANAMÁ', source: 'dental' },
+    { name: 'Dra. Bheusis B. Castillo', specialty: 'DENTAL', location: 'Ave. Balboa, PH Interplus, Clínica Dental Ibarra', phone: '', province: 'PANAMÁ', source: 'dental' },
+    { name: 'Centro de Medicina Preventiva Dental - Costa del Este', specialty: 'DENTAL', location: 'Urb. Costa del Este, Ave. Principal, Plaza Emporio del Este', phone: '', province: 'PANAMÁ', source: 'dental' },
+    { name: 'Idental Clinic', specialty: 'DENTAL', location: 'Urb. El Cangrejo, Calle Alberto Navarro, Edif. Setton Place', phone: '', province: 'PANAMÁ', source: 'dental' },
+    { name: 'Dentibela Dental Care', specialty: 'DENTAL', location: 'Juan Diaz, Vía Tocumen, Urb. Don Bosco', phone: '', province: 'PANAMÁ', source: 'dental' },
+    { name: 'Dr. Aurelio E. Correa', specialty: 'DENTAL', location: 'Blvd. El Dorado, Plaza Galería Colonial, Local 32', phone: '', province: 'PANAMÁ', source: 'dental' },
+    { name: 'Dra. María Gabriela Lescure', specialty: 'DENTAL', location: 'Calle 50, Clínica Denticlub, Edif. 17, oficina 2', phone: '', province: 'PANAMÁ', source: 'dental' },
+    { name: 'Dra. Giselle Young', specialty: 'DENTAL', location: 'San Miguelito, Urb. San Isidro, Calle Principal, Piso 2', phone: '', province: 'PANAMÁ', source: 'dental' },
+    { name: 'Clínica Dental Sonrident', specialty: 'DENTAL', location: 'El Cangrejo y Plaza Centennial', phone: '', province: 'PANAMÁ', source: 'dental' },
+    { name: 'Biodent', specialty: 'DENTAL', location: 'Urb. Punta Pacífica, Consultorios Pacífica Salud, Piso 8', phone: '', province: 'PANAMÁ', source: 'dental' },
+    { name: 'Centro de Especialidades Odontológicas Smile Laser', specialty: 'DENTAL', location: 'Vía Porras, Calle 75, Plaza Royal Blue, Piso 2', phone: '', province: 'PANAMÁ', source: 'dental' },
+    { name: 'Hollywood Smile Dental Studio', specialty: 'DENTAL', location: 'San Francisco, Calle 72 y Costa del Este, Ave. Centenario', phone: '', province: 'PANAMÁ', source: 'dental' },
+    { name: 'Dr. Mario A. Chalhoub', specialty: 'DENTAL', location: 'Vía España, Plaza Regency, Piso 9', phone: '', province: 'PANAMÁ', source: 'dental' },
+    { name: 'Clínica Dental La Victoria', specialty: 'DENTAL', location: 'Centro Comercial Boulevard Costa Verde, Local 18C, Colón', phone: '', province: 'COLÓN', source: 'dental' },
+    { name: 'Atlantic Dental Clinic', specialty: 'DENTAL', location: 'Avenida Espavé, Plaza Margarita, Local 5, Colón', phone: '', province: 'COLÓN', source: 'dental' },
+    { name: 'Clínica Inmaculada', specialty: 'DENTAL', location: 'Penonomé, Coclé', phone: '', province: 'COCLÉ', source: 'dental' },
+    { name: 'Clínica Dra. Elvia Vergara', specialty: 'DENTAL', location: 'Aguadulce, Avenida Central, Edificio Diamante, planta alta', phone: '', province: 'COCLÉ', source: 'dental' },
+    { name: 'Dra. Nilka Caballero', specialty: 'DENTAL', location: 'Santiago, Consultorio San Miguel Arcángel, calle 2da', phone: '933-1112', province: 'VERAGUAS', source: 'dental' },
+    { name: 'Consultorio Dental Familiar Dr. Omar Samaniego', specialty: 'DENTAL', location: 'Chitré, Calle Aminta Burgos de Amado, detrás de los Bomberos', phone: '', province: 'HERRERA', source: 'dental' },
+    { name: 'Dra. Maristela Gómez', specialty: 'DENTAL', location: 'Hospital Chiriquí, Torre 1, Consultorio 3, David', phone: '', province: 'CHIRIQUÍ', source: 'dental' },
+    { name: 'Clínica Dental Ibarra - David', specialty: 'DENTAL', location: 'Hospital Chiriquí, Torre Sur, Piso 5, Consultorio 30, David', phone: '700-1837', province: 'CHIRIQUÍ', source: 'dental' },
+  ];
+}
+
+function getRadiology(): AssaEntry[] {
+  return [
+    { name: 'Centro de Diagnóstico de América', specialty: 'RADIOLOGÍA E IMÁGENES', location: 'Vía España, Consultorios América, Planta Baja', phone: '229-1623', province: 'PANAMÁ', website: 'cdaradiologia.com', source: 'radiologia' },
+    { name: 'Centro Radiológico Metropolitano', specialty: 'RADIOLOGÍA E IMÁGENES', location: 'Boulevard El Dorado, Edificio Galerías Colonial El Doral, 2do Piso', phone: '236-3410', province: 'PANAMÁ', website: 'centroradiologicometropolitano.com', source: 'radiologia' },
+    { name: 'Complejo Médico Marbella', specialty: 'RADIOLOGÍA E IMÁGENES', location: 'Calle 53 Marbella, Edificio Royal Center, Planta Baja', phone: '263-7977', province: 'PANAMÁ', website: 'complejomedicomarbella.com', source: 'radiologia' },
+    { name: 'CRE Centro de Resonancia Especializada', specialty: 'RADIOLOGÍA E IMÁGENES', location: 'Avenida Cuba, Calle 39-40, Bella Vista', phone: '399-0025', province: 'PANAMÁ', website: 'resonanciaespecializada.com', source: 'radiologia' },
+    { name: 'RADIMAGEN', specialty: 'RADIOLOGÍA E IMÁGENES', location: 'Vía Israel, entre calle 73 y 74, San Francisco', phone: '382-1424', province: 'PANAMÁ', website: 'radimagen.com', source: 'radiologia' },
+    { name: 'Resonancia Magnética Marbella', specialty: 'RADIOLOGÍA E IMÁGENES', location: 'Urbanización Nuevo Paitilla, Calle 59E y La Colmena, San Francisco', phone: '214-4545', province: 'PANAMÁ', source: 'radiologia' },
+    { name: 'Resonancia Magnética Open Side', specialty: 'RADIOLOGÍA E IMÁGENES', location: 'Centro Comercial San Francisco Plaza, Local 3-4', phone: '302-0309', province: 'PANAMÁ', website: 'open-side.com', source: 'radiologia' },
+    { name: 'Women Care Center', specialty: 'RADIOLOGÍA E IMÁGENES', location: 'PH Street Mall, Vía Israel y Vía Brasil, 3er Piso, Local 301', phone: '830-2626', province: 'PANAMÁ', website: 'womencarecenterpanama.com', source: 'radiologia' },
+    { name: 'Centro Médico Betania', specialty: 'RADIOLOGÍA E IMÁGENES', location: 'Betania, Ave. De La Paz (El Ingenio), Edif. Laimin, Local 1', phone: '374-4218', province: 'PANAMÁ', source: 'radiologia' },
+    { name: 'Resonancia Magnética Colón', specialty: 'RADIOLOGÍA E IMÁGENES', location: 'Urb. San Cristóbal, Hospital Cuatro Altos Colón, Local 1, PB', phone: '439-8487', province: 'COLÓN', source: 'radiologia' },
+    { name: 'Todo Salud Panamá - Imágenes', specialty: 'RADIOLOGÍA E IMÁGENES', location: 'Urb. El Limón, Calle Costa Verde, Plaza Uniplaza, Local B-15', phone: '247-0013', province: 'PANAMÁ OESTE', website: 'todosaludpanama.com', source: 'radiologia' },
+    { name: 'Serra Radiología', specialty: 'RADIOLOGÍA E IMÁGENES', location: 'Clínica Hospital Jesús Nazareno, Vía Interamericana, Santiago', phone: '933-1590', province: 'VERAGUAS', source: 'radiologia' },
+  ];
+}
+
+function getSurgeryCenters(): AssaEntry[] {
+  return [
+    { name: 'Centro de Cirugía Ambulatoria Paitilla', specialty: 'CIRUGÍA AMBULATORIA', location: 'Calle 53 Marbella, Edificio Centro Especializado Paitilla, PB', phone: '269-1281', province: 'PANAMÁ', website: 'cirugiaambulatoria.com.pa', source: 'cirugia-ambulatoria' },
+    { name: 'CIRPA - Cirugía Plástica Ambulatoria', specialty: 'CIRUGÍA AMBULATORIA', location: 'Vía España, PH Centro Especializado San Fernando, piso 2', phone: '261-7989', province: 'PANAMÁ', source: 'cirugia-ambulatoria' },
+    { name: 'CETRERSA', specialty: 'CIRUGÍA AMBULATORIA', location: 'Correg. de Pueblo Nuevo, Urb. Hato Pintado, Ave. La Loma', phone: '229-5000', province: 'PANAMÁ', source: 'cirugia-ambulatoria' },
+    { name: 'CIRRO - Radioterapia Oncológica Panamá', specialty: 'CIRUGÍA AMBULATORIA', location: 'Ave. Cuba, Hospital Nacional, Sótano', phone: '300-2224', province: 'PANAMÁ', source: 'cirugia-ambulatoria' },
+    { name: 'Centro Hemato-Oncológico de Panamá (CHOP)', specialty: 'CIRUGÍA AMBULATORIA', location: 'Calle Ramón H. Jurado, Pacific Center, The Panama Clinic, Torre B', phone: '265-2231', province: 'PANAMÁ', source: 'cirugia-ambulatoria' },
+    { name: 'Centro Oncológico de Panamá (COPSA)', specialty: 'CIRUGÍA AMBULATORIA', location: 'Hospital Santa Fe, Piso 3 / Consultorios Médicos Paitilla, Piso 4', phone: '360-7400', province: 'PANAMÁ', source: 'cirugia-ambulatoria' },
+    { name: 'Centro Nacional de Diagnóstico Gastrointestinal', specialty: 'CIRUGÍA AMBULATORIA', location: 'Avenida Balboa, Sky Business Center, Torre A, PB', phone: '374-2054', province: 'PANAMÁ', source: 'cirugia-ambulatoria' },
+    { name: 'CAPA - Clínica Ambulatoria de Panamá', specialty: 'CIRUGÍA AMBULATORIA', location: 'Punta Pacífica, Edificio Torre Las Américas, PB', phone: '374-1627', province: 'PANAMÁ', source: 'cirugia-ambulatoria' },
+    { name: 'CIENSA Cirugía & Endoscopias', specialty: 'CIRUGÍA AMBULATORIA', location: 'Calle Ramón Arias, El Carmen, Edificio Ropardi, PB', phone: '830-5238', province: 'PANAMÁ', source: 'cirugia-ambulatoria' },
+    { name: 'Cardiomedic Center', specialty: 'CIRUGÍA AMBULATORIA', location: 'Urb. Costa Del Este, PH Town Center, Piso 5', phone: '309-2754', province: 'PANAMÁ', source: 'cirugia-ambulatoria' },
+    { name: 'Grupo NEPHRON - Centro de Hemodiálisis', specialty: 'CIRUGÍA AMBULATORIA', location: 'The Panama Clinic, Torre B, Piso 21, Ofic. 2111', phone: '310-2895', province: 'PANAMÁ', source: 'cirugia-ambulatoria' },
+    { name: 'Clínica Boyd', specialty: 'CIRUGÍA AMBULATORIA', location: 'Esquina de Calle 50 y Ave. Venezuela', phone: '264-8011', province: 'PANAMÁ', source: 'cirugia-ambulatoria' },
+    { name: 'INDELCO - Instituto Laser y Cirugía Ocular', specialty: 'CIRUGÍA AMBULATORIA', location: 'Centro Especializado Hospital Pediátrico San Fernando', phone: '398-1632', province: 'PANAMÁ', source: 'cirugia-ambulatoria' },
+    { name: 'VITAE Health', specialty: 'CIRUGÍA AMBULATORIA', location: 'Clayton, Ciudad Del Saber, Edif. 231, Piso 2, Ofic. A', phone: '6569-1219', province: 'PANAMÁ', source: 'cirugia-ambulatoria' },
+    { name: 'Centro Quirúrgico Ambulatorio David', specialty: 'CIRUGÍA AMBULATORIA', location: 'Ave. Rubén Morales, Urb. El Bosque, David, Chiriquí', phone: '779-0163', province: 'CHIRIQUÍ', source: 'cirugia-ambulatoria' },
+  ];
+}
+
+// ═══════════════════════════════════════════
+// PDF Parsing for Examiner Lists
+// ═══════════════════════════════════════════
+
+async function fetchPdf(url: string): Promise<Buffer> {
+  console.log(`  Fetching PDF: ${url}`);
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
+  const ab = await res.arrayBuffer();
+  return Buffer.from(ab);
+}
+
+async function parseExaminerPdf(buffer: Buffer, type: string): Promise<AssaEntry[]> {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const pdfParse = require('pdf-parse');
+  const entries: AssaEntry[] = [];
+
+  try {
+    const data = await pdfParse(buffer);
+    console.log(`    PDF parsed: ${data.numpages} pages, ${data.text.length} chars`);
+
+    // Save raw text for debug
+    const textFile = path.join(OUTPUT_DIR, `assa-examiner-${type}-raw.txt`);
+    fs.writeFileSync(textFile, data.text);
+
+    const lines: string[] = data.text
+      .split('\n')
+      .map((l: string) => l.trim())
+      .filter((l: string) => l.length > 0);
+
+    // Examiner PDFs have format:
+    // "Dr. Name Surname  Location / Phone"
+    // or multi-line: name, then address, then phone
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i];
+
+      // Match lines starting with "Dr." or "Dra."
+      const drMatch = line.match(/^(Dra?\.\s+[A-ZÁÉÍÓÚÜÑa-záéíóúüñ\s.\-]+?)(?:\s{2,}|\t|$)/);
+      if (drMatch) {
+        let name = drMatch[1].trim();
+        // Clean trailing dots/spaces
+        name = name.replace(/\.\s*$/, '.').replace(/\s+/g, ' ');
+        // Fix merged text from PDF (e.g., "Dr. Ivo GuerraExámen Medico")
+        name = name.replace(/(?:Ex[áa]men\s*M[ée]dico|Examinador|Ubicaci[óo]n|Tel[ée]fono).*$/i, '').trim();
+
+        if (name.length < 6) continue;
+        // Skip headers
+        if (/^Dr\.?\s*$/i.test(name)) continue;
+        if (/médico|examinador|individual|salud|vida|nombre|ubicación/i.test(name)) continue;
+
+        // Rest of the line after the name = location info
+        let location = line.substring(drMatch[0].length).trim();
+
+        // Look ahead for more location/phone info
+        let phone = '';
+        const phoneInLine = location.match(/(\d{3,4}[-\s]?\d{4})/);
+        if (phoneInLine) {
+          phone = phoneInLine[1].replace(/\s/g, '');
+          location = location.replace(phoneInLine[0], '').trim();
+        }
+
+        // Check next line(s) for continuation
+        if (i + 1 < lines.length && !/^Dra?\./i.test(lines[i + 1])) {
+          const nextLine = lines[i + 1];
+          const nextPhone = nextLine.match(/(\d{3,4}[-\s]?\d{4})/);
+          if (nextPhone && !phone) {
+            phone = nextPhone[1].replace(/\s/g, '');
+            const nextLoc = nextLine.replace(nextPhone[0], '').trim();
+            if (nextLoc.length > 3) location = location ? `${location}, ${nextLoc}` : nextLoc;
+          } else if (nextLine.length > 3 && !/^Dra?\./i.test(nextLine) && !/médico|examinador/i.test(nextLine)) {
+            location = location ? `${location}, ${nextLine}` : nextLine;
+          }
+        }
+
+        // Clean location
+        location = location
+          .replace(/[,.\s-]+$/, '')
+          .replace(/^[,.\s-]+/, '')
+          .trim();
+
+        entries.push({
+          name,
+          specialty: 'MEDICINA GENERAL',
+          location: location || 'Ciudad de Panamá',
+          phone,
+          province: detectProvince(location || 'Panamá'),
+          source: `examiner-${type}`,
+        });
+      }
+    }
+  } catch (err) {
+    console.warn(`    Failed to parse PDF: ${err}`);
+  }
+
+  return entries;
+}
+
+function detectProvince(text: string): string {
+  const upper = text.toUpperCase();
+  if (/\bCHIRIQU[IÍ]\b|\bDAVID\b/i.test(upper)) return 'CHIRIQUÍ';
+  if (/\bCOLO?N\b|\bSABANITAS\b/i.test(upper)) return 'COLÓN';
+  if (/\bCOCL[EÉ]\b|\bPENONOM[EÉ]\b|\bAGUADULCE\b/i.test(upper)) return 'COCLÉ';
+  if (/\bHERRERA\b|\bCHITR[EÉ]\b/i.test(upper)) return 'HERRERA';
+  if (/\bLOS SANTOS\b|\bLAS TABLAS\b/i.test(upper)) return 'LOS SANTOS';
+  if (/\bVERAGUAS\b|\bSANTIAGO\b/i.test(upper)) return 'VERAGUAS';
+  if (/\bBOCAS DEL TORO\b|\bCHANGUINOLA\b/i.test(upper)) return 'BOCAS DEL TORO';
+  if (/\bDARI[EÉ]N\b|\bMETET[IÍ]\b/i.test(upper)) return 'DARIÉN';
+  if (/\bLA CHORRERA\b|\bARRAIJ[AÁ]N\b|\bCORONADO\b|\bPANAM[AÁ]\s*OESTE\b/i.test(upper)) return 'PANAMÁ OESTE';
+  return 'PANAMÁ';
+}
+
+// ═══════════════════════════════════════════
+// Deduplication
+// ═══════════════════════════════════════════
+
+function deduplicateEntries(entries: AssaEntry[]): AssaEntry[] {
+  const seen = new Map<string, AssaEntry>();
+
+  for (const entry of entries) {
+    const key = entry.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, ' ').trim();
+
+    if (!seen.has(key)) {
+      seen.set(key, entry);
+    } else {
+      const existing = seen.get(key)!;
+      if (!existing.phone && entry.phone) existing.phone = entry.phone;
+      if (!existing.website && entry.website) existing.website = entry.website;
+      if (existing.location.length < entry.location.length) existing.location = entry.location;
+    }
+  }
+
+  return Array.from(seen.values());
+}
+
+// ═══════════════════════════════════════════
+// Main
+// ═══════════════════════════════════════════
+
+async function main() {
+  console.log('============================================');
+  console.log('  PlexusMap — ASSA Network Importer');
+  console.log('============================================\n');
+
+  if (!fs.existsSync(OUTPUT_DIR)) {
+    fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+  }
+
+  const allEntries: AssaEntry[] = [];
+
+  // 1. Structured data from website pages
+  console.log('1. Loading hospitals (24 entries)...');
+  const hospitals = getHospitals();
+  allEntries.push(...hospitals);
+  console.log(`   ✅ ${hospitals.length} hospitals`);
+
+  console.log('2. Loading primary clinics (49 entries)...');
+  const clinics = getPrimaryClinics();
+  allEntries.push(...clinics);
+  console.log(`   ✅ ${clinics.length} clinics`);
+
+  console.log('3. Loading dental providers (24 entries)...');
+  const dental = getDental();
+  allEntries.push(...dental);
+  console.log(`   ✅ ${dental.length} dental providers`);
+
+  console.log('4. Loading radiology centers (12 entries)...');
+  const radiology = getRadiology();
+  allEntries.push(...radiology);
+  console.log(`   ✅ ${radiology.length} radiology centers`);
+
+  console.log('5. Loading surgery centers (15 entries)...');
+  const surgery = getSurgeryCenters();
+  allEntries.push(...surgery);
+  console.log(`   ✅ ${surgery.length} surgery centers`);
+
+  // 6. Medical Examiner PDFs
+  console.log('6. Parsing medical examiner PDFs...');
+  try {
+    const saludPdf = await fetchPdf('https://www.assanet.com/formularios/Listado-medicos-examinadores-salud-individual.pdf');
+    const saludDoctors = await parseExaminerPdf(saludPdf, 'salud');
+    console.log(`   ✅ Salud examiners: ${saludDoctors.length}`);
+    allEntries.push(...saludDoctors);
+  } catch (err) {
+    console.warn(`   ⚠️ Salud PDF error: ${err}`);
+  }
+
+  try {
+    const vidaPdf = await fetchPdf('https://www.assanet.com/formularios/Listado-medicos-examinadores-vida-individual.pdf');
+    const vidaDoctors = await parseExaminerPdf(vidaPdf, 'vida');
+    console.log(`   ✅ Vida examiners: ${vidaDoctors.length}`);
+    allEntries.push(...vidaDoctors);
+  } catch (err) {
+    console.warn(`   ⚠️ Vida PDF error: ${err}`);
+  }
+
+  // 7. Deduplicate
+  console.log('\n7. Deduplicating...');
+  const before = allEntries.length;
+  const deduplicated = deduplicateEntries(allEntries);
+  console.log(`   Before: ${before}, After: ${deduplicated.length}, Removed: ${before - deduplicated.length}`);
+
+  // Stats
+  console.log(`\n============================================`);
+  console.log(`Total entries extracted: ${deduplicated.length}`);
+
+  const bySpecialty = new Map<string, number>();
+  const byProvince = new Map<string, number>();
+  const bySource = new Map<string, number>();
+
+  for (const e of deduplicated) {
+    bySpecialty.set(e.specialty, (bySpecialty.get(e.specialty) || 0) + 1);
+    byProvince.set(e.province, (byProvince.get(e.province) || 0) + 1);
+    bySource.set(e.source, (bySource.get(e.source) || 0) + 1);
+  }
+
+  console.log('\nBy specialty/type:');
+  for (const [s, c] of [...bySpecialty.entries()].sort((a, b) => b[1] - a[1])) console.log(`  ${s}: ${c}`);
+
+  console.log('\nBy province:');
+  for (const [p, c] of [...byProvince.entries()].sort((a, b) => b[1] - a[1])) console.log(`  ${p}: ${c}`);
+
+  console.log('\nBy source:');
+  for (const [s, c] of [...bySource.entries()].sort((a, b) => b[1] - a[1])) console.log(`  ${s}: ${c}`);
+
+  console.log('\nSample entries (first 5):');
+  for (const e of deduplicated.slice(0, 5)) {
+    console.log(`  ${e.name} | ${e.specialty} | ${e.location} | ${e.phone} | ${e.province}`);
+  }
+
+  fs.writeFileSync(OUTPUT_FILE, JSON.stringify(deduplicated, null, 2));
+  console.log(`\nSaved to: ${OUTPUT_FILE}`);
+  console.log('Done!');
+}
+
+main().catch((err) => {
+  console.error('Fatal error:', err);
+  process.exit(1);
+});

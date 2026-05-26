@@ -1,0 +1,831 @@
+[
+  {
+    "name": "Hospital Brisas",
+    "specialty": "HOSPITAL",
+    "location": "Centro Comercial Plaza Signature, Nivel 200",
+    "phone": "309-2300",
+    "province": "PANAMÁ",
+    "website": "hospitalbrisas.com",
+    "source": "hospitales",
+    "bestMatchName": "Hospital MiniMed",
+    "bestMatchSimilarity": 0.625
+  },
+  {
+    "name": "Hospital Colón 4 Altos",
+    "specialty": "HOSPITAL",
+    "location": "Vía Boyd Roosevelt, Corredor sector cuatro altos, Colón",
+    "phone": "433-7400",
+    "province": "COLÓN",
+    "website": "hospitalcolon.com",
+    "source": "hospitales",
+    "bestMatchName": "Hospital Nacional de Panamá",
+    "bestMatchSimilarity": 0.519
+  },
+  {
+    "name": "Policlínica Saturno",
+    "specialty": "HOSPITAL",
+    "location": "Avenida Las Américas, frente a panadería Cesarín, Colón",
+    "phone": "253-7272",
+    "province": "COLÓN",
+    "source": "hospitales",
+    "bestMatchName": "Clínica Albrook",
+    "bestMatchSimilarity": 0.526
+  },
+  {
+    "name": "Clínica Hospital Zaratí",
+    "specialty": "HOSPITAL",
+    "location": "Vía Interamericana, Penonomé",
+    "phone": "6630-7145",
+    "province": "COCLÉ",
+    "source": "hospitales",
+    "bestMatchName": "Clínica Hospital San Fernando",
+    "bestMatchSimilarity": 0.69
+  },
+  {
+    "name": "Servicios Médicos de Aguadulce",
+    "specialty": "HOSPITAL",
+    "location": "Avenida Sebastián Sucre, cerca del estadio Remón Cantera, Aguadulce",
+    "phone": "997-0860",
+    "province": "COCLÉ",
+    "source": "hospitales",
+    "bestMatchName": "Centro Médico Integral de Alta Especialidad",
+    "bestMatchSimilarity": 0.5
+  },
+  {
+    "name": "Servicios Médicos de Azuero",
+    "specialty": "HOSPITAL",
+    "location": "Ave. Carmelo Spadafora, carretera Vía Los Santos, Chitré",
+    "phone": "996-2360",
+    "province": "HERRERA",
+    "source": "hospitales",
+    "bestMatchName": "Centro Médico Integral de Alta Especialidad",
+    "bestMatchSimilarity": 0.5
+  },
+  {
+    "name": "Hospital Médica Norte Nuevo Santiago",
+    "specialty": "HOSPITAL",
+    "location": "Urb. Nuevo Santiago, Calle Principal, Santiago",
+    "phone": "950-0047",
+    "province": "VERAGUAS",
+    "source": "hospitales",
+    "bestMatchName": "Hospital MiniMed",
+    "bestMatchSimilarity": 0.5
+  },
+  {
+    "name": "Clínica Los Portales - Vía Porras",
+    "specialty": "CLÍNICA PRIMARIA",
+    "location": "Vía Porras y Santa Elena, cerca de estación Puma",
+    "phone": "270-3467",
+    "province": "PANAMÁ",
+    "source": "clinicas-primarias",
+    "bestMatchName": "Clinica Los Portales El Dorado 24 horas",
+    "bestMatchSimilarity": 0.667
+  },
+  {
+    "name": "Clínica Los Portales - Ave. Las Mercedes",
+    "specialty": "CLÍNICA PRIMARIA",
+    "location": "Ave. Agustín Arango y Ave. Las Mercedes, Plaza Campo Limberg",
+    "phone": "217-6012",
+    "province": "PANAMÁ",
+    "source": "clinicas-primarias",
+    "bestMatchName": "Clinica Los Portales El Dorado 24 horas",
+    "bestMatchSimilarity": 0.667
+  },
+  {
+    "name": "Clínica Los Portales - Cerro Viento",
+    "specialty": "CLÍNICA PRIMARIA",
+    "location": "Cerro Viento, Plaza Los Portales, local 6",
+    "phone": "220-2132",
+    "province": "PANAMÁ",
+    "source": "clinicas-primarias",
+    "bestMatchName": "Clinica Los Portales El Dorado 24 horas",
+    "bestMatchSimilarity": 0.615
+  },
+  {
+    "name": "Centro de Medicina Preventiva - Brisas del Golf",
+    "specialty": "CLÍNICA PRIMARIA",
+    "location": "Brisas del Golf, Plaza las Arcas, locales 11-12",
+    "phone": "266-7319",
+    "province": "PANAMÁ",
+    "source": "clinicas-primarias",
+    "bestMatchName": "CENTRO DE CIRUGÍA OCULAR",
+    "bestMatchSimilarity": 0.5
+  },
+  {
+    "name": "Clínica Clayton",
+    "specialty": "CLÍNICA PRIMARIA",
+    "location": "La Plaza, Ciudad del Saber, Clayton, Edificio 214 Local 1",
+    "phone": "317-0011",
+    "province": "PANAMÁ",
+    "website": "clinicaclayton.com",
+    "source": "clinicas-primarias",
+    "bestMatchName": "Clínica Chanis",
+    "bestMatchSimilarity": 0.667
+  },
+  {
+    "name": "Centro Médico Bernardette - Transístmica",
+    "specialty": "CLÍNICA PRIMARIA",
+    "location": "Camino Real de Bethania, Transístmica",
+    "phone": "261-5857",
+    "province": "PANAMÁ",
+    "website": "centromedicobernardette.com",
+    "source": "clinicas-primarias",
+    "bestMatchName": "Centro Medico Atlantico",
+    "bestMatchSimilarity": 0.667
+  },
+  {
+    "name": "Centro Médico Bernardette - Villa Lucre",
+    "specialty": "CLÍNICA PRIMARIA",
+    "location": "Villa Lucre, Calle Principal, Torre San Judas Tadeo, PB",
+    "phone": "277-5731",
+    "province": "PANAMÁ",
+    "source": "clinicas-primarias",
+    "bestMatchName": "Centro Medico Atlantico",
+    "bestMatchSimilarity": 0.667
+  },
+  {
+    "name": "Centro Médico Albrook View",
+    "specialty": "CLÍNICA PRIMARIA",
+    "location": "Ave. Omar Torrijos Herrera, Plaza Terrazas de Albrook, PB Local 8",
+    "phone": "209-0658",
+    "province": "PANAMÁ",
+    "source": "clinicas-primarias",
+    "bestMatchName": "Centro Medico Atlantico",
+    "bestMatchSimilarity": 0.667
+  },
+  {
+    "name": "Clínica Villa Zaita",
+    "specialty": "CLÍNICA PRIMARIA",
+    "location": "Villa Zaita, Centro Comercial OVNI, Local 3",
+    "phone": "231-9335",
+    "province": "PANAMÁ",
+    "source": "clinicas-primarias",
+    "bestMatchName": "CLÍNICA VILLALBA, SANTIAGO",
+    "bestMatchSimilarity": 0.68
+  },
+  {
+    "name": "Clínica La Condesa",
+    "specialty": "CLÍNICA PRIMARIA",
+    "location": "Don Bosco, Ave. Domingo Díaz, Plaza Cantabria, Local 32",
+    "phone": "374-2605",
+    "province": "PANAMÁ",
+    "source": "clinicas-primarias",
+    "bestMatchName": "Clínica Dental Panamá La Central",
+    "bestMatchSimilarity": 0.667
+  },
+  {
+    "name": "Clínica Laboratorio Santillana - Condado del Rey",
+    "specialty": "CLÍNICA PRIMARIA",
+    "location": "Urb. Condado Del Rey, Plaza Mi Condado, PB Local 15",
+    "phone": "6571-0115",
+    "province": "PANAMÁ",
+    "source": "clinicas-primarias",
+    "bestMatchName": "Clínica Condado - 惠民诊所",
+    "bestMatchSimilarity": 0.667
+  },
+  {
+    "name": "Clínica CEMSAB Sabanitas",
+    "specialty": "CLÍNICA PRIMARIA",
+    "location": "Atlantic Plaza, 4 Altos, PB Local 3, Sabanitas",
+    "phone": "6188-8274",
+    "province": "COLÓN",
+    "website": "cemsab.com",
+    "source": "clinicas-primarias",
+    "bestMatchName": "Clinica San Benito",
+    "bestMatchSimilarity": 0.625
+  },
+  {
+    "name": "Clínica Unisalud - Colón",
+    "specialty": "CLÍNICA PRIMARIA",
+    "location": "Ciudad de Colón, Calle 11 Paseo Gorgas",
+    "phone": "474-5172",
+    "province": "COLÓN",
+    "source": "clinicas-primarias",
+    "bestMatchName": "CLINICA TU SALUD SB",
+    "bestMatchSimilarity": 0.636
+  },
+  {
+    "name": "Clínica Unisalud - Sabanitas",
+    "specialty": "CLÍNICA PRIMARIA",
+    "location": "Sabanitas, Plaza Puerto Pilón, Local 2",
+    "phone": "439-8144",
+    "province": "COLÓN",
+    "source": "clinicas-primarias",
+    "bestMatchName": "CLINICA TU SALUD SB",
+    "bestMatchSimilarity": 0.615
+  },
+  {
+    "name": "Clínica Unisalud - Buena Vista",
+    "specialty": "CLÍNICA PRIMARIA",
+    "location": "Buena Vista, Plaza Dos Ríos, Colón",
+    "phone": "448-0168",
+    "province": "COLÓN",
+    "source": "clinicas-primarias",
+    "bestMatchName": "Clinica San Benito",
+    "bestMatchSimilarity": 0.571
+  },
+  {
+    "name": "Minimed Colón - Margarita",
+    "specialty": "CLÍNICA PRIMARIA",
+    "location": "Margarita, Plaza El Sol, Colón",
+    "phone": "263-6464",
+    "province": "COLÓN",
+    "source": "clinicas-primarias",
+    "bestMatchName": "BAEZ GOMEZ, ROSALIA MARGARITA",
+    "bestMatchSimilarity": 0.536
+  },
+  {
+    "name": "Clínica San Felipe - La Chorrera",
+    "specialty": "CLÍNICA PRIMARIA",
+    "location": "Corregimiento de Puerto Caimito, Centro Comercial Mariano Rivera, Local 13",
+    "phone": "345-2880",
+    "province": "PANAMÁ OESTE",
+    "source": "clinicas-primarias",
+    "bestMatchName": "Clinica San Benito",
+    "bestMatchSimilarity": 0.667
+  },
+  {
+    "name": "Centro de Medicina Preventiva - Arraiján",
+    "specialty": "CLÍNICA PRIMARIA",
+    "location": "Brisas del Golf Arraiján, Centro Comercial junto a Super 99",
+    "phone": "389-3483",
+    "province": "PANAMÁ OESTE",
+    "source": "clinicas-primarias",
+    "bestMatchName": "CENTRO DE CIRUGÍA OCULAR",
+    "bestMatchSimilarity": 0.5
+  },
+  {
+    "name": "CliniLab Panamá - Costa Verde",
+    "specialty": "CLÍNICA PRIMARIA",
+    "location": "Plaza Paseo Costa Verde, PB, La Chorrera",
+    "phone": "310-0680",
+    "province": "PANAMÁ OESTE",
+    "source": "clinicas-primarias",
+    "bestMatchName": "Dermatología Panamá",
+    "bestMatchSimilarity": 0.5
+  },
+  {
+    "name": "Minimed - Panamá Pacífico",
+    "specialty": "CLÍNICA PRIMARIA",
+    "location": "Panamá Pacífico, International Business Park, Edificio 3815, Local 108",
+    "phone": "263-6464",
+    "province": "PANAMÁ OESTE",
+    "source": "clinicas-primarias",
+    "bestMatchName": "Óptica Optikal | Multiplaza Pacific Panamá",
+    "bestMatchSimilarity": 0.667
+  },
+  {
+    "name": "Clínica Médico Dental de Occidente",
+    "specialty": "CLÍNICA PRIMARIA",
+    "location": "Corregimiento Juan Demóstenes Arosemena, Calle Principal de Chapala",
+    "phone": "349-8221",
+    "province": "PANAMÁ OESTE",
+    "source": "clinicas-primarias",
+    "bestMatchName": "Clinica Dental 74",
+    "bestMatchSimilarity": 0.667
+  },
+  {
+    "name": "Minimed Costa Verde - La Chorrera",
+    "specialty": "CLÍNICA PRIMARIA",
+    "location": "Costa Verde, Plaza Boulevard Costa Verde, Local 16, La Chorrera",
+    "phone": "263-6464",
+    "province": "PANAMÁ OESTE",
+    "source": "clinicas-primarias",
+    "bestMatchName": "Hospital MiniMed",
+    "bestMatchSimilarity": 0.5
+  },
+  {
+    "name": "Clínica Laboratorio Santillana - La Chorrera",
+    "specialty": "CLÍNICA PRIMARIA",
+    "location": "La Chorrera, Vía hacia Puerto Caimito, Plaza Vista Mar, Local 21",
+    "phone": "349-0494",
+    "province": "PANAMÁ OESTE",
+    "source": "clinicas-primarias",
+    "bestMatchName": "Clínica y Laboratorio Express Paitilla",
+    "bestMatchSimilarity": 0.5
+  },
+  {
+    "name": "Clínica Nacional - La Chorrera",
+    "specialty": "CLÍNICA PRIMARIA",
+    "location": "La Chorrera, Urb. Costa Verde, Plaza Central, Locales 3-4",
+    "phone": "343-9950",
+    "province": "PANAMÁ OESTE",
+    "source": "clinicas-primarias",
+    "bestMatchName": "Clinica Nacional/Cardiología",
+    "bestMatchSimilarity": 0.679
+  },
+  {
+    "name": "Dr. Yanisa Del Carmen Ríos A.",
+    "specialty": "MEDICINA GENERAL",
+    "location": "Consultorio Popular, Ave. Herrera, Chitré",
+    "phone": "996-4163",
+    "province": "HERRERA",
+    "source": "clinicas-primarias",
+    "bestMatchName": "DEL RÍO H, BENJAMÍN",
+    "bestMatchSimilarity": 0.667
+  },
+  {
+    "name": "Dr. Agustín Solís",
+    "specialty": "MEDICINA GENERAL",
+    "location": "Centro Médico Los Santos, Las Tablas",
+    "phone": "994-7997",
+    "province": "LOS SANTOS",
+    "source": "clinicas-primarias",
+    "bestMatchName": "SOLÍS DÍAZ, SERGIO",
+    "bestMatchSimilarity": 0.5
+  },
+  {
+    "name": "Medicalab Centro Médico y Laboratorio Clínico",
+    "specialty": "CLÍNICA PRIMARIA",
+    "location": "Calle 3ra. Santiago, diagonal a Caja de Ahorros",
+    "phone": "950-8844",
+    "province": "VERAGUAS",
+    "source": "clinicas-primarias",
+    "bestMatchName": "Clinica Medica Panama",
+    "bestMatchSimilarity": 0.667
+  },
+  {
+    "name": "CliniLab Panamá - Penonomé",
+    "specialty": "CLÍNICA PRIMARIA",
+    "location": "Boulevard Penonomé, Ave. Interamericana",
+    "phone": "310-0608",
+    "province": "COCLÉ",
+    "source": "clinicas-primarias",
+    "bestMatchName": "Clinica San Benito",
+    "bestMatchSimilarity": 0.542
+  },
+  {
+    "name": "Clínica Santa Elena",
+    "specialty": "CLÍNICA PRIMARIA",
+    "location": "David, Doleguita, Calle 1era y Calle E Norte",
+    "phone": "775-0425",
+    "province": "CHIRIQUÍ",
+    "source": "clinicas-primarias",
+    "bestMatchName": "Clinica Dental Espino",
+    "bestMatchSimilarity": 0.667
+  },
+  {
+    "name": "Todo Salud Panamá - David",
+    "specialty": "CLÍNICA PRIMARIA",
+    "location": "David, Ave. Belisario Porras, Calle J Norte, PH Pacific Plaza",
+    "phone": "730-4290",
+    "province": "CHIRIQUÍ",
+    "source": "clinicas-primarias",
+    "bestMatchName": "Nutrisalud Panama",
+    "bestMatchSimilarity": 0.522
+  },
+  {
+    "name": "Clínica San José - Changuinola",
+    "specialty": "CLÍNICA PRIMARIA",
+    "location": "Changuinola, Bocas del Toro",
+    "phone": "758-6537",
+    "province": "BOCAS DEL TORO",
+    "source": "clinicas-primarias",
+    "bestMatchName": "Clinica San Benito",
+    "bestMatchSimilarity": 0.667
+  },
+  {
+    "name": "Clínica de Especialidades Médicas Darién",
+    "specialty": "CLÍNICA PRIMARIA",
+    "location": "Vía Panamericana, Pinogana, Metetí, Plaza Metetí, Local 2",
+    "phone": "299-5384",
+    "province": "DARIÉN",
+    "source": "clinicas-primarias",
+    "bestMatchName": "Clínica de Oftalmología",
+    "bestMatchSimilarity": 0.667
+  },
+  {
+    "name": "Clínica Clayton Dental",
+    "specialty": "DENTAL",
+    "location": "Ancón, Ciudad del Saber, Edif. 214, local 1",
+    "phone": "317-0011",
+    "province": "PANAMÁ",
+    "source": "dental",
+    "bestMatchName": "Clínica Ford Dental Spa | Clínica Dental en Panamá",
+    "bestMatchSimilarity": 0.667
+  },
+  {
+    "name": "Clínica Dr. Ernesto Calvo",
+    "specialty": "DENTAL",
+    "location": "Urbanización, Calle 53",
+    "phone": "",
+    "province": "PANAMÁ",
+    "source": "dental",
+    "bestMatchName": "Clínica Dermoestética",
+    "bestMatchSimilarity": 0.571
+  },
+  {
+    "name": "Dra. Bheusis B. Castillo",
+    "specialty": "DENTAL",
+    "location": "Ave. Balboa, PH Interplus, Clínica Dental Ibarra",
+    "phone": "",
+    "province": "PANAMÁ",
+    "source": "dental",
+    "bestMatchName": "CASTILLO RIOS, BENITO ARTUROCENTRO HEMATO ONCOLÓGIO ROYAL CENTER",
+    "bestMatchSimilarity": 0.5
+  },
+  {
+    "name": "Dentibela Dental Care",
+    "specialty": "DENTAL",
+    "location": "Juan Diaz, Vía Tocumen, Urb. Don Bosco",
+    "phone": "",
+    "province": "PANAMÁ",
+    "source": "dental",
+    "bestMatchName": "Tender Loving Dental Care. TLDC",
+    "bestMatchSimilarity": 0.667
+  },
+  {
+    "name": "Dr. Aurelio E. Correa",
+    "specialty": "DENTAL",
+    "location": "Blvd. El Dorado, Plaza Galería Colonial, Local 32",
+    "phone": "",
+    "province": "PANAMÁ",
+    "source": "dental",
+    "bestMatchName": "CORREA VIZOSO, RAÚL",
+    "bestMatchSimilarity": 0.5
+  },
+  {
+    "name": "Dra. María Gabriela Lescure",
+    "specialty": "DENTAL",
+    "location": "Calle 50, Clínica Denticlub, Edif. 17, oficina 2",
+    "phone": "",
+    "province": "PANAMÁ",
+    "source": "dental",
+    "bestMatchName": "CASTILLERO, GABRIEL A.",
+    "bestMatchSimilarity": 0.5
+  },
+  {
+    "name": "Dra. Giselle Young",
+    "specialty": "DENTAL",
+    "location": "San Miguelito, Urb. San Isidro, Calle Principal, Piso 2",
+    "phone": "",
+    "province": "PANAMÁ",
+    "source": "dental",
+    "bestMatchName": "ORTIZ, GISELLE MARIE",
+    "bestMatchSimilarity": 0.5
+  },
+  {
+    "name": "Biodent",
+    "specialty": "DENTAL",
+    "location": "Urb. Punta Pacífica, Consultorios Pacífica Salud, Piso 8",
+    "phone": "",
+    "province": "PANAMÁ",
+    "source": "dental",
+    "bestMatchName": "My Podocenter",
+    "bestMatchSimilarity": 0.385
+  },
+  {
+    "name": "Hollywood Smile Dental Studio",
+    "specialty": "DENTAL",
+    "location": "San Francisco, Calle 72 y Costa del Este, Ave. Centenario",
+    "phone": "",
+    "province": "PANAMÁ",
+    "source": "dental",
+    "bestMatchName": "RR Estudio Dental",
+    "bestMatchSimilarity": 0.667
+  },
+  {
+    "name": "Dr. Mario A. Chalhoub",
+    "specialty": "DENTAL",
+    "location": "Vía España, Plaza Regency, Piso 9",
+    "phone": "",
+    "province": "PANAMÁ",
+    "source": "dental",
+    "bestMatchName": "LOMBANA, BEY MARIO",
+    "bestMatchSimilarity": 0.5
+  },
+  {
+    "name": "Atlantic Dental Clinic",
+    "specialty": "DENTAL",
+    "location": "Avenida Espavé, Plaza Margarita, Local 5, Colón",
+    "phone": "",
+    "province": "COLÓN",
+    "source": "dental",
+    "bestMatchName": "Clínica Ford Dental Spa | Clínica Dental en Panamá",
+    "bestMatchSimilarity": 0.667
+  },
+  {
+    "name": "Clínica Dra. Elvia Vergara",
+    "specialty": "DENTAL",
+    "location": "Aguadulce, Avenida Central, Edificio Diamante, planta alta",
+    "phone": "",
+    "province": "COCLÉ",
+    "source": "dental",
+    "bestMatchName": "VERGARA A, FRANCISCO J.CLINICA HOSPITAL DR. VENANCIO VILLARREAL",
+    "bestMatchSimilarity": 0.667
+  },
+  {
+    "name": "Dra. Nilka Caballero",
+    "specialty": "DENTAL",
+    "location": "Santiago, Consultorio San Miguel Arcángel, calle 2da",
+    "phone": "933-1112",
+    "province": "VERAGUAS",
+    "source": "dental",
+    "bestMatchName": "Clínica Castillero",
+    "bestMatchSimilarity": 0.556
+  },
+  {
+    "name": "Consultorio Dental Familiar Dr. Omar Samaniego",
+    "specialty": "DENTAL",
+    "location": "Chitré, Calle Aminta Burgos de Amado, detrás de los Bomberos",
+    "phone": "",
+    "province": "HERRERA",
+    "source": "dental",
+    "bestMatchName": "Consultorio Médico Dental Vita",
+    "bestMatchSimilarity": 0.5
+  },
+  {
+    "name": "Dra. Maristela Gómez",
+    "specialty": "DENTAL",
+    "location": "Hospital Chiriquí, Torre 1, Consultorio 3, David",
+    "phone": "",
+    "province": "CHIRIQUÍ",
+    "source": "dental",
+    "bestMatchName": "BAEZ GOMEZ, ROSALIA MARGARITA",
+    "bestMatchSimilarity": 0.5
+  },
+  {
+    "name": "RADIMAGEN",
+    "specialty": "RADIOLOGÍA E IMÁGENES",
+    "location": "Vía Israel, entre calle 73 y 74, San Francisco",
+    "phone": "382-1424",
+    "province": "PANAMÁ",
+    "website": "radimagen.com",
+    "source": "radiologia",
+    "bestMatchName": "GUARDIA, MARLENE",
+    "bestMatchSimilarity": 0.467
+  },
+  {
+    "name": "Resonancia Magnética Marbella",
+    "specialty": "RADIOLOGÍA E IMÁGENES",
+    "location": "Urbanización Nuevo Paitilla, Calle 59E y La Colmena, San Francisco",
+    "phone": "214-4545",
+    "province": "PANAMÁ",
+    "source": "radiologia",
+    "bestMatchName": "Complejo Médico Marbella",
+    "bestMatchSimilarity": 0.517
+  },
+  {
+    "name": "Resonancia Magnética Open Side",
+    "specialty": "RADIOLOGÍA E IMÁGENES",
+    "location": "Centro Comercial San Francisco Plaza, Local 3-4",
+    "phone": "302-0309",
+    "province": "PANAMÁ",
+    "website": "open-side.com",
+    "source": "radiologia",
+    "bestMatchName": "Clinica Medica Panama",
+    "bestMatchSimilarity": 0.4
+  },
+  {
+    "name": "Women Care Center",
+    "specialty": "RADIOLOGÍA E IMÁGENES",
+    "location": "PH Street Mall, Vía Israel y Vía Brasil, 3er Piso, Local 301",
+    "phone": "830-2626",
+    "province": "PANAMÁ",
+    "website": "womencarecenterpanama.com",
+    "source": "radiologia",
+    "bestMatchName": "Óptica Eye Care Center Panamá",
+    "bestMatchSimilarity": 0.667
+  },
+  {
+    "name": "Resonancia Magnética Colón",
+    "specialty": "RADIOLOGÍA E IMÁGENES",
+    "location": "Urb. San Cristóbal, Hospital Cuatro Altos Colón, Local 1, PB",
+    "phone": "439-8487",
+    "province": "COLÓN",
+    "source": "radiologia",
+    "bestMatchName": "CRESPO BATISTA, JEANNETTE DILMA",
+    "bestMatchSimilarity": 0.4
+  },
+  {
+    "name": "Todo Salud Panamá - Imágenes",
+    "specialty": "RADIOLOGÍA E IMÁGENES",
+    "location": "Urb. El Limón, Calle Costa Verde, Plaza Uniplaza, Local B-15",
+    "phone": "247-0013",
+    "province": "PANAMÁ OESTE",
+    "website": "todosaludpanama.com",
+    "source": "radiologia",
+    "bestMatchName": "Dermatología Panamá",
+    "bestMatchSimilarity": 0.5
+  },
+  {
+    "name": "Serra Radiología",
+    "specialty": "RADIOLOGÍA E IMÁGENES",
+    "location": "Clínica Hospital Jesús Nazareno, Vía Interamericana, Santiago",
+    "phone": "933-1590",
+    "province": "VERAGUAS",
+    "source": "radiologia",
+    "bestMatchName": "SIERRA ROBLES, IVAN AUGUSTO",
+    "bestMatchSimilarity": 0.5
+  },
+  {
+    "name": "CIRPA - Cirugía Plástica Ambulatoria",
+    "specialty": "CIRUGÍA AMBULATORIA",
+    "location": "Vía España, PH Centro Especializado San Fernando, piso 2",
+    "phone": "261-7989",
+    "province": "PANAMÁ",
+    "source": "cirugia-ambulatoria",
+    "bestMatchName": "Centro De Cirugia Ambulatoria Paitilla",
+    "bestMatchSimilarity": 0.5
+  },
+  {
+    "name": "CETRERSA",
+    "specialty": "CIRUGÍA AMBULATORIA",
+    "location": "Correg. de Pueblo Nuevo, Urb. Hato Pintado, Ave. La Loma",
+    "phone": "229-5000",
+    "province": "PANAMÁ",
+    "source": "cirugia-ambulatoria",
+    "bestMatchName": "COMEDSA",
+    "bestMatchSimilarity": 0.5
+  },
+  {
+    "name": "CIRRO - Radioterapia Oncológica Panamá",
+    "specialty": "CIRUGÍA AMBULATORIA",
+    "location": "Ave. Cuba, Hospital Nacional, Sótano",
+    "phone": "300-2224",
+    "province": "PANAMÁ",
+    "source": "cirugia-ambulatoria",
+    "bestMatchName": "Dra. Carla Donado | Ginecología Panamá",
+    "bestMatchSimilarity": 0.528
+  },
+  {
+    "name": "Centro Hemato-Oncológico de Panamá (CHOP)",
+    "specialty": "CIRUGÍA AMBULATORIA",
+    "location": "Calle Ramón H. Jurado, Pacific Center, The Panama Clinic, Torre B",
+    "phone": "265-2231",
+    "province": "PANAMÁ",
+    "source": "cirugia-ambulatoria",
+    "bestMatchName": "Centro Fecundar Panamá",
+    "bestMatchSimilarity": 0.667
+  },
+  {
+    "name": "Centro Oncológico de Panamá (COPSA)",
+    "specialty": "CIRUGÍA AMBULATORIA",
+    "location": "Hospital Santa Fe, Piso 3 / Consultorios Médicos Paitilla, Piso 4",
+    "phone": "360-7400",
+    "province": "PANAMÁ",
+    "source": "cirugia-ambulatoria",
+    "bestMatchName": "Centro Fecundar Panamá",
+    "bestMatchSimilarity": 0.667
+  },
+  {
+    "name": "CAPA - Clínica Ambulatoria de Panamá",
+    "specialty": "CIRUGÍA AMBULATORIA",
+    "location": "Punta Pacífica, Edificio Torre Las Américas, PB",
+    "phone": "374-1627",
+    "province": "PANAMÁ",
+    "source": "cirugia-ambulatoria",
+    "bestMatchName": "Clinica Dental Panama",
+    "bestMatchSimilarity": 0.667
+  },
+  {
+    "name": "CIENSA Cirugía & Endoscopias",
+    "specialty": "CIRUGÍA AMBULATORIA",
+    "location": "Calle Ramón Arias, El Carmen, Edificio Ropardi, PB",
+    "phone": "830-5238",
+    "province": "PANAMÁ",
+    "source": "cirugia-ambulatoria",
+    "bestMatchName": "CENTRO DE CIRUGÍA OCULAR",
+    "bestMatchSimilarity": 0.393
+  },
+  {
+    "name": "Cardiomedic Center",
+    "specialty": "CIRUGÍA AMBULATORIA",
+    "location": "Urb. Costa Del Este, PH Town Center, Piso 5",
+    "phone": "309-2754",
+    "province": "PANAMÁ",
+    "source": "cirugia-ambulatoria",
+    "bestMatchName": "Derma Medical Center",
+    "bestMatchSimilarity": 0.65
+  },
+  {
+    "name": "Grupo NEPHRON - Centro de Hemodiálisis",
+    "specialty": "CIRUGÍA AMBULATORIA",
+    "location": "The Panama Clinic, Torre B, Piso 21, Ofic. 2111",
+    "phone": "310-2895",
+    "province": "PANAMÁ",
+    "source": "cirugia-ambulatoria",
+    "bestMatchName": "CENTRO DE CIRUGÍA OCULAR",
+    "bestMatchSimilarity": 0.5
+  },
+  {
+    "name": "INDELCO - Instituto Laser y Cirugía Ocular",
+    "specialty": "CIRUGÍA AMBULATORIA",
+    "location": "Centro Especializado Hospital Pediátrico San Fernando",
+    "phone": "398-1632",
+    "province": "PANAMÁ",
+    "source": "cirugia-ambulatoria",
+    "bestMatchName": "Clínica Yee - Instituto de Microcirugía Ocular",
+    "bestMatchSimilarity": 0.614
+  },
+  {
+    "name": "VITAE Health",
+    "specialty": "CIRUGÍA AMBULATORIA",
+    "location": "Clayton, Ciudad Del Saber, Edif. 231, Piso 2, Ofic. A",
+    "phone": "6569-1219",
+    "province": "PANAMÁ",
+    "source": "cirugia-ambulatoria",
+    "bestMatchName": "Consultorio Médico Dental Vita",
+    "bestMatchSimilarity": 0.5
+  },
+  {
+    "name": "Centro Quirúrgico Ambulatorio David",
+    "specialty": "CIRUGÍA AMBULATORIA",
+    "location": "Ave. Rubén Morales, Urb. El Bosque, David, Chiriquí",
+    "phone": "779-0163",
+    "province": "CHIRIQUÍ",
+    "source": "cirugia-ambulatoria",
+    "bestMatchName": "Centro De Cirugia Ambulatoria Paitilla",
+    "bestMatchSimilarity": 0.632
+  },
+  {
+    "name": "Dr. Manuel Pereira Consultorios",
+    "specialty": "MEDICINA GENERAL",
+    "location": "Royal Center, 2do. Piso",
+    "phone": "",
+    "province": "PANAMÁ",
+    "source": "examiner-salud",
+    "bestMatchName": "JAEN M., MANUEL S.",
+    "bestMatchSimilarity": 0.5
+  },
+  {
+    "name": "Dr. Ricardo Lyma Young",
+    "specialty": "MEDICINA GENERAL",
+    "location": "CH, San Fernando, Policlínica",
+    "phone": "",
+    "province": "PANAMÁ",
+    "source": "examiner-vida",
+    "bestMatchName": "SANDOVAL, RICARDO M.",
+    "bestMatchSimilarity": 0.5
+  },
+  {
+    "name": "Dr. Marcos Cordoba - Clinca",
+    "specialty": "MEDICINA GENERAL",
+    "location": "San Fernando Sur, Primer piso",
+    "phone": "",
+    "province": "PANAMÁ",
+    "source": "examiner-vida",
+    "bestMatchName": "CAMPOS, CRISTOBALINA",
+    "bestMatchSimilarity": 0.524
+  },
+  {
+    "name": "Dr. Alfredo López - La Gran",
+    "specialty": "MEDICINA GENERAL",
+    "location": "Estación de San Miguelito",
+    "phone": "",
+    "province": "PANAMÁ",
+    "source": "examiner-vida",
+    "bestMatchName": "CANTON, ALFREDO",
+    "bestMatchSimilarity": 0.5
+  },
+  {
+    "name": "Dr. Francisco Navarro",
+    "specialty": "MEDICINA GENERAL",
+    "location": "Martinez",
+    "phone": "",
+    "province": "PANAMÁ",
+    "source": "examiner-vida",
+    "bestMatchName": "Dr. Francisco J. Mata Pitti",
+    "bestMatchSimilarity": 0.545
+  },
+  {
+    "name": "Dra. Luris GonzálezLaboratoriosMichelle Cedeño",
+    "specialty": "MEDICINA GENERAL",
+    "location": "Ciudad de Panamá",
+    "phone": "6674-5710",
+    "province": "PANAMÁ",
+    "source": "examiner-vida",
+    "bestMatchName": "FERRABONE, LUIS A.",
+    "bestMatchSimilarity": 0.5
+  },
+  {
+    "name": "Dr. José C. Correa",
+    "specialty": "MEDICINA GENERAL",
+    "location": "Clínica Venancio VillarrealDr. José Pinto",
+    "phone": "",
+    "province": "PANAMÁ",
+    "source": "examiner-vida",
+    "bestMatchName": "BATISTA FERREIRA, JOSE CARLOS",
+    "bestMatchSimilarity": 0.5
+  },
+  {
+    "name": "Dra. Sirly Reyes Hernández",
+    "specialty": "MEDICINA GENERAL",
+    "location": "Ciudad de Panamá",
+    "phone": "6760-8740",
+    "province": "PANAMÁ",
+    "source": "examiner-vida",
+    "bestMatchName": "HERNANDEZ, VIVIAN",
+    "bestMatchSimilarity": 0.5
+  },
+  {
+    "name": "Dr. Ivo Guerra",
+    "specialty": "MEDICINA GENERAL",
+    "location": "Ciudad de Panamá",
+    "phone": "6616-6479",
+    "province": "PANAMÁ",
+    "source": "examiner-vida",
+    "bestMatchName": "GUERRA, MIGUEL",
+    "bestMatchSimilarity": 0.5
+  }
+]

@@ -1,0 +1,7240 @@
+[
+  {
+    "name": "BARRERA, OLGA M.",
+    "specialty": "ALGIOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BATISTA FERREIRA, JOSE CARLOS",
+    "specialty": "ALGIOLOGÍA",
+    "location": "THE PANAMÁ CLINIC",
+    "phone": "310-1111",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LEE, ROSELLA",
+    "specialty": "ALGIOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "385-0895",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PÉREZ MONTENEGRO, ANABEL SARAY",
+    "specialty": "ALGIOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "206-2595",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ZEBEDE YOHOROS, MOISÉS SALOMON",
+    "specialty": "ALGIOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "6671-6765",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ATENCIO, ELIAS",
+    "specialty": "ALGIOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "264-4444",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CHEN, JUYTHEL DEL CARMEN",
+    "specialty": "ALGIOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "230-6881",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ERRIGO PINILLO, MARJORIE MIREYA",
+    "specialty": "ALGIOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6364",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PASCO OSPINO, JOSUE ANGEL",
+    "specialty": "ALGIOLOGÍA",
+    "location": "THE PANAMÁ CLINIC",
+    "phone": "229-4273",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RIOS CABALLERO, EVELYN",
+    "specialty": "ALGIOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "6235-5910",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VEGA PERALTA, MELISSA MASSIEL",
+    "specialty": "ALGIOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "6303-3524",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "WU, STANLEY",
+    "specialty": "ALGIOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "264-4444",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ABREGO BARCENAS, GESELY ANNET",
+    "specialty": "ALGIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ÁBREGO VARGAS, THAYRA",
+    "specialty": "ALGIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ABREGO, SIXTO",
+    "specialty": "ALGIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ACEVEDO, FRANCISCO",
+    "specialty": "ALGIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ACOSTA CHAVEZ, DIONISIA EDITH",
+    "specialty": "ALGIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "AGUILAR M., ODALIS",
+    "specialty": "ALGIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ALLEN, DORIS",
+    "specialty": "ALGIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ALMANZA, ARIEL",
+    "specialty": "ALGIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ALVAREZ, SONIA",
+    "specialty": "ALGIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ALVEO, SAMUEL",
+    "specialty": "ALGIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ANDERSON PANG, RICHARD ALEXANDER",
+    "specialty": "ALGIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ANDRADE E., JORGE",
+    "specialty": "ALGIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ARROCHA, THELMA",
+    "specialty": "ALGIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ASUNCION HERNANDEZ, YETSYBETH",
+    "specialty": "ALGIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ATENCIO AGUILAR, NOEMI",
+    "specialty": "ALGIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ATENCIO, ELIAS ANTONIO",
+    "specialty": "ALGIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "AUSTIN HOWELL, JULEEN NASTASSJA",
+    "specialty": "ALGIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "AVILA LAM, CARLA P.",
+    "specialty": "ALGIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BARBA, RAMIRO",
+    "specialty": "ALGIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BARCENAS, KIRIA",
+    "specialty": "ALGIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "OSTIA CHUNG, JONATHAN OMAR",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BARRAGAN GARCIA, BRITANIA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BARRIA QUINTERO DE BEITIA, DALVYS E.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BARROSO, LUCILA LUCILA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BATISTA BARRIAS, JONATHAN ABDIEL",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BATISTA ESTUARIN, ESMERALDA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BATISTA, DIANA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BATISTA, HENDRIZ",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BATISTA, RUSBEL",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BEJARANO RUIZ, ENDER FRANCISCO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BEQUER POVEA, GINA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BISHOP, BORIS",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BRAVO, RODRIGO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BRITO, MARION",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BUSTAVINOS, MIGUEL",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CABALLERO, ZULIA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CÁCERES, YARIELA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CACÓ, GABRIEL",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CANDANEDO DE LUCA, FERNANDO JOSÉ",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CARDENAS VASQUEZ, FABIOLA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CÁRDENAS, CARLOS",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CARLEY RUIZ, HOWARD ISAAC",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CARRASCO RIVERA, ANDRÉS JUAN",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CARRASQUILLA GARCÍA, INDIRA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CARRERA, BÉLGICA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CARRIZO AGUILERA, RAUL ALBERTO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CARROLL, IVETTE",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CARTER RICHARDSON, SERGIO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CASAL, ERIC",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CASTILLO, JUAN H.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CASTILLO, SONIA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CASTRO, RICARDO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CEDEÑO PINO, DAVID DARIO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CEDEÑO, ADRIAN",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CERVANTES DE OBALDÍA, MARIA ISABEL",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CHAN MOCK, RAFAEL",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CHEN JIMENEZ, JENNY",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CHEUNG YAU, JUAN CARLOS",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "COHEN LEE, NICOLE",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "COHEN, ELIAS",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "COHEN, LILIAN",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "COLLINS GAITAN, JOAN",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CONTÉ SALDAÑA, GILIANA SOLIMAR",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CORELLA, ABRAHAM",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CORONADO BROCE, THAIS PATRICIA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CORREA PICHEL, HELEN",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "COSSIO RAMOS, JETZABEL MILENA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CROSTON, JOSE ANTONIO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DE DE GRACIA, GLADYS MERCEDES",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DE DIOS CASTILLO, JUAN",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DE LA OSSA VILLA, LUIS EDUARDO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DE LA TORRE, LIRIOLA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DE LEON ROJAS, ILMA ARACELLY",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DE LOS RIOS, SOLANGE",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DE MORENO, SARA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DE SALAS, KATHIA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DE URRIOLA R., CRISTOBAL ADAN",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DEL CASTILLO, ANA SOFÍA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DELGADO, RICARDO A.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DENIS, MELISSA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DIAZ FUNG, ROQUE",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DIAZ SANCHEZ, CARLOS ARTURO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DUBOIS PEÑA, EUSEBIO AUGUSTO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DUQUE, NADJHI LINETTE",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DUTARY, BERNARDO E.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ERRIGO, MARJORIE",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ESPINOSA C., KETSY Y.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ESPINOSA GUEVARA, GILMA GISELA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ESPINOSA ROSS, FRANCISCO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ESQUIVEL, HILDA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "FIERRO GUTIERREZ, JUAN ATILA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "FLORES DE GARCIA, NURISABEL",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "FRÍAS, MELBA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "FU, CARLOS",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GAERLAN, TATIANA RAQUEL",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GAN H., SIER",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GARCIA, ABRAHAM",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GARCÍA, MARIA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GARIBALDI, MARIO J.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GARZÓN, ALEJANDRA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GIL LASSO, GISELA A.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GOMEZ DE LA LASTRA, JOSE LUIS",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GOMEZ HAWKINS, FREDERICK ANTONIO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GÓMEZ, ZUDISADAY Z.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GONZALEZ ALVARADO, LEANDRO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GONZALEZ BATISTA, ARIEL ALEXIS",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GONZÁLEZ C., MANUEL S.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GONZÁLEZ DE ROVIRA, JULIA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GONZÁLEZ DÍAZ, YORELDA E.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GONZALEZ MERA, KARINA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GONZALEZ MURILLO, ARIEL",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GONZALEZ SALINAS, KAREN",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GONZÁLEZ TORRERO, AYMÉ JUNISSE",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GONZALEZ VEGA, JAVIER",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GONZÁLEZ VISSUETTI, GUSTAVO A .",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GORDILLO, BERTA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GRANADOS, MARIBEL",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GUARDIA, MARLENE",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GUERRA ADAMES, NELIO ERNESTO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GUERRA M., MARIA MARQUELA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GUERRA MUÑOZ, ISIS MARLENE",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GUERRERO, VIRGINIA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GUEVARA MORAN, JORGE ISAAC",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GUEVARA UREÑA, MIGUEL",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "HENRIQUEZ DE GRACIA, HECTOR OMAR",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "HERNANDEZ, ABDIEL ALEXIS",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "HERNÁNDEZ, ALEJANDRO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "HERNÁNDEZ, CESAR",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "HERNANDEZ, DALIA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "HERRERO MUÑOZ, MARIOLA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "HOWELL YOUNG, ANGELICA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "HUERTA BUSTAVINO, KARINA ITZEL",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "IBÁÑEZ DE GÓMEZ, CARMEN",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "JAEN R RIOS DE AHUMADA, ILEANA ENID",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "JAEN SANCHEZ, RAUL EDGARDO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "JAÉN SANTANA, PLINIO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "JARAMILLO CARBALLO, ELOY ENRIQUE",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "JELENSZKY CARVAJAL, JAVIER",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "KIM CHUNG, DAMY G.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LEÓN G., ALEXANDRA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LEON PUCHE, JADER A.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LLAMAS, IRMA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LOPEZ ATENCIO, CAMILO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LOPEZ MOCK, CAMILO ANTONIO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LOPEZ SOLIS, SILKA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LU OSORIO, ELIECER A.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LUNA HOQUEE, EDGAR ANTONIO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MACIAS, JAIRO ALAN",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MAN YIN CHAN, NG WEI",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MARTÍNEZ, AILEEN",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MARTINEZ, JORGE E.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MC LEOD SOSA, GUILLERMO RAUL",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MCKAY, GABRIELA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MEANA, MIGUEL",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MEJIA TAPIA, ALEJANDRA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MELILLO ACEVEDO, FRANCESCO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MENESES, XIOMARA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MERCHAN, LUIS",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MIRANDA, AMARILDO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MISLOV, MARKO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MOLINA VILLAVERDE, RUBY",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MOLINA, ROSA ROSA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MONSALVES, UZIEL",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MORA, JORGE",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MORÁIS, ERICK",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MORALES A. DE VILLARREAL, REBECA H.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MORENO, EDUARDO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MORRISON, WENDY",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MOSCOSO UGARTE, JANIA GISELA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MURILLO R., ANETTE B.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "NEBWALL, YASHIRA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "NEREIRA, ARNULFO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "NEWBALL B., ABEL EUSEBIO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "NIATOS, ALNIE",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "NICOSIA, ROSA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "NORERO V., NORI E.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "NUÑEZ, FRANCISCO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "NUÑEZ, LUIS ALBERTO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "OBANDO NUÑEZ, YEXENIA E.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "OBREGON, OSVALDO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "OLIVARDIA, ALEJANDRO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "OROCU GAITAN, MARVIN MIGUEL",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "OROCU GAITÁN, MARVIN MIGUEL",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ORTEGA PINTO, ALEX ORLANDO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "OSTIA, JONATHAN",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PALMA TUÑÓN , RUBERTO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PASCO OSPINO, JOSUÉ ÁNGEL",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PAULINO TAPIA, FRANKLIN JESUS",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PEDRESCHI, AGUEDA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PERALTA SUAREZ, JULIO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PÉREZ GONZÁLEZ, JOSÉ I.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PHILLIPS CAMARENA, GERSON ALBERTO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PINILLA M., LOLITA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PINO, JENIFFER",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PLATA, ALINA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PLOCHÉ SALGADO, NANCY V.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PONCE MORALES, MARLENE DEL C.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PONCE, MARLENE",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PORTILLO, SONIA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PORTUGAL, JESUS",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PRADO, JACQUELINE",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PRETTO MALCA, LUIS ENRIQUE",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "QUINTERO DELGADO, KATHLEEN DEL C.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "QUINTERO V., MARIO A.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RAMBOA, GUSTAVO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RAMOS, SARI MARITZA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RANGEL GARCIA, HUMBERTO ANGEL",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RANGEL, JANETT",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RESTOM DÍAZ, FRANSISCO A.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RIOS JURADO, MARIA LORENA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RIOS VARELA, ANA LUISA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RIVERA,MARIEL L.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ROBLES, LUIS C.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RODRÍGUEZ , JOSE ANIBAL",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RODRÍGUEZ L., JUAN PABLO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RODRIGUEZ TORRES, JOSE A.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RODRÍGUEZ, ELOÍSA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RODRIGUEZ, ROY EDUARDO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RODRIGUEZ, TANIA MAYTA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RUIZ CASTRO, YARAVY ITZEL",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RUIZ NAJERA, BEATRIZ",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SAENZ LOO, DENISE BELEN",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SÁENZ, EYDA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SAIED ESQUIVEL, KATHERINE",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SALDAÑA, MOISES",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SAN MARTIN GONZALEZ, EVA DEL C.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SANCHEZ DE RIOS, GISELA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SANCHEZ JUAREZ, WHITNEY",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SANCHEZ ORDOÑEZ, ARIADNE ITZEL",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SÁNCHEZ, JULIETA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SÁNCHEZ, MAYTHE",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SÁNCHEZ, NADIN",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SANTAMARIA DE TRUJILLO, ODERAY",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SANTAMARIA, REYES ODERAY",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SANTOS, DEYKA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SARASQUETA, GALILEO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SEGOVIA PAZ, EDUARDO ROMULO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SEIXAS ULLOA, RAFAEL",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SERRACIN, ANTONIO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SILVA CHONG, SERGIO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SOTO, CAROLINA DEL CARMEN",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SOUSA, ALEXIS",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SUAREZ MEDINA, LOURDES",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "THOMPSON SALDAÑA, EMANUEL",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "TINOCO, NICANOR",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "TODD, MARÍA LUISA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "TORRES COTES, HECTOR",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "TREJOS, JULISSA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "UGALDE, CARLOS",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "URIBE, TESILA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "URRIOLA, FERNANDO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VALDES R., RAMON M.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VANEGAS BATISTA, PAOLA HERMINIA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VANEGAS P., JORGE L.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VEGA PERALTA, MELISSA MASSIEL",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VELARDE R., GABRIELA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VELARDE, GABRIELA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VELÁSQUEZ, ADRIANA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VELÁSQUEZ, GEMMA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VERBEL CH., JORGE LUIS",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VERGARA, MANUEL D.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VLIEG AGUILAR, FRANCISCO ADOLFO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VON CHONG ON, REINALDO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VREUX, GLORIA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "WEINBERG MD, RONIEL Y.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "WHITEMAN, STEFANY",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "WOLFSCHOON, AUGUSTO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "WU TAI, STANLEY",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ZAFRANI COHEN, VICTOR",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ZAFRANI COHEN, VICTOR",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ZAPATEIRO PEREZ, BEATRIZ HELENA",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "AGUIRRE VIQUEZ, JOSE MANUEL",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "396-4886",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BOLAÑOS, SERGIO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "HOSPITAL SANTA FE",
+    "phone": "360-7400",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DUTARY TORRES, JAIME ROLANDO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "209-5745",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "EFFIO, JULIO A.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "302-6820",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GONZALEZ, BALDOMERO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "CONSULTORIOS AMÉRICA",
+    "phone": "229-4388",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LOMBANA, BEY MARIO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "206-2585",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MARCHENA, ALFARO N.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "CONSULTORIOS AMÉRICA",
+    "phone": "229-4388",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MENDEZ TAYLOR, ENRIQUE",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8460",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MORRISON, GUILLERMO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "229-9602",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PINTO ALFONSO, JOSE",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "CONSULTORIOS AMÉRICA",
+    "phone": "229-4388",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ROGNONI, PAULINA A",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "261-9966",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ROMERO GUERRA, ALEXANDER",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "307-3617",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SIMON RUIZ, SILVINO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "229-6648",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SOLÍS DÍAZ, SERGIO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "302-6820",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "TEJERA J., LUIS CARLOS",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "6997-9133",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VALDERRAMA C., VICTOR MANUEL",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "206-2597",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MORALES TRIBALDOS, LUIS A. CONSULTORIOS MÉDICOS ROYAL CENTER",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "340-9980",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ECHEVERRIA, PEDRO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "302-0178",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GUERRA, MIGUEL",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "278-6353",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "HIGUERO Z.*, GUSTAVO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "JAEN M., MANUEL S.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8311",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "JARAMILLO GUERRERO, RICARDO M.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8316",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MATOS ADAMES, ALFREDO A.CENTRO MÉDICO NACIONAL",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "307-3665",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "OCHOA ARBOLEDA, MANUEL",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "397-9366",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PITTY CEBALLOS, FELIX ANTONIO*",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "CONSULTORIOS ROYAL CENTER; THE PANAMA, CLINIC",
+    "phone": "263-2810",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RODRIGUEZ ZAMBRANO, CAMILO A.",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "206-2409",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SIBAUSTE,CESAR *",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "229-2407",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ADAMES, VICTOR JULIO",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6362",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DOMÍNGUEZ , BOLIVAR",
+    "specialty": "CARDIOLOGÍA",
+    "location": "No especificada",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ALVARADO, ALONSO ANTONIO",
+    "specialty": "CIRUGÍA GENERAL",
+    "location": "PACÍFICA SALUD",
+    "phone": "229-3916",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ARCE ATENCIO, ERIC JAVIER",
+    "specialty": "CIRUGÍA GENERAL",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "399-5307",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "AVILA, ALDO A.",
+    "specialty": "CIRUGÍA GENERAL",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "229-3524",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BAILEY MOISES, GUILLERMO ALBERTO",
+    "specialty": "CIRUGÍA GENERAL",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "317-0567",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CABADA, JOSE MIGUEL",
+    "specialty": "CIRUGÍA GENERAL",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6362",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CHITRIT AMAR, MOISES",
+    "specialty": "CIRUGÍA GENERAL",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "391-0503",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CUKIER, MOISES",
+    "specialty": "CIRUGÍA GENERAL",
+    "location": "PACÍFICA SALUD",
+    "phone": "203-8797",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MARTIN, JORGE E.",
+    "specialty": "CIRUGÍA GENERAL",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "229-6721",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MON BARRIOS, LUIS SAMUEL",
+    "specialty": "CIRUGÍA GENERAL",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6365",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "NAVARRO LOPEZ, ALBERTO",
+    "specialty": "CIRUGÍA GENERAL",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "223-3902",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "NEVAH, ELIAS",
+    "specialty": "CIRUGÍA GENERAL",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8357",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PAZ RUIZ, PEDRO SEBASTIAN",
+    "specialty": "CIRUGÍA GENERAL",
+    "location": "THE PANAMA CLINIC",
+    "phone": "310-1111",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PEREZ, INTI CENTRO MÉDICO NACIONAL",
+    "specialty": "CIRUGÍA GENERAL",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO, PACÍFICA SALUD",
+    "phone": "263-5159",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PIRRO, LEONARDO",
+    "specialty": "CIRUGÍA GENERAL",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8316",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "QUIEL, MARIO",
+    "specialty": "CIRUGÍA GENERAL",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "6677-5986",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "QUIODETTIS PONCE, MARTHA",
+    "specialty": "CIRUGÍA GENERAL",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "6232-9005",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RODRIGUEZ P., EDUARDO E.",
+    "specialty": "CIRUGÍA GENERAL",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RODRIGUEZ ZENTNER, HOMERO",
+    "specialty": "CIRUGÍA GENERAL",
+    "location": "PACÍFICA SALUD",
+    "phone": "203-8797",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SANTAMARIA GALEOTTI, LEONARDO N.",
+    "specialty": "CIRUGÍA GENERAL",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6350",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "TELLO RODRIGUEZ ELIECER G.",
+    "specialty": "CIRUGÍA GENERAL",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "230-6315",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VEGA YUIL, NESTOR",
+    "specialty": "CIRUGÍA GENERAL",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6365",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "WONG GOLDING, PATRICIA ANN",
+    "specialty": "CIRUGÍA GENERAL",
+    "location": "THE PANAMA CLINIC",
+    "phone": "310-1111",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "YUIL VALDEZ, ALEJANDRO",
+    "specialty": "CIRUGÍA GENERAL",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RICHARDS CANTORAL, LIZKA LORENA",
+    "specialty": "CIRUGÍA GENERAL",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "227-5444",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CONSTABLE, DANIEL",
+    "specialty": "CIRUGÍA GENERAL",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "227-5444",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GARCIA MONTENEGRO, MOISES CENTRO MÉDICO NACIONAL",
+    "specialty": "CIRUGÍA GENERAL",
+    "location": "No especificada",
+    "phone": "227-5444",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RODRIGUEZ Z., YESNEIRA E.CENTRO MÉDICO NACIONAL",
+    "specialty": "CIRUGÍA GENERAL",
+    "location": "No especificada",
+    "phone": "260-4278",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "AGUILAR QUINTERO, CARLOS ESTEBAN",
+    "specialty": "CIRUGÍA GENERAL",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "305-6364",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CASTILLERO PINILLA, CARLOMAGNO",
+    "specialty": "CIRUGÍA GENERAL",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "207-8210",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CRISMATT ZAPATA, ALEJANDRO",
+    "specialty": "CIRUGÍA GENERAL",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "263-3449",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DIAZ SELLES, CESAR",
+    "specialty": "CIRUGÍA GENERAL",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "269-5222",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "EL ACHTAR V., OLIVIA ELIZABETH",
+    "specialty": "CIRUGÍA GENERAL",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "6405-1846",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PEREIRA CROOK, RICARDO",
+    "specialty": "CIRUGÍA GENERAL",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "392-8768",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CHANIS THORP, JONATTAN ARTURO",
+    "specialty": "CIRUGÍA GENERAL",
+    "location": "No especificada",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PERURENA VALLARINO, CARLOS A.",
+    "specialty": "CIRUGÍA MAXILO FACIAL",
+    "location": "DE LEON DUBOIS, ERNESTO",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DE LEON DUBOIS, ERNESTO",
+    "specialty": "CIRUGÍA MAXILO FACIAL",
+    "location": "No especificada",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "AGUILAR, ARLETTE",
+    "specialty": "CIRUGÍA ONCOLÓGICA",
+    "location": "CONSULTORIOS AMÉRICA",
+    "phone": "381-2654",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DEL RÍO H, BENJAMÍN",
+    "specialty": "CIRUGÍA ONCOLÓGICA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "278-6608",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DE ESPINOZA, HONORINA",
+    "specialty": "CIRUGÍA ONCOLÓGICA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "269-1746",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MORALES TRIBALDOS, LUIS A.",
+    "specialty": "CIRUGÍA ONCOLÓGICA",
+    "location": "CONS. MÉDICOS ROYAL CENTER",
+    "phone": "340-9980",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VALLE, REXXIE",
+    "specialty": "CIRUGÍA ONCOLÓGICA",
+    "location": "THE PANAMÁ CLINIC",
+    "phone": "310-9925",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "COUTTE MAYORA, ALBERTO JAVIER",
+    "specialty": "CIRUGÍA ONCOLÓGICA",
+    "location": "PACÍFICA SALUD",
+    "phone": "226-0975",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ESPINO, JOSE AGUSTIN",
+    "specialty": "CIRUGÍA ONCOLÓGICA",
+    "location": "PACÍFICA SALUD",
+    "phone": "206-8000",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "HERNANDEZ MINA, ELIECER RICARDO",
+    "specialty": "CIRUGÍA ONCOLÓGICA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "209-7868",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LAMBIS CELY, OMAR DARIO",
+    "specialty": "CIRUGÍA ONCOLÓGICA",
+    "location": "PACÍFICA SALUD",
+    "phone": "247-2261",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RICHA DE ARCO, JACQUELINE MARIE",
+    "specialty": "CIRUGÍA ONCOLÓGICA",
+    "location": "THE PANAMÁ CLINIC",
+    "phone": "6378-2957",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SAMUDIO HORNA, JOSE MIGUEL",
+    "specialty": "CIRUGÍA ONCOLÓGICA",
+    "location": "THE PANAMÁ CLINIC",
+    "phone": "6957-1090",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "TRIBALDOS J., MONICA LORENA",
+    "specialty": "CIRUGÍA ONCOLÓGICA",
+    "location": "PACÍFICA SALUD",
+    "phone": "206-2595",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DIAZ, MARIA ALEJANDRA",
+    "specialty": "CIRUGÍA ONCOLÓGICA",
+    "location": "PACÍFICA SALUD",
+    "phone": "302-0178",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ORTIZ, GISELLE MARIE",
+    "specialty": "CIRUGÍA ONCOLÓGICA",
+    "location": "CENTRO MÉDICO ESP. SAN FERNANDO",
+    "phone": "278-6605",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ALEMAN LOAIZA, EDGAR ANTONIO",
+    "specialty": "CIRUGÍA ONCOLÓGICA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "206-2599",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ARCIA GUERRA, EDGARDO G.",
+    "specialty": "CIRUGÍA ONCOLÓGICA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "305-6364",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BEITIA JURADO, IVAN",
+    "specialty": "CIRUGÍA ONCOLÓGICA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6355",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LATORRACA SANTAMARIA, JOSE I.",
+    "specialty": "CIRUGÍA ONCOLÓGICA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8316",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MARTIZ FUENTES, ALFREDO",
+    "specialty": "CIRUGÍA ONCOLÓGICA",
+    "location": "THE PANAMÁ CLINIC",
+    "phone": "310-1111",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RÍOS PÉREZ, JOSÉ LUIS",
+    "specialty": "CIRUGÍA ONCOLÓGICA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "206-2599",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VALDES, MIGUEL A.",
+    "specialty": "CIRUGÍA ONCOLÓGICA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "206-2418",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VEGA BATISTA, ROGER NESTOR",
+    "specialty": "CIRUGÍA ONCOLÓGICA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "204-8316",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BERNAL FERNANDEZ, MARYORIE K. DERMI CLINIC - ROYAL BLUE PLAZA",
+    "specialty": "CIRUGÍA ONCOLÓGICA",
+    "location": "No especificada",
+    "phone": "398-2908",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CORREA IBAÑEZ, JUAN CARLOS",
+    "specialty": "CIRUGÍA ONCOLÓGICA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8000",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DONDERIS L., LIDIA",
+    "specialty": "CIRUGÍA ONCOLÓGICA",
+    "location": "HOSPITAL PAITILLA",
+    "phone": "215-1544",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "JONES ULATE, LISETH ALEJANDRA",
+    "specialty": "CIRUGÍA ONCOLÓGICA",
+    "location": "THE PANAMÁ CLINIC",
+    "phone": "6955-2895",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LOPEZ MIRANDA, ROSARIO",
+    "specialty": "CIRUGÍA ONCOLÓGICA",
+    "location": "THE PANAMÁ CLINIC",
+    "phone": "310-2432",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PEREIRA, DENNIS",
+    "specialty": "CIRUGÍA ONCOLÓGICA",
+    "location": "CONS. MÉDICOS SAN JUDAS TADEO",
+    "phone": "277-7600",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RODRIGUEZ CALVO, TIBERIO A.",
+    "specialty": "CIRUGÍA ONCOLÓGICA",
+    "location": "CENTRO ESP. SAN FERNANDO",
+    "phone": "203-7383",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "TEJADA GARCIA, DIANA LUZ",
+    "specialty": "CIRUGÍA ONCOLÓGICA",
+    "location": "PACÍFICA SALUD",
+    "phone": "261-9720",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SIERRA ZARAK, ABDIEL",
+    "specialty": "CIRUGÍA ONCOLÓGICA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CACHAFEIRO VILAR, MANUEL",
+    "specialty": "CIRUGÍA ONCOLÓGICA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8347",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DA SILVA RODRÍGUEZ, RAMIRO",
+    "specialty": "CIRUGÍA ONCOLÓGICA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "6671-5202",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "FERRABONE, LUIS A.",
+    "specialty": "CIRUGÍA ONCOLÓGICA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "229-4388",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LAMBRAÑO SANCHEZ, LUIS E.",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MAYO DI BELLO , MIGUEL ANTONIO",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "CENTRO MÉDICO ESP. SAN FERNANDO",
+    "phone": "278-6605",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MC KENZIE B., ALEXIS JAVIER",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8347",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MÉNDEZ, JOSÉ ROGELIO",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "206-2594",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ORILLAC, JORGE ROBERTO",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "229-0544",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ORTIZ NUÑEZ, ERIC M.",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6365",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PEÑA, MAXIMINO",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "229-4388",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RAMOS POLO, IVAN CARLO",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6352",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RETTALLY VARGAS ,CARLOS A.",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8347",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RUIZ O., JOSE RICARDO",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8348",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VON CHONG, RUBEN",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "CENTRO MÉDICO ESP. SAN FERNANDO",
+    "phone": "278-6605",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ARJONA PLANO, DIOGENES",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ARJONA WILSON, DIOGENES",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "FERRO, FRANK",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "HOSPITAL SANTA FÉ",
+    "phone": "360-7400",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ADAMES SILVA, VLADIMIR ENRIQUE",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "391-1363",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ADMADE BRAWERMAN, BLEIXEN E.",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "278-6606",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ALVAREZ, ERNESTO",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "PACÍFICA SALUD",
+    "phone": "399-4857",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ALLARD RODRIGUEZ, JISEL ILEANA",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8315",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ANDERSON KANT, RICARDO",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "CONS. MÉDICOS ROYAL CENTER",
+    "phone": "340-9931",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ARIAS, TOMÁS",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "227-0198",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BAL CHIARI, AUGUSTO",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BASO, EDUARDO",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "206-2598",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BIANCO SERRACIN, DAVID",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "206-2588",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CAMPOS, CRISTOBALINA",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "206-2588",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CARBONE, JUAN ANTONIO",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8329",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CÁRDENAS Z., GERARDO A.",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "THE PANAMÁ CLINIC",
+    "phone": "310-1111",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CASTRELLON, MANUEL JOSÉ",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "206-2598",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CEBALLOS ESCOBAR, ERNESTO",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CHONG SOLÍS, JOSÉ GUILLERMO",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "227-0198",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CHONG CHUNG, WILLIAM",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "206-2598",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CHUNG, CHRISTIAN",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "264-4893",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CHUNG MORALES, CRISTHIAN MIGUEL",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "THE PANAMÁ CLINIC",
+    "phone": "310-1111",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CORDOBA MORALES, CARLOS E.",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "264-4893",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CORREA VIZOSO, RAÚL",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8327",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CORTES, LOURDES",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "CONSULTORIOS AMÉRICA",
+    "phone": "229-5442",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DAMES, ENRIQUE",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "PACÍFICA SALUD",
+    "phone": "399-4857",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DE GRACIA, MARLENE",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "PACÍFICA SALUD, INSTITUTO DE SALUD FEMENINA",
+    "phone": "204-8533",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DE LEON MAYLIN, IVONNE SHANIDA",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "PACÍFICA SALUD",
+    "phone": "399-4887",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DE OBALDÍA, MERY",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "223-1580",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DELGADO DE PASQUALE, SAMUEL",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "ANTONIO, HOSPITAL NACIONAL",
+    "phone": "229-6421",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DIAZ MARMOLEJO, ANGEL DARIO",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DOMINGUEZ APARICIO, ERNESTO LUIS",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8315",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "EFFIO, EMILIO",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "206-2598",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GALVEZ G., ERIC N.",
+    "specialty": "CIRUGÍA GENERAL PEDIÁTRICA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GARCIA LEE, ITZAMARA YEISETH",
+    "specialty": "GINECOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "264-4893",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GARDELLINI DE CROSTON, BRENDA",
+    "specialty": "GINECOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GODOY BYERLY, JULIO",
+    "specialty": "GINECOLOGÍA",
+    "location": "CENTRO MÉDICO ESP. SAN FERNANDO",
+    "phone": "278-6605",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GOMEZ, ARACELLY",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "227-5444",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GONZÁLEZ, JOSE LEONARDO",
+    "specialty": "GINECOLOGÍA",
+    "location": "CONS. MÉDICOS ROYAL CENTER",
+    "phone": "217-0307",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GONZÁLEZ, ROCIO DEL C.",
+    "specialty": "GINECOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "229-6226",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GONZÁLEZ BARRIOS, JACINTO",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "229-6421",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GONZÁLEZ SIBURU, DIEGO",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "225-4042",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GONZÁLEZ T., GENEVA",
+    "specialty": "GINECOLOGÍA",
+    "location": "CONSULTORIOS AMÉRICA",
+    "phone": "229-4388",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GUERRA, ARIEL",
+    "specialty": "GINECOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "264-4893",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GUTIERREZ RODRIGUEZ, EVERARDO",
+    "specialty": "GINECOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8533",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GUZMÁN A., NELSON D.",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "227-5444",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "HO, MILENA YAVEL",
+    "specialty": "GINECOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "206-2415",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "IBARRA MARTINEZ, ABEL",
+    "specialty": "GINECOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "JAEN DE MACRINI, ELBA",
+    "specialty": "GINECOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "229-6421",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "JUNCA, ALEX",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "225-6512",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "KAM WONG, DANIEL",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "227-0198",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "KARNAKIS KOSMAS, GEORGIOS",
+    "specialty": "GINECOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "269-5222",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LASSO DE LA VEGA, JORGE",
+    "specialty": "GINECOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8550",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LASSO DEL CASTILLO, JAIME",
+    "specialty": "GINECOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "206-2439",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LEE, YERINA DEL C.",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "225-5536",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LEE LAU, WEI KIN",
+    "specialty": "GINECOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "229-9602",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LEWIS BARRIOS, ROBERTO AUGUSTUS",
+    "specialty": "GINECOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "263-5513",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LOPEZ RODRIGUEZ, JUAN CARLOS",
+    "specialty": "GINECOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8533",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LUZCANDO V., ADAN ALBERTO",
+    "specialty": "GINECOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MARINO, LESLIE",
+    "specialty": "GINECOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "203-9824",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MARTINEZ CARVAJAL, ERASMO",
+    "specialty": "GINECOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "206-2415",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MARTINZ RESTREPO, ADRIANA DEL C.",
+    "specialty": "GINECOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "206-2509",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MC LEAN CASTILLO, GAMALIEL N.",
+    "specialty": "GINECOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "264-4893",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MELILLO, DOMENICO",
+    "specialty": "GINECOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "229-6421",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MÉNDEZ, TEODORO",
+    "specialty": "GINECOLOGÍA",
+    "location": "CENTRO MÉDICO ESP. SAN FERNANDO",
+    "phone": "278-6605",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MENDIETA C., MARIEL Y.",
+    "specialty": "GINECOLOGÍA",
+    "location": "THE PANAMÁ CLINIC",
+    "phone": "310-9925",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MORENO MAGDALENO, RUBÉN DARÍO",
+    "specialty": "GINECOLOGÍA",
+    "location": "THE PANAMÁ CLINIC",
+    "phone": "395-1735",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MORENO MIRANDA, DOMINGO A.",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "227-0198",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "NG CHINKEE, JORGE",
+    "specialty": "GINECOLOGÍA",
+    "location": "PACÍFICA SALUD, INSTITUTO DE SALUD FEMENINA",
+    "phone": "204-8533",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "NOVOA, GLADYS",
+    "specialty": "GINECOLOGÍA",
+    "location": "CENTRO MÉDICO ESP. SAN FERNANDO",
+    "phone": "277-7600",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "OLMEDO, JOAQUIN",
+    "specialty": "GINECOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "206-2588",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "OLMOS DE MIGUELENA, GLADYS",
+    "specialty": "GINECOLOGÍA",
+    "location": "CONS. MÉDICOS ROYAL CENTER",
+    "phone": "387-7788",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "OVIEDO, FERNANDO",
+    "specialty": "GINECOLOGÍA",
+    "location": "PACÍFICA SALUD, INSTITUTO DE SALUD FEMENINA",
+    "phone": "204-8533",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "OVIEDO, JOSE LUIS",
+    "specialty": "GINECOLOGÍA",
+    "location": "PACÍFICA SALUD, INSTITUTO DE SALUD FEMENINA",
+    "phone": "204-8533",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PARADA MALEK, JUAN JOSE",
+    "specialty": "GINECOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "396-7562",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PITTI CIFUENTES, DIANA",
+    "specialty": "GINECOLOGÍA",
+    "location": "THE PANAMÁ CLINIC",
+    "phone": "310-2801",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PONCE BARBERENA, PEDRO A.",
+    "specialty": "GINECOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "381-4621",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PONCE CARRIZO, RICARDO A.",
+    "specialty": "GINECOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "396-1752",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PONCE DE SEDAS, RICARDO",
+    "specialty": "GINECOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "396-1752",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PONCE DE SEDAS, ROBERTO",
+    "specialty": "GINECOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "396-1752",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PONCE RIVERA, AXEL MANUEL",
+    "specialty": "GINECOLOGÍA",
+    "location": "CENTRO MÉDICO ESP. SAN FERNANDO",
+    "phone": "277-7600",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "POVEDA NIETO, CARLOS",
+    "specialty": "GINECOLOGÍA",
+    "location": "CENTRO MÉDICO ESP. SAN FERNANDO",
+    "phone": "277-7600",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PURKUT ABREGO, LAURA YOVANA",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL BRISAS",
+    "phone": "266-1659",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "QUIJADA, RAÚL DE JESÚS",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "229-6421",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "QUIJANO S., DAMIAN E.",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "225-4042",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "QUINTERO DE LEÓN, ARELYS MELISSA",
+    "specialty": "GINECOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "278-6606",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "QUINTERO GOMEZ, PORFIRIO",
+    "specialty": "GINECOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "399-4857",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "QUINTERO MONTOTO, PORFIRIO",
+    "specialty": "GINECOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "264-4893",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RANGEL, ROXANNA YAMARIES",
+    "specialty": "GINECOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "307-3605",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ROBLES, MAYRA",
+    "specialty": "GINECOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RODANICHE, BRITTANNIA",
+    "specialty": "GINECOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "264-4893",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RODRÍGUEZ, JORGE G.",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "225-4042",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ROSAS DE SEGOVIA, LEYSA CRISTINA",
+    "specialty": "GINECOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "386-3809",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ROWE, VILDIA MICHELLE",
+    "specialty": "GINECOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "229-6421",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SHEPHERD ORTEGA, MANUEL A.",
+    "specialty": "GINECOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "229-6421",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SMITH SCOTT, DARCY DALE HAMILTON",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "395-3310",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "STOUTE, MARIA EUGENIA",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "230-1439",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SUBIA BONILLA, ICELA DEL C.",
+    "specialty": "GINECOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "277-1186",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "TAPIA GONZALEZ, ABDIEL OSCAR",
+    "specialty": "GINECOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6354",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "TINKER FRIAS, ADOLFO AMAURY",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "271-5069",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "TORRES CHANG, AURELIO",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "227-5444",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "TROYA DE SOTO, CARMEN IRELA",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "229-6421",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "TSEROTAS, KONSTANTITNO",
+    "specialty": "GINECOLOGÍA",
+    "location": "CONS. MÉDICOS ROYAL CENTER",
+    "phone": "263-1542",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "UREÑA ALMANZA, NESTOR JULIO",
+    "specialty": "GINECOLOGÍA",
+    "location": "CENTRO MÉDICO ESP. SAN FERNANDO",
+    "phone": "229-6421",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "URIBE GIL, SOLEDAD",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "225-4042",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VASQUEZ ATENCIO, LEIDY YARINETH INST. DE GINECOLOGÍA. GALERÍAS BALBOA",
+    "specialty": "GINECOLOGÍA",
+    "location": "No especificada",
+    "phone": "227-1284",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VECES GONZALEZ, ARIEL JESUS",
+    "specialty": "GINECOLOGÍA",
+    "location": "No especificada",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VEGA CROKER, MARIO GILBERTO",
+    "specialty": "GINECOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8517",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VEGA MALEK, JUAN CARLOS",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "225-6512",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VEGA RICH, MARIO",
+    "specialty": "GINECOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8514",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VERGARA A., FRANCISCO J.",
+    "specialty": "GINECOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "278-6606",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VILLARREAL LANDAU, IVAN",
+    "specialty": "GINECOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8384",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "WONG, FELIPE",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "227-5444",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "YASSINE EL SAADI, YASSER GHASSAN",
+    "specialty": "GINECOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "206-2415",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "YI CRUZ, RODOLFO ANTONIO",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "227-5444",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BOYD LINARES, JAIME EDUARDO",
+    "specialty": "GINECOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "340-9996",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BUITRON SANTIAGO, NATALIE",
+    "specialty": "GINECOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "265-2231",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CASTILLO RIOS, BENITO ARTUROCENTRO HEMATO ONCOLÓGIO ROYAL CENTER",
+    "specialty": "GINECOLOGÍA",
+    "location": "No especificada",
+    "phone": "265-2232",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DIAZ FERNANDEZ, RICARDO CENTRO HEMATO ONCOLÓGIO ROYAL CENTER",
+    "specialty": "GINECOLOGÍA",
+    "location": "No especificada",
+    "phone": "265-2232",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ESPINO L. GERMAN",
+    "specialty": "GINECOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "206-2438",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "FRANCESCHI D., JOSE LUIS",
+    "specialty": "GINECOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "265-2231",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LOPEZ, LINETH CENTRO HEMATO ONCOLÓGIO ROYAL CENTER",
+    "specialty": "GINECOLOGÍA",
+    "location": "No especificada",
+    "phone": "265-2232",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MONTERO, CARLOS",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "229-5993",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MORENO, BELGICA",
+    "specialty": "GINECOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "QUIEL R., DIMAS A.",
+    "specialty": "GINECOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "293-5030",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RODRIGUEZ CENTELLA, CARLOS M.",
+    "specialty": "GINECOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CANTON, ALFREDO",
+    "specialty": "GINECOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8000",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CASTILLO SATURNO, BORIS ARMANDO",
+    "specialty": "INFECTOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "392-1456",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "KENNION RODRIGUEZ, GUILLERMO",
+    "specialty": "INFECTOLOGÍA",
+    "location": "CONSULTORIOS AMÉRICA",
+    "phone": "261-5161",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "NIETO, NARCISO",
+    "specialty": "INFECTOLOGÍA",
+    "location": "HOSPITAL BRISAS",
+    "phone": "6799-4961",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "TOALA GONZALEZ, IVAN I.",
+    "specialty": "INFECTOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VILLARREAL AGRAZALEZ, OLMEDO E.",
+    "specialty": "INFECTOLOGÍA",
+    "location": "CONSULTORIOS AMÉRICA",
+    "phone": "229-4388",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MARTIN DE MERA, HIRAM OZIEL",
+    "specialty": "INFECTOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS SAN JUDAS TADEO",
+    "phone": "385-0215",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MAYO DE BELLO, ENRIQUE JOSE",
+    "specialty": "INFECTOLOGÍA",
+    "location": "MEDIC GYM ROYAL CENTER",
+    "phone": "263-0407",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RIVERA TUÑÓN, PATRICIA DEL CARMEN",
+    "specialty": "INFECTOLOGÍA",
+    "location": "THE PANAMÁ CLINIC",
+    "phone": "310-2895",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RODRIGUEZ R., MILTHON AMETH",
+    "specialty": "INFECTOLOGÍA",
+    "location": "CONS. MÉDICOS ROYAL CENTER",
+    "phone": "399-1836",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SALDAÑA SILVERA, ABELARDO E.",
+    "specialty": "INFECTOLOGÍA",
+    "location": "CONSULTORIOS AMÉRICA",
+    "phone": "260-7647",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SAMPSON, NEAL",
+    "specialty": "INFECTOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SERRACIN CALLENDER, DEMETRIO E.",
+    "specialty": "INFECTOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS SAN JUDAS TADEO",
+    "phone": "204-8311",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SILVERA CEDEÑO, CRISTINA BEATRIZ",
+    "specialty": "INFECTOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "396-2098",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CABALLERO RODRIGUEZ, ZELKY Y.",
+    "specialty": "INFECTOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "6673-9002",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CHANDLER BATISTA, MARLENE L. CLÍNCA",
+    "specialty": "INFECTOLOGÍA",
+    "location": "HOSPITAL BRISAS",
+    "phone": "6615-9366",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DE LEÓN, MARIA ALEJANDRA",
+    "specialty": "INFECTOLOGÍA",
+    "location": "MEDIC GYM ROYAL CENTER",
+    "phone": "263-0407",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GONZALEZ CATTAN, RAQUEL ITZEL",
+    "specialty": "INFECTOLOGÍA",
+    "location": "CLÍNICA CONDADO",
+    "phone": "6664-5697",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PÉREZ DE MAYO, JULIETA",
+    "specialty": "INFECTOLOGÍA",
+    "location": "MEDIC GYM ROYAL CENTER",
+    "phone": "263-0407",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "QUIROS, LUZ",
+    "specialty": "INFECTOLOGÍA",
+    "location": "HOSPITAL SANTA FE",
+    "phone": "360-7400",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RODRIGUEZ-MESA C., ILIANA",
+    "specialty": "INFECTOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "264-4444",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "URRIOLA HERRERA, VERA ANGELICA",
+    "specialty": "INFECTOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "392-4203",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VIGIL ESQUIVEL, CLARIBEL",
+    "specialty": "INFECTOLOGÍA",
+    "location": "THE PANAMÁ CLINIC",
+    "phone": "310-2881",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ALFARO, FERNANDO LUIS",
+    "specialty": "INFECTOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "204-8312",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "AMADOR F., CÁNDIDO E.",
+    "specialty": "INFECTOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "6613-8829",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "AVERSA DE LEON, ANTONIO AXEL",
+    "specialty": "INFECTOLOGÍA",
+    "location": "CENTRO MÉDICO ESP. SAN FERNANDO",
+    "phone": "278-6605",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BALLESTEROS ZARZAVILLA, CARLOS M.",
+    "specialty": "INFECTOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "204-8312",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BENALCAZAR, ERNESTO",
+    "specialty": "INFECTOLOGÍA",
+    "location": "CENTRO MÉDICO ESP. SAN FERNANDO",
+    "phone": "204-8312",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BRAVO VÁSQUEZ, LUIS CARLOS",
+    "specialty": "INFECTOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "6612-6571",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CERRUD GONZÁLEZ, RIGOBERTO",
+    "specialty": "INFECTOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GOMEZ BLIZNIAK, ARTUR",
+    "specialty": "INFECTOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "385-7787",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "HERNANDEZ, AUGUSTO RAUL",
+    "specialty": "INFECTOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8000",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "HURTADO, NICOLAS HENRY",
+    "specialty": "INFECTOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "207-8100",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MELGAR BIEBERACH, REBECA ESTELA",
+    "specialty": "INFECTOLOGÍA",
+    "location": "HOSPITAL SANTA FÉ",
+    "phone": "360-7400",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MUÑOZ E., PAUL ALEXANDER",
+    "specialty": "INFECTOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "207-8100",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PRADO PINEDO, EDUARDO",
+    "specialty": "INFECTOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8000",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RINCON, LESLIE KARINA",
+    "specialty": "INFECTOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "366-0000",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SANDOVAL A., JULIO CÉSAR",
+    "specialty": "INFECTOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8312",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "TANG R., LILIAN K.",
+    "specialty": "INFECTOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8315",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VALVERDE CASAS, JOSE WALTER",
+    "specialty": "INFECTOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "204-8312",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "WITTGREEN GONZALEZ, RANDALL DAYAN",
+    "specialty": "INFECTOLOGÍA",
+    "location": "HOSPITAL SANTA FE",
+    "phone": "360-7400",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "AGUILAR NIGOT, FERNANDO ENRIQUE",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "THE PANAMA CLINIC",
+    "phone": "310-2895",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ARMUELLES P., ALANNA M.",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "229-0632",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "AROSEMENA, JORGE",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "305-6365",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BRAVO N., YARICELYS L.",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "305-6365",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BYRNE VARGAS, JUAN PABLO",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CASTILLO, KATIANA ELIZABETH",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "THE PANAMÁ CLINIC",
+    "phone": "395-5909",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CASTILLERO RODRIGUEZ, FRANKLIN A.",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "CENTRO HEMATO ONCOLOGICO PANAMÁ",
+    "phone": "300-6800",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CERRUD GONZÁLEZ, RIGOBERTO",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "278-6629",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "FILOS AIZPURUA, LUIS MANUEL",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "278-6607",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ITURRALDE MORAN, CAMILO ABEL",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "206-2589",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "JARAMILLO RAMOS, JULIO JOEL",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "CONSULTORIOS ROYAL CENTER",
+    "phone": "6319-9476",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "NIEDDA GONZALEZ, MARIA",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "THE PANAMÁ CLINIC",
+    "phone": "310-2895",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "OLACIREGUI, GUSTAVO",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "CENTRO MÉDICO ESP. SAN FERNANDO",
+    "phone": "277-7600",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PEREZ PINZON, EFRAIN",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "206-2563",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PINZON CUCA, VICTOR MANUEL",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RIOS DEL CID, CARLOS IVÁN",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "6236-4889",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RODRIGUEZ, FELIPE",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RODRÍGUEZ, RAMIRO DA SILVA",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "6671-5202",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RUIZ, YASSIR",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "HOSPITAL SANTA FE",
+    "phone": "360-7400",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SÁNCHEZ, EDGAR RAUL",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "CONSULTORIOS ROYAL CENTER",
+    "phone": "340-9996",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SANDOVAL, RICARDO M.",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "THE PANAMA CLINIC",
+    "phone": "310-9924",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SANTAMARÍA CASTILLO, JOSÉ LUIS INSTITUTO MÉDICO ESPECIALIZADO",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "No especificada",
+    "phone": "366-0000",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BALLESTEROS RAMOS, ALEXANDER",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "THE PANAMÁ CLINIC",
+    "phone": "310-2895",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CALVO BROCE, JOSE ANTONIO",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "325-0011",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CARLES, EFRAIN",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "269-5222",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CUERO ZAMBRANO, CESAR",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "263-3356",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DE FREITAS, OVIDIO",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "227-5444",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MARTINEZ ECHEVERS, YELEINE",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "THE PANAMÁ CLINIC",
+    "phone": "310-1111",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "NIEDDA, MARIA",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "THE PANAMÁ CLINIC",
+    "phone": "310-2895",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PEREZ CARILLO, RAFAEL ANIELO",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "CENTRO MÉDICO ESP. SAN FERNANDO",
+    "phone": "390-2494",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RODRIGUEZ, DIEGO REY",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "229-3524",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RODRIGUEZ DE LEON, FELIPE ANTONIO",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "TOMLINSON FOWLER, JERMAINE R.",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "THE PANAMÁ CLINIC",
+    "phone": "310-2895",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VARGAS C., FRANCISCO KHIRAM",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "THE PANAMÁ CLINIC",
+    "phone": "310-2895",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VIGGIANO VEGA, CARLOS ALBERTO",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "AGUILERA VALDERRAMA, AMPARO",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "265-8825",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LALYRE, ANA LILY",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "AGUILAR, FERNANDO",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "AGUILAR, FERNANDO",
+    "specialty": "MEDICINA INTENSIVA",
+    "location": "No especificada",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BERNAL CORONADO, LILIA ELIZABETH",
+    "specialty": "MEDICINA INTERNA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "209-5631",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CANDANEDO, MITZI",
+    "specialty": "MEDICINA INTERNA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CHEVALIER CHOCKEE, ELENA MARIA",
+    "specialty": "MEDICINA INTERNA",
+    "location": "THE PANAMÁ CLINIC",
+    "phone": "310-1111",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DIAZ STRUNZ, TEMISTOCLES",
+    "specialty": "MEDICINA INTERNA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "JARAMILLO, FABIO",
+    "specialty": "MEDICINA INTERNA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "209-5632",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LOMBARDO HERRERA, AMÉRICO",
+    "specialty": "MEDICINA INTERNA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MARQUEZ FABREGA, FERNANDO G.",
+    "specialty": "MEDICINA INTERNA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "209-5630",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "NORIEGA, LORENA",
+    "specialty": "MEDICINA INTERNA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "209-5632",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PAREDES T., RAFAEL A.",
+    "specialty": "MEDICINA INTERNA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "209-5630",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PEREA, TARSICIO",
+    "specialty": "MEDICINA INTERNA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PERNETT, AMARANTA",
+    "specialty": "MEDICINA INTERNA",
+    "location": "PACÍFICA SALUD",
+    "phone": "830-5398",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PINZON YUIL, VICTOR MANUEL",
+    "specialty": "MEDICINA INTERNA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RUIZ JIMENEZ, NESTOR",
+    "specialty": "MEDICINA INTERNA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "TREJOS GONZALEZ, SABRINA DEL C.",
+    "specialty": "MEDICINA INTERNA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ALMENDRAL, ANDRES",
+    "specialty": "MEDICINA INTERNA",
+    "location": "THE PANAMÁ CLINIC",
+    "phone": "310-1111",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BRUGGEMAN, LAURENT",
+    "specialty": "MEDICINA INTERNA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "307-3634",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CALVIT, MARIO",
+    "specialty": "MEDICINA INTERNA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "307-3634",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DE MOLA, JUAN CARLOS",
+    "specialty": "MEDICINA INTERNA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "307-3634",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VILLARREAL, ORLANDO",
+    "specialty": "MEDICINA INTERNA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "307-3634",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ANAYA, ALINA",
+    "specialty": "MEDICINA INTERNA",
+    "location": "THE PANAMÁ CLINIC",
+    "phone": "310-1111",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ALVARADO RAMOS, AURELIO ANTONIO",
+    "specialty": "MEDICINA INTERNA",
+    "location": "PACÍFICA SALUD",
+    "phone": "391-1024",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "JETHMAL, EZEQUIEL",
+    "specialty": "MEDICINA INTERNA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "269-3983",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "AGUILAR URRIOLA, MANUEL JOSE",
+    "specialty": "MEDICINA INTERNA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ANGUIZOLA, DAVID",
+    "specialty": "MEDICINA INTERNA",
+    "location": "PACÍFICA SALUD/INSTITUTO EUROPEO DEL, SUEÑO",
+    "phone": "387-6041",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DONDIS CAMAÑO, DAVID ROMAN",
+    "specialty": "MEDICINA INTERNA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "204-8315",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ALVEROLA GARMPIS, GIORGIA MARIA",
+    "specialty": "MEDICINA INTERNA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6360",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "AROSEMENA BARICHOVIC, AUGUSTO",
+    "specialty": "MEDICINA INTERNA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "206-2424",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BAEZ GOMEZ, ROSALIA MARGARITA",
+    "specialty": "MEDICINA INTERNA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "396-2098",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BOYD LEWIS, SAMUEL",
+    "specialty": "MEDICINA INTERNA",
+    "location": "CLÍNICA BOYD",
+    "phone": "264-8011",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CARDENAS APOLAYO, MARITZA",
+    "specialty": "MEDICINA INTERNA",
+    "location": "CLÍNICA BOYD",
+    "phone": "264-8011",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CARVAJAL GUMBAN, BRUNO A.",
+    "specialty": "MEDICINA INTERNA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "264-4444",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CASTILLERO, GABRIEL A.",
+    "specialty": "MEDICINA INTERNA",
+    "location": "CENTRO MÉDICO ESP. SAN FERNANDO",
+    "phone": "229-6663",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CASTILLERO ABADIA, GABRIEL E.",
+    "specialty": "MEDICINA INTERNA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CHU, ALFREDO",
+    "specialty": "MEDICINA INTERNA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "265-8800",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CONCEPCIÓN NOVOA DE KRAVCIO",
+    "specialty": "MEDICINA INTERNA",
+    "location": "ANAIKA L., CLÍNICA BOYD",
+    "phone": "264-8011",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DE ALEMÁN, CRISTELA F.",
+    "specialty": "MEDICINA INTERNA",
+    "location": "CLÍNICA BOYD",
+    "phone": "264-8011",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DIAZ RODRIGUEZ, CARLOS",
+    "specialty": "MEDICINA INTERNA",
+    "location": "THE PANAMÁ CLINIC",
+    "phone": "310-1111",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BRANDARIS FONTES, TANIA LORENA",
+    "specialty": "MEDICINA INTERNA",
+    "location": "No especificada",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "HURTADO, ROBERTO",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "229-6654",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "IBAÑEZ DE TELLO, ANA",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "THE PANAMÁ CLINIC",
+    "phone": "204-8540",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LOMBARDO V., INELDA I.",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "CLÍNICA BOYD",
+    "phone": "264-8011",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MELILLO MAGLIONE, ROCCO G.",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "390-4257",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MORENO, ÁLVARO",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "CLÍNICA BOYD",
+    "phone": "264-8011",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "NG GONZALEZ , KARLA DEL ROSARIO",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8000",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RIVERA GONZALEZ, MARINO MIGUEL",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "CLÍNICA BOYD",
+    "phone": "264-8011",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "TRAPATSAS, CONSTANTINO",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "229-6678",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "WONG TANG, MIGUEL",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "WONG VALDIVIESO, ARTURO D.",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MORENO RIOS, JOEL CENTRO HEMATO ONCOLÓGICO",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "No especificada",
+    "phone": "265-2231",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ALCEDO VELARDE, JUAN CARLOS",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "265-2232",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "AMADOR SOSA, JOSE LUIS",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "263-3449",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BARES, JUAN PABLO",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "264-8813",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CASTILLO FERNANDEZ, OMAR ORLANDO CENTRO HEMATO ONCOLÓGIO ROYAL CENTER",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "No especificada",
+    "phone": "265-2232",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CASTILLERO RODRIGUEZ, FRANKLIN A.",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "CENTRO HEMATO ONCOLOGICO PANAMÁ",
+    "phone": "300-6800",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LIM LAW, MARIA",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "391-1618",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MORENO, JOEL ALEXANDER",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "CONS. MÉDICOS ROYAL CENTER",
+    "phone": "300-6800",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LOPEZ, ROBERTO IVAN",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "207-8210",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RUIZ, YASSIR",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "HOSPITAL SANTA FE",
+    "phone": "360-7400",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SANTAMARIA, JULIO JAVIER",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "264-8813",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "WONG, FELIPE JAVIER",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "CONSULTORIOS AMÉRICA",
+    "phone": "229-5476",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ARJONA SERRANO, RAUL DARIO",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "260-2570",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SOPALDA PIMENTEL, NELSON P.",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "306-3382",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "AIZPURUA B., MARIO F.",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "306-3382",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ALEMÁN, JAIME",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "261-7275",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ALESSANDRIA, ALESSANDRO",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "261-7275",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "AMADO IBARRA, LUIS FERNANDO",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "306-3382",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ANDERSON, MAURICIO VALENTINO",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "306-3382",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ARAUZ CUBILLA, RENAN",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "229-7591",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ARIAS DE LA GUARDIA, JULIO ERNESTO",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "204-8568",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ARJONA SERRANO, RAÚL DARIO",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6304",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BARRIA STANZIOLA, HERACLIO",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "206-2448",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BONILLA HUERTAS, PATRICIA",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "THE PANAMA CLINIC",
+    "phone": "6946-5466",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BOZA LOPEZ, LINDA",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "HOSPITAL SANTA FE",
+    "phone": "360-7400",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CAPARO ALAIN, ISAIAS MANUEL",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "306-3382",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CARRILLO RIQUEROS, FRANKLIN A.",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "227-9489",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CELY, LUIS ROBERTO",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6301",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CHEN LEE, RENE ARTURO",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "206-2596",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CONCEPCION SANCHEZ, RICARDO A.",
+    "specialty": "NEUROCIRUGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6302",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "YI AGUILAR, RODOLFO ALBERTO",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "No especificada",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "COTES SANCHEZ, EDUARDO AGUSTIN",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "206-2530",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CUESTAS POLANCO, LUIS MARIO",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DELGADO CORREA, NICOLAS",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "HOSPITAL SANTA FÉ",
+    "phone": "6954-6549",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "FASKHA VUGMAN, ELIAHOU",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "PACÍFICA SALUD",
+    "phone": "223-1717",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "FORD MORA, EDMUNDO BASILIO",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "261-7275",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "FORD SOUSA, EDMUNDO BASILIO",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "261-7275",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "FRANCO, BOLÍVAR",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "229-3779",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "FUENTES PENHAVEL, LUIS FERNANDO",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "261-7275",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GONZALEZ*, MARCELINO",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "269-5222",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GONZALEZ CHU, GABRIELA ISOLDA",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "THE PANAMA CLINIC",
+    "phone": "204-8318",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "JAEN MARICHAL, LIONEL ANTONIO",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "PACÍFICA SALUD",
+    "phone": "390-2227",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "JASPE CASTAÑO, JAIME ANTONIO",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "JEAN LOUIS BONILLA, LILIVETH JESSELL",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "THE PANAMÁ CLINIC",
+    "phone": "310-2834",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "KAM VARGAS, RAUL ANEL",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "387-2590",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LEE CHOY, JUAN GREGORIO",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "CONSULTORIOS AMÉRICA",
+    "phone": "264-5155",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MARTINEZ MILLAN, DANILO",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "229-4388",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MARTINEZ QUIJADA, GERINALDO CLÍNICA GMEDSPORT",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "No especificada",
+    "phone": "263-5292",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MARXEN RUIZ, JOLIEANNE YSABEL",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MATURELL, JORGE ALBERTO",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MENDEZ LAVERGNE, OCTAVIO ALFONSO",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "261-7275",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MICK PEREZ, ROSA ITZELA",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "263-5262",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MORENO OBANDO, JOSE BERNARDO",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "HOSPITAL SANTA FÉ",
+    "phone": "227-4733",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "NAVARRO, CARLOS*",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "306-3382",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "NIKOLAEV, MARISOL JACQUELINE",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "261-7275",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ORTEGA AYALA, RODRIGO GUSTAVO",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6303",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PARK, DENY LU",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8000",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PRETTO, JUAN CARLOS",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "206-2448",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PINILLA, ROQUE B.",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "393-8317",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PINILLA BONILLA, GUSTAVO ADOLFO",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "PACÍFICA SALUD",
+    "phone": "229-7522",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "POVEA, ESTEBAN",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "206-2585",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "TIRADO DELGADO, RAFAEL ANTONIO",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6301",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VASQUEZ, CARMEN",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "229-7522",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VASQUEZ POLO, TOMAS",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "390-2350",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VERGARA GONZALEZ, JOSE ELIAS",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "227-9489",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ZORITA SAMUDIO, CESAR ALFONSO",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "HOSPITAL SANTA FÉ",
+    "phone": "227-4733",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BEDOYA ORTEGA, MARCELA",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "6677-7089",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BEITIA SAMUDIO, CARLOS",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "269-3387",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BERRIO AQUÍ, IVETTE",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "CENTRO MÉDICO ESP. SAN FERNANDO",
+    "phone": "229-6675",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BURROWS, CARLOS",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "278-0466",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CORRO GARCIA, DAVID FRANCISCO",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "278-6607",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CRESPO BATISTA, JEANNETTE DILMA",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "398-1699",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CRESPO BERGES, RAMON",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "224-8611",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DE LA GUARDIA, ARACELI MAGDALENA",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "226-0036",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "HERNANDEZ, VIVIAN",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "HOSPITAL SANTA FE",
+    "phone": "360-7400",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "HIM CEDEÑO, RUTH ESTEFANIA",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "395-4194",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "KORYTOWSKI, LECH",
+    "specialty": "ORTOPEDAS DE COLUMNA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "206-2415",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LORENZO PALMA, JOSE ANTONIO",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8585",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LUQUE, REY",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "229-6675",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MOCK DONATO, MANUEL",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "221-5822",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MURILLO, GISSELLE MARIBELLA",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "262-8136",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PONCE VERGARA, VANESSA",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "206-2458",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SAA QUIROS, BRENDA ILEANA",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6353",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SAMUELS, ROBERT",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "307-3667",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "TAMEZ DE LEON, MARIA DOLORES",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "230-3534",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "TORRIJOS L., MOISES",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "206-2540",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VASQUEZ, RITA DEL C.",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "HOSPITAL SANTA FE",
+    "phone": "260-7400",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VELASCO MOSCOSO, PATRICIA CRISTINA",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "229-6675",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VERASTEGUI, LUIS F.",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "206-2588",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VIELGO, AHMED ARON",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "TODOS LOS HOSPITALES",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ZAPATA GARCIA, SABRINA DEL C.",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "307-3668",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CORTES, DIANA",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "204-8315",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GANCI CERRUD, ALESSANDRO",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "CENTRO MÉDICO ESP. SAN FERNANDO",
+    "phone": "229-2299",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GIL DEL REAL ALEGRE, PATRICIA",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "CENTRO MÉDICO ESP. SAN FERNANDO",
+    "phone": "261-7543",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MOSQUERA H., DAVID H.",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "396-4694",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RODRIGUEZ, GENEVA D.",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "229-4388",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ROY GRAIN, MILANTIA",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8360",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VILLALOBOS, RODRIGO J.",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "396-4694",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ABBOTT, MARIA B.",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8000",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ABOOD AOUN, MANUEL",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "204-8312",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "AGUILAR, ITZEL",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8000",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ALVEAR PALMA, MIREYA EMPERATRIZ",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "204-8312",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ARAUZ NAVARRO, YARIELA DEL C.",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "CONS. MÉDICOS ROYAL CENTER204-8312",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ARCIA TORRES, ALYNA NEKELDA",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "392-9680",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BERMUDEZ ORTIZ, BRISEIDA G.",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "CONSULTORIOS AMÉRICA",
+    "phone": "229-3591",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BRAVO ICAZA, FRANCISCO",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "264-3058",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CAICEDO L., MIRNA ENEIDA",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "204-8312",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CASTILLO, YILA IRIS",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8000",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CASTILLO, EVELYN",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "HOSPITAL BRISAS",
+    "phone": "309-2300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CASTRELLON, JOSE ANGEL",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "CONSULTORIOS AMÉRICA",
+    "phone": "229-3591",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CHEN R., ELSA E.",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8000",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CHUNG CHIAN, CHI PIN",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "CENTRO MÉDICO ESP. SAN FERNANDO",
+    "phone": "278-6600",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CORDOBA BONILLA, GILBERTO E.",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "264-4444",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CORRALES VALLECILLA, VALENTIN R.",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8000",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DAVALOS, BOLIVAR",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "CENTRO MÉDICO ESP. SAN FERNANDO",
+    "phone": "278-6603",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DE GRACIA, MANUEL",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "CENTRO MÉDICO ESP. SAN FERNANDO",
+    "phone": "204-8312",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DE LA CRUZ GARCÍA, ABBY VANESSA",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DE LEON, HUMBERTO",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "225-2697",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DE LEÓN , LUIS J. CONSULTORIOS SAN JUDAS TADEO",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "No especificada",
+    "phone": "204-8312",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DEJUANE MATEO, MARIA ELISA",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "204-8312",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ELLIS HARVEY, DAVID",
+    "specialty": "OTORRINOLARINGOLOGÍA",
+    "location": "CENTRO MÉDICO ESP. SAN FERNANDO",
+    "phone": "229-6691",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "FARRO SERRANO, VICTOR MANUEL",
+    "specialty": "PATOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "204-8312",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GARCIA BARRIOS, RAMIRO",
+    "specialty": "PATOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "204-8312",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GRIMALDO, ROBERTO",
+    "specialty": "PATOLOGÍA",
+    "location": "CENTRO MÉDICO ESP. SAN FERNANDO",
+    "phone": "204-8312",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ICAZA VALDES, KAREN AIMEE",
+    "specialty": "PATOLOGÍA",
+    "location": "CENTRO MÉDICO ESP. SAN FERNANDO",
+    "phone": "224-5470",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ITURRALDE M., RODOLFO A",
+    "specialty": "PATOLOGÍA",
+    "location": "CENTRO MÉDICO ESP. SAN FERNANDO",
+    "phone": "204-8312",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "JOLY, RAFAEL",
+    "specialty": "PATOLOGÍA",
+    "location": "CENTRO MÉDICO ESP. SAN FERNANDO",
+    "phone": "204-8312",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LEANDRO, ICARO",
+    "specialty": "PATOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "269-9212",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LEZCANO, LUIS FELIPE CONSULTORIOS SAN JUDAS TADEO",
+    "specialty": "PATOLOGÍA",
+    "location": "No especificada",
+    "phone": "204-8312",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LOPEZ S., MARIANA E.",
+    "specialty": "PATOLOGÍA",
+    "location": "CONSULTORIOS AMÉRICA",
+    "phone": "204-8312",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LUM CHIAL, HENRY",
+    "specialty": "PATOLOGÍA",
+    "location": "CENTRO MÉDICO ESP. SAN FERNANDO",
+    "phone": "229-3524",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MENDEZ DUTARY, DAVID EFRAIN",
+    "specialty": "PATOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "206-2585",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MILORD DE MANZANARES, ARIADNE",
+    "specialty": "PATOLOGÍA",
+    "location": "CENTRO MÉDICO ESP. SAN FERNANDO",
+    "phone": "229-6605",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MIZRACHI, ALBERTO",
+    "specialty": "PATOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "278-6608",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MURGAS TORRAZZA, ROBERTO J.",
+    "specialty": "PATOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8000",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "NELSON VALDES, EDUARDO",
+    "specialty": "PATOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "394-7857",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PEÑALBA S., ROBERTO",
+    "specialty": "PATOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS SAN JUDAS TADEO",
+    "phone": "204-8312",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RICO CEDEÑO, YARMINIA DEL C.",
+    "specialty": "PATOLOGÍA",
+    "location": "CONSULTORIOS AMÉRICA",
+    "phone": "204-8312",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RODRIGUEZ HERNANDEZ, LESBIA EDITH",
+    "specialty": "PATOLOGÍA",
+    "location": "CONSULTORIOS AMÉRICA",
+    "phone": "204-8312",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RODRIGUEZ LAVERGNE, MIGUEL",
+    "specialty": "PATOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "227-5444",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RUEDA, KATIA",
+    "specialty": "PATOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "395-4064",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RUIZ GUTIERREZ, JUAN ANTONIO",
+    "specialty": "PATOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8000",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SAAVEDRA ESPINOZA, JOSE SILVIO",
+    "specialty": "PATOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "394-7857",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SALAS CESPEDES, ALBINO",
+    "specialty": "PATOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SUGASTI P., SECUNDINO",
+    "specialty": "PATOLOGÍA",
+    "location": "CENTRO MÉDICO ESP. SAN FERNANDO",
+    "phone": "204-8312",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "TEJEIRA ARAUZ, ORLANDO JOSE",
+    "specialty": "PATOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "204-8312",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VEGA, JULIO CESAR",
+    "specialty": "PATOLOGÍA",
+    "location": "CONSULTORIOS AMÉRICA",
+    "phone": "229-4388",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VERBEL ARROCHA, PEDRO E.",
+    "specialty": "PATOLOGÍA",
+    "location": "CONSULTORIOS AMÉRICA",
+    "phone": "204-8312",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BAMBU RODRIGUEZ, MIGUEL A.",
+    "specialty": "PATOLOGÍA",
+    "location": "CENTRO MÉDICO ESP. SAN FERNANDO",
+    "phone": "204-8312",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BISSOT, ALBERTO",
+    "specialty": "PATOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BONILLA MORALES, TELSYS Y.",
+    "specialty": "PATOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "206-2586",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CASTILLERO SANTOS, NESTOR M.",
+    "specialty": "PATOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "204-8312",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CORREOSO DOMINGUEZ, NITZA I.",
+    "specialty": "PATOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "204-8312",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GALLARDO SOSA, PAUL GASTON",
+    "specialty": "PATOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "204-8312",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GÓNZALEZ, IAN",
+    "specialty": "PATOLOGÍA",
+    "location": "THE PANAMÁ CLINIC",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "HERRERA, DANIEL DANILO",
+    "specialty": "PATOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8486",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "IOVANE IBAÑEZ, MARIA TERESA",
+    "specialty": "PATOLOGÍA",
+    "location": "CENTRO MÉDICO ESP. SAN FERNANDO",
+    "phone": "204-8312",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LOMBARDO, VERA ITZEL",
+    "specialty": "PATOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "204-8312",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MEDRANO DE LEON, JORGE JUAN",
+    "specialty": "PATOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "394-7857",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RIVERA CHEN, GERARDO",
+    "specialty": "PATOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RUIDIAZ P., ENRIQUE",
+    "specialty": "PATOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8397",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SANCHEZ LOPEZ, JESUALDA LISET",
+    "specialty": "PATOLOGÍA",
+    "location": "CENTRO MÉDICO ESP. SAN FERNANDO",
+    "phone": "395-4064",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SIERRA ROBLES, IVAN AUGUSTO",
+    "specialty": "PATOLOGÍA",
+    "location": "CENTRO MÉDICO ESP. SAN FERNANDO",
+    "phone": "206-2588",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SOLANO VILLANUEVA, HORTENSIA",
+    "specialty": "PATOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "TORRES HERRERA, MILITZA",
+    "specialty": "PATOLOGÍA",
+    "location": "CENTRO MÉDICO ESP. SAN FERNANDO",
+    "phone": "204-8312",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "VAUGHAN COBO, LOURDES DEL C.",
+    "specialty": "PATOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8000",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PEREZ NINAMANGO, ANGIE VANESA",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "CLÍNICA CONDADO",
+    "phone": "239-7019",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MARTINEZ HERRERA, MAGDALENA",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "CONS. MÉDICOS ROYAL CENTER",
+    "phone": "315-6817",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ALMENGOR GALVAN, ARLENE ANETTE",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "396-0155",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BONILLA QUIJADA, ISIS DEL CARMEN",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "360-7441",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BUITRAGO MORENO, KAREN",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "386-5845",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ARANDA ESPINOZA, NORIS ESTHER",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8000",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ALEXIS PALACIOS ADAMES",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "232-8196",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ANIBAL URRUTIA",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "261-0610",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MAYLIN RUIZ VALDES",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8159",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LOPEZ CERRUD, GALEN",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "CENTRO MÉDICO ESP. SAN FERNANDO",
+    "phone": "229-7740",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ALSTON BERNAL, CELESTE",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "CENTRO MEDICO INTEGRAL ALTA, ESPECIALIDAD",
+    "phone": "307-3665",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BECKFORD VILLALVAZO, CLEVELAND A.",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "260-7909",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BODDEN M., ELIAS",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8428",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BYER, ARMANDO",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "307-3620",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CASTILLO NORIEGA, GRACIELA E.",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CASTRO FERRARI, JORGE ALONSO",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "395-4194",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CORCIONE, GIUSEPPE",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "269-1073",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CRESPO BATISTA, DAVID",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "269-1073",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DEL ROSARIO, JAVIER",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "CENTRO MÉDICO ESP. SAN FERNANDO",
+    "phone": "261-6326",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DIAZ GONZALEZ, JORGE AUGUSTO",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6352",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "DONDERIS LOUISON, RICARDO ALBERTO",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "204-8312",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ESPINO, GUSTAVO",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "307-3620",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ESPINOSA, CARLOS",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "PACÍFICA SALUD, INSTITUTO DE SALUD FEMENINA",
+    "phone": "204-8533",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "FIGUEROA RODRIGUEZ, EDGAR ANEL",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "229-3524",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "FLETCHER, EDUARDO",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "393-8148",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GARCIA LOPEZ, GUILLERMO ELOY",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "206-2595",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GUERRA DAJER, MANUEL ALFREDO",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "261-9057",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "HASAN, KHALIL",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "265-5737",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MANDULEY CARRIZO, ALEJANDRO",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "229-9739",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MONTAGNE, VIANETTE",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "382-5445",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MONTERREY P., JUAN A.",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "305-6300",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "MORALES, WALTER",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "307-3620",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PERSCKY, INGRID MARIA",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "263-7977",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PIMENTEL MONTERO, EDWIN ELIAS",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "305-6358",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PINEDA DELGADILLO, ALBINS",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "CLÍNICA HOSPITAL SAN FERNANDO",
+    "phone": "302-3877",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RODRIGUEZ LAY, RAMON",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "CONS. MÉDICOS ROYAL CENTER",
+    "phone": "263-3490",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RODRIGUEZ TEJADA, JULIO JOSE",
+    "specialty": "PEDIATRÍA/NEONATOLOGÍA",
+    "location": "HOSPITAL SANTA FÉ",
+    "phone": "305-6351",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BRUGIATI SANJUR, CARLOS ALBERTO",
+    "specialty": "PSIQUIATRÍA",
+    "location": "No especificada",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ROMAN, PAOLA",
+    "specialty": "REUMATOLOGÍA",
+    "location": "HOSPITAL NACIONAL",
+    "phone": "227-5444",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RUIZ JAEN, LETICIA JOSEFINA",
+    "specialty": "REUMATOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "315-0811",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "SOTO TROYA, IRELA YINEL",
+    "specialty": "REUMATOLOGÍA",
+    "location": "PACÍFICA SALUD",
+    "phone": "203-5561",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "YOUNG, MARCOS",
+    "specialty": "REUMATOLOGÍA",
+    "location": "CONSULTORIOS MÉDICOS PAITILLA",
+    "phone": "278-2105",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ESPINOSA, CARLOS",
+    "specialty": "REUMATOLOGÍA",
+    "location": "PACÍFICA SALUD, INSTITUTO DE SALUD FEMENINA",
+    "phone": "204-8533",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BATISTA BARRIAS, JONATHAN ABDIEL",
+    "specialty": "REUMATOLOGÍA",
+    "location": "HOSPITAL PANAMERICANO",
+    "phone": "253-3447",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CARLEY RUIZ, HOWARD ISAAC",
+    "specialty": "REUMATOLOGÍA",
+    "location": "HOSPITAL PANAMERICANO",
+    "phone": "253-3448",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CRAGWELL TUÑON, MARTIN HUMBERTO",
+    "specialty": "REUMATOLOGÍA",
+    "location": "HOSPITAL PANAMERICANO",
+    "phone": "253-3449",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "GUEVARA UREÑA, MIGUEL",
+    "specialty": "REUMATOLOGÍA",
+    "location": "HOSPITAL PANAMERICANO",
+    "phone": "253-3450",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "RIOS CABALLERO, EVELYN",
+    "specialty": "REUMATOLOGÍA",
+    "location": "HOSPITAL PANAMERICANO",
+    "phone": "253-3451",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LEE MITRE, KEI MEI",
+    "specialty": "REUMATOLOGÍA",
+    "location": "HOSPITAL PANAMERICANO",
+    "phone": "253-3447",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LOPEZ MIRANDA, ROSARIO",
+    "specialty": "REUMATOLOGÍA",
+    "location": "HOSPITAL PANAMERICANO",
+    "phone": "204-8632",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "IBARRA MARTINEZ, ABEL",
+    "specialty": "REUMATOLOGÍA",
+    "location": "HOSPITAL PANAMERICANO",
+    "phone": "253-3447",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "LEE, YERINA CLÍNICA CEMPO (BOULEVARD COSTA VERDE)",
+    "specialty": "REUMATOLOGÍA",
+    "location": "No especificada",
+    "phone": "344-4432",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "OLMEDO RODRIGUEZ, JOAQUIN C.",
+    "specialty": "REUMATOLOGÍA",
+    "location": "HOSPITAL PANAMERICANO",
+    "phone": "253-6996",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "BRAVO B., EUSEBIO E.",
+    "specialty": "REUMATOLOGÍA",
+    "location": "HOSPITAL PANAMERICANO",
+    "phone": "253-3447",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "FU ALVAREZ, CARLOS ENRIQUE",
+    "specialty": "REUMATOLOGÍA",
+    "location": "HOSPITAL PANAMERICANO",
+    "phone": "6200-4331",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ITURRALDE MORAN, CAMILO ABEL",
+    "specialty": "REUMATOLOGÍA",
+    "location": "HOSPITAL PANAMERICANO",
+    "phone": "253-3447",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "PINTO, JOSE",
+    "specialty": "REUMATOLOGÍA",
+    "location": "CLÍNICA DE ESPECIALIDADES MÉDICAS,, PENONOMÉ",
+    "phone": "997-9702",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CLÍNICA DE ESPECIALIDADES MÉDICAS",
+    "specialty": "REUMATOLOGÍA",
+    "location": "PENONOMÉ",
+    "phone": "997-9702",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "CAMPOS AVILA, CRISTOBALINA ESTHER",
+    "specialty": "REUMATOLOGÍA",
+    "location": "SERVICIOS MÉDICOS AGUADULCE",
+    "phone": "997-0860",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "UREÑA, RUBEN",
+    "specialty": "UROGINECOLOGÍA",
+    "location": "No especificada",
+    "phone": "",
+    "province": "PANAMÁ"
+  },
+  {
+    "name": "ROJAS SANTILLANA,EDWIN DANIEL",
+    "specialty": "GINECOLOGÍA",
+    "location": "CLÍNICA HOSPITAL ZARATÍ",
+    "phone": "908-5501",
+    "province": "COCLÉ"
+  },
+  {
+    "name": "CHE S., JAVIER E.",
+    "specialty": "GINECOLOGÍA",
+    "location": "CLÍNICA HOSPITAL ZARATÍ",
+    "phone": "991-2767",
+    "province": "COCLÉ"
+  },
+  {
+    "name": "TEJERA GONZALEZ, GERMAN ANTONIO",
+    "specialty": "GINECOLOGÍA",
+    "location": "SERVICIOS MÉDICOS AGUADULCE",
+    "phone": "997-6904",
+    "province": "COCLÉ"
+  },
+  {
+    "name": "ESCALONA CHONG, JORGE MIGUEL",
+    "specialty": "GINECOLOGÍA",
+    "location": "SERVICIOS MÉDICOS AGUADULCE",
+    "phone": "997-0860",
+    "province": "COCLÉ"
+  },
+  {
+    "name": "BONAGAS MEDIANERO, JESSICA JOANNA",
+    "specialty": "GINECOLOGÍA",
+    "location": "CENTRO MÉDICO DEL CARIBE",
+    "phone": "441-4420",
+    "province": "COCLÉ"
+  },
+  {
+    "name": "CRAGWELL TUÑON, MARTIN HUMBERTO",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL CUATRO ALTOS",
+    "phone": "445-7234",
+    "province": "COCLÉ"
+  },
+  {
+    "name": "GUERRERO, NODIER",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL CUATRO ALTOS",
+    "phone": "441-4420",
+    "province": "COCLÉ"
+  },
+  {
+    "name": "IGLESIAS ROZAS, FRANCISCO JAVIER",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL CUATRO ALTOS",
+    "phone": "433-7513",
+    "province": "COCLÉ"
+  },
+  {
+    "name": "FENTON SANTANA, ERNESTO CECILIO",
+    "specialty": "GINECOLOGÍA",
+    "location": "CENTRO MÉDICO DEL CARIBE",
+    "phone": "441-4420",
+    "province": "COCLÉ"
+  },
+  {
+    "name": "GONZALEZ G., ROLANDO ELIAS",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL CUATRO ALTOS",
+    "phone": "474-5308",
+    "province": "COCLÉ"
+  },
+  {
+    "name": "PARDO ACOSTA, NIMIA ARACELY",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL CUATRO ALTOS",
+    "phone": "433-7500",
+    "province": "COCLÉ"
+  },
+  {
+    "name": "TOVARES URIETA, SUANY MARIELYS",
+    "specialty": "GINECOLOGÍA",
+    "location": "CENTRO MÉDICO DEL CARIBE",
+    "phone": "441-4420",
+    "province": "COCLÉ"
+  },
+  {
+    "name": "TREJOS ALVARADO, JAIME",
+    "specialty": "GINECOLOGÍA",
+    "location": "CENTRO MÉDICO DEL CARIBE",
+    "phone": "441-4420",
+    "province": "COCLÉ"
+  },
+  {
+    "name": "DIAZ BONILLA, ANTONIO",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL CUATRO ALTOS",
+    "phone": "441-4420",
+    "province": "COCLÉ"
+  },
+  {
+    "name": "THORNE SCOTT, KAMAL ELISHO",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL CUATRO ALTOS",
+    "phone": "442-1373",
+    "province": "COCLÉ"
+  },
+  {
+    "name": "GALVAN RENTERIA, LUTE",
+    "specialty": "GINECOLOGÍA",
+    "location": "CENTRO MÉDICO DEL CARIBE",
+    "phone": "441-4420",
+    "province": "COCLÉ"
+  },
+  {
+    "name": "GONZÁLEZ AGUIRRE, DAMARIS",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL CUATRO ALTOS",
+    "phone": "204-8581",
+    "province": "COCLÉ"
+  },
+  {
+    "name": "VÁSQUEZ ATENCIO, LEIDY",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL CUATRO ALTOS",
+    "phone": "204-8581",
+    "province": "COCLÉ"
+  },
+  {
+    "name": "HURTADO, NICOLAS HENRY",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL CUATRO ALTOS",
+    "phone": "433-7400",
+    "province": "COCLÉ"
+  },
+  {
+    "name": "WITTGREEN GONZALEZ, RANDALL D.",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL CUATRO ALTOS",
+    "phone": "433-7400",
+    "province": "COCLÉ"
+  },
+  {
+    "name": "SMITH ROMERO, RONALD",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL CUATRO ALTOS",
+    "phone": "433-7400",
+    "province": "COCLÉ"
+  },
+  {
+    "name": "RODRIGUEZ MOLINAR, LUIS ENRIQUE",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL CUATRO ALTOS",
+    "phone": "433-7504",
+    "province": "COCLÉ"
+  },
+  {
+    "name": "JURADO E., JULIO CESAR",
+    "specialty": "GINECOLOGÍA",
+    "location": "CENTRO MÉDICO DEL CARIBE",
+    "phone": "441-4420",
+    "province": "COCLÉ"
+  },
+  {
+    "name": "WILLIAMS DERBY, VICTORIA ANASTASIA",
+    "specialty": "GINECOLOGÍA",
+    "location": "HOSPITAL CUATRO ALTOS",
+    "phone": "433-7400",
+    "province": "COCLÉ"
+  },
+  {
+    "name": "BELIZ PORTILLO, EDWIN ANTONIO",
+    "specialty": "CARDIOLOGÍA",
+    "location": "No especificada",
+    "phone": "",
+    "province": "COCLÉ"
+  },
+  {
+    "name": "ALMENDRAL, ANDRÉS",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "CENTRO MÉDICO DEL CARIBE",
+    "phone": "441-4420",
+    "province": "COLÓN"
+  },
+  {
+    "name": "CASTRO, HECTOR R.",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "HOSPITAL CUATRO ALTOS",
+    "phone": "441-4420",
+    "province": "COLÓN"
+  },
+  {
+    "name": "LEON JULIO, ADRIANO YOUNG",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "HOSPITAL CUATRO ALTOS",
+    "phone": "251-3626",
+    "province": "COLÓN"
+  },
+  {
+    "name": "ANDERSON PEAT, MAURICIO VALENTINO",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "HOSPITAL CUATRO ALTOS",
+    "phone": "474-1320",
+    "province": "COLÓN"
+  },
+  {
+    "name": "CELY NIÑO, LUIS ROBERTO",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "HOSPITAL CUATRO ALTOS",
+    "phone": "441-4420",
+    "province": "COLÓN"
+  },
+  {
+    "name": "JASPE CASTAÑO, JAIME ANTONIO",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "HOSPITAL CUATRO ALTOS",
+    "phone": "474-1452",
+    "province": "COLÓN"
+  },
+  {
+    "name": "KRAVCIO, ERIC*",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "HOSPITAL CUATRO ALTOS",
+    "phone": "474-1320",
+    "province": "COLÓN"
+  },
+  {
+    "name": "MATURELL, JORGE ALBERTO",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "HOSPITAL CUATRO ALTOS",
+    "phone": "441-4420",
+    "province": "COLÓN"
+  },
+  {
+    "name": "ROMERO V., JULIO C.",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "HOSPITAL CUATRO ALTOS",
+    "phone": "475-2211",
+    "province": "COLÓN"
+  },
+  {
+    "name": "ACIEGO LAN, ARTURO ANTONIO",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "CENTRO MÉDICO DEL CARIBE",
+    "phone": "441-4420",
+    "province": "COLÓN"
+  },
+  {
+    "name": "CEBALLOS AMADOR, CARLOS CESAR",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "CENTRO MÉDICO DEL CARIBE",
+    "phone": "441-4420",
+    "province": "COLÓN"
+  },
+  {
+    "name": "DE GRACIA TEJADA, PUBLIO",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "HOSPITAL CUATRO ALTOS",
+    "phone": "433-7400",
+    "province": "COLÓN"
+  },
+  {
+    "name": "GAONA, DILIA",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "CENTRO MÉDICO DEL CARIBE",
+    "phone": "441-4420",
+    "province": "COLÓN"
+  },
+  {
+    "name": "RIOS CARRILLO, ARMANDO",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "CENTRO MÉDICO DEL CARIBE",
+    "phone": "441-4420",
+    "province": "COLÓN"
+  },
+  {
+    "name": "WILLIAMS LARSON, KENNETH ANTONIO",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "HOSPITAL CUATRO ALTOS",
+    "phone": "474-1832",
+    "province": "COLÓN"
+  },
+  {
+    "name": "TAMARA GONZALEZ DIAZ",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "CENTRO MÉDICO DEL CARIBE",
+    "phone": "441-4420",
+    "province": "COLÓN"
+  },
+  {
+    "name": "HERALDEZ MACKAY, CRUZ MARIA",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "HOSPITAL CUATRO ALTOS",
+    "phone": "470-0420",
+    "province": "COLÓN"
+  },
+  {
+    "name": "DE BERNARD, MARTEL",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "HOSPITAL CUATRO ALTOS",
+    "phone": "441-4409",
+    "province": "COLÓN"
+  },
+  {
+    "name": "PINZON, TRISTAN L.",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "HOSPITAL CUATRO ALTOS",
+    "phone": "433-7504",
+    "province": "COLÓN"
+  },
+  {
+    "name": "ESCALA M., ANGEL BOLIVAR CENTRO MÉDICO MAE LEWIS",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "No especificada",
+    "phone": "775-4616",
+    "province": "COLÓN"
+  },
+  {
+    "name": "ANDRADE, JORGE EDUARDO HOSPITAL CHIRIQUÍ",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "No especificada",
+    "phone": "775-4616",
+    "province": "COLÓN"
+  },
+  {
+    "name": "APARICIO CEDEÑO, BLANCA ELENA HOSPITAL CHIRIQUÍ",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "No especificada",
+    "phone": "730-4511",
+    "province": "COLÓN"
+  },
+  {
+    "name": "CASTAÑO GOMEZ, RENATA A. CENTRO MÉDICO MAE LEWIS",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "No especificada",
+    "phone": "730-5909",
+    "province": "COLÓN"
+  },
+  {
+    "name": "ESCALA M., ANGEL BOLIVAR CENTRO MÉDICO MAE LEWIS",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "No especificada",
+    "phone": "730-5909",
+    "province": "COLÓN"
+  },
+  {
+    "name": "ESPINOSA M., CALIXTO HOSPITAL CHIRIQUÍ",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "No especificada",
+    "phone": "775-4616",
+    "province": "COLÓN"
+  },
+  {
+    "name": "SAMUDIO B., EYNAR M. HOSPITAL CHIRIQUÍ",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "No especificada",
+    "phone": "775-0738",
+    "province": "COLÓN"
+  },
+  {
+    "name": "CORREA, DOMINGO HOSPITAL CHIRIQUÍ",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "No especificada",
+    "phone": "777-8064",
+    "province": "COLÓN"
+  },
+  {
+    "name": "BRUNO CAO, VICTOR HUGO CENTRO MÉDICO MAE LEWIS",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "776-4616",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "CABALLERO ADAMES, ARMANDO F. CENTRO MÉDICO MAE LEWIS",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "6638-0840",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "CATTAN ALVAREZ, SAMUEL LUIS CENTRO MÉDICO MAE LEWIS",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "774-0871",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "COTES SMITH, MARICELA OSIRIS HOSPITAL CHIRIQUÍ",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "730-5080",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "GUERRA MARTINEZ, ALGIS ABDIEL HOSPITAL CHIRIQUÍ",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "774-0128",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "HURTADO SANJUR, MARIELA GISELLE CENTRO MÉDICO MAE LEWIS",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "775-4616",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "JACOME RODRIGUEZ, GUSTAVO A.HOSPITAL CHIRIQUÍ",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "774-0128",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "LOPEZ NIETO, ANA TERESA HOSPITAL CHIRIQUÍ",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "774-0128",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "MIRANDA RIVERA, ERICK CENTRO MÉDICO MAE LEWIS",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "775-4616",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "MORALES BOUCHE, FELIX A. CENTRO MÉDICO MAE LEWIS",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "775-4616",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "PRIETO, JOSSARY M. HOSPITAL CHIRIQUÍ",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "774-0128",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "RIVERA AROSEMENA, RUBEN D.HOSPITAL CHIRIQUÍ",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "774-0128",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "SANJUR GUERRA, GLARISSA LIBED HOSPITAL CHIRIQUÍ",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "774-0128",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "YANGUEZ CASTILLO, ADALBERTO HOSPITAL CHIRIQUÍ",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "777-8076",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "ABADIA, CARLOS ENRIQUE HOSPITAL CHIRIQUÍ",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "774-0128",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "MIRONES CASTRO, DALILA IDAZELCENTRO MÉDICO MAE LEWIS",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "775-4149",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "DE LEON AROSEMENA, LUCAS GILBERTO HOSPITAL CHIRIQUÍ",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "777-8084",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "BEITIA M., VELKYS Y.HOSPITAL CHIRIQUÍ",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "774-0128",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "ADAMES ORTIZ, ENRIQUE JUAN HOSPITAL CHIRIQUÍ",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "774-0128",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "ARIAS, TOMÁS HOSPITAL CHIRIQUÍ",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "777-8024",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "CHONG CHUNG, WILLIAM HOSPITAL CHIRIQUÍ",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "730-5129",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "GOMEZ ARAUZ, ARACELLY JOSSIVA HOSPITAL CHIRIQUÍ",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "774-0128",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "GUERRA GONZALEZ, ARIEL EDGARDO HOSPITAL CHIRIQUÍ",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "777-8012",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "KAM WONG, DANIELHOSPITAL CHIRIQUÍ",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "774-0128",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "NOVOA, GLADYS HOSPITAL CHIRIQUÍ",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "774-0128",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "QUINTERO DE LEON, ARELYS MELISSA CENTRO MÉDICO MAE LEWIS",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "775-4616",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "RODRIGUEZ, JORGE G. CENTRO MÉDICO MAE LEWIS",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "775-4616",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "ROWE MOLLAH, VILDIA MICHELLE HOSPITAL CHIRIQUÍ",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "774-0128",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "SHEPHERD ORTEGA, MANUEL A. HOSPITAL CHIRIQUÍ",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "774-0128",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "ALVARADO, HEYDY MIRLA HOSPITAL CHIRIQUÍ",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "774-0128",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "VALDEZ CARRERA, ROBERTINO HOSPITAL CHIRIQUÍ",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "774-0128",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "HURTADO MUÑOZ, AMILCAR EDWARD HOSPITAL CHIRIQUÍ",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "774-0128",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "STAFF GOMEZ, EDGAR EDUARDO HOSPITAL CHIRIQUÍ",
+    "specialty": "ANESTESIOLOGÍA",
+    "location": "No especificada",
+    "phone": "777-8083",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "NOVOA, NADJI RAQUEL HOSPITAL CHIRIQUÍ",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "No especificada",
+    "phone": "774-0128",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "AROSEMENA MORENO, ALCIBIADES CENTRO MÉDICO MAE LEWIS",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "No especificada",
+    "phone": "775-4616",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "SERRUD ESPINO, HUMBERTO ADOARDO CENTRO MÉDICO MAE LEWIS",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "No especificada",
+    "phone": "775-4616",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "ALMENDRAL, ANDRES CENTRO MÉDICO MAE LEWIS",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "No especificada",
+    "phone": "775-4616",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "VILLARREAL NUÑEZ, FELIPE ELIAS HOSPITAL CHIRIQUÍ",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "No especificada",
+    "phone": "776-9055",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "GOMEZ GOFF DE BAEZ, BLANCA M. CENTRO MÉDICO MAE LEWIS",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "No especificada",
+    "phone": "775-4616",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "VELASCO DE ARIAS, MITZI DEL ROSARIO CENTRO MÉDICO MAE LEWIS",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "No especificada",
+    "phone": "774-0128",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "ABADIA, FELIX HOSPITAL CHIRIQUÍ",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "No especificada",
+    "phone": "777-8064",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "AIZPURÚA B., MARIO F. HOSPITAL CHIRIQUÍ",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "No especificada",
+    "phone": "777-8092",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "ARAUZ GUEVARA, EYNAR E.CLÍNICA HOSPITAL CATTAN",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "No especificada",
+    "phone": "730-4440",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "BAEZ DEL PUERTO, DONALDO CENTRO MÉDICO MAE LEWIS",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "No especificada",
+    "phone": "777-8085",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "CUESTAS POLANCO, LUIS MARIO CLÍNICA HOSPITAL CATTAN",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "No especificada",
+    "phone": "730-4440",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "GONZALEZ DE HOYOS, ARKEL ANTONIO HOSPITAL CHIRIQUÍ",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "No especificada",
+    "phone": "774-0128",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "GONZALEZ GONZALEZ, CEFERINO HOSPITAL CHIRIQUÍ",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "No especificada",
+    "phone": "774-3226",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "MUÑOZ S., ESTEBAN*HOSPITAL CHIRIQUÍ",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "No especificada",
+    "phone": "775-4616",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "ORTIZ CASTILLO, ALEXANDER HOSPITAL CHIRIQUÍ",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "No especificada",
+    "phone": "774-0128",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "OSIGIAN GUERRA, GEOVANY RENE HOSPITAL CHIRIQUÍ",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "No especificada",
+    "phone": "775-4616",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "RODRIGUEZ, AVID JULIO CENTRO MÉDICO MAE LEWIS",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "No especificada",
+    "phone": "730-3608",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "GOZAINE ABDELMALAK, TEOFILO CAMILO HOSPITAL CHIRIQUÍ",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "No especificada",
+    "phone": "774-0128",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "GRENALD RIOS, MARIO XAVIER HOSPITAL CHIRIQUÍ",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "No especificada",
+    "phone": "775-4616",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "MILANES SUAREZ, RAFAEL JOSE CENTRO MÉDICO MAE LEWIS",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "No especificada",
+    "phone": "838-0306",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "SANTAMARIA ALVAREZ, RAFAEL ANGEL HOSPITAL CHIRIQUÍ",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "No especificada",
+    "phone": "775-4616",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "AGUILAR ROMERO, ELIA EDITH CAROLINA CENTRO MÉDICO MAE LEWIS",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "No especificada",
+    "phone": "775-4616",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "CORONADO, GREGORIO HOSPITAL CHIRIQUÍ",
+    "specialty": "GASTROENTEROLOGÍA",
+    "location": "No especificada",
+    "phone": "774-9465",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "MIRANDA, ALBAHOSPITAL CHIRIQUÍ",
+    "specialty": "PEDIATRÍA",
+    "location": "No especificada",
+    "phone": "774-0128",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "WONG, SIKIA M",
+    "specialty": "PEDIATRÍA",
+    "location": "CENTRO MÉDICO ESPECIALIZADO TODO, SALUD",
+    "phone": "730-2220",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "ARIAS BEITIA, KHAYAM SARAK HOSPITAL CHIRIQUÍ",
+    "specialty": "PEDIATRÍA",
+    "location": "No especificada",
+    "phone": "775-7071",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "GOAD RIOS, KEVIN LAIRD HOSPITAL CATTAN",
+    "specialty": "PEDIATRÍA",
+    "location": "No especificada",
+    "phone": "775-7099",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "GUERRERO M., DON MANUEL VIRGILIO CENTRO MÉDICO MAE LEWIS",
+    "specialty": "PEDIATRÍA",
+    "location": "No especificada",
+    "phone": "775-4616",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "ROSS MENDEZ, REYNALDO AMHAT CENTRO MÉDICO MAE LEWIS",
+    "specialty": "PEDIATRÍA",
+    "location": "No especificada",
+    "phone": "775-4616",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "SANCHEZ D., MARTA CECILIA*TODO SALUD/ CLINICA UROLOGICA",
+    "specialty": "PEDIATRÍA",
+    "location": "No especificada",
+    "phone": "787-1872",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "BUENDÍA MARTÍNEZ, ICIAR DEL R. CLÍNICA HOSPITAL VENANCIO VILLARREAL",
+    "specialty": "PEDIATRÍA",
+    "location": "No especificada",
+    "phone": "996-2360",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "CASTILLO DIAZ, ARCADIO ANTONIO CLÍNICA HOSPITAL SAN JUAN BAUTISTA",
+    "specialty": "PEDIATRÍA",
+    "location": "No especificada",
+    "phone": "996-4448",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "MORA TORRES, JORGE L.CLÍNICA HOSPITAL SAN JUAN BAUTISTA",
+    "specialty": "PEDIATRÍA",
+    "location": "No especificada",
+    "phone": "996-4448",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "PÉREZ MONTENEGRO, ABEL FLORENCIO CLÍNICA HOSPITAL SAN JUAN BAUTISTA",
+    "specialty": "PEDIATRÍA",
+    "location": "No especificada",
+    "phone": "996-4448",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "CLÍNICA GUADALUPANA, LAS TABLAS994-9730",
+    "specialty": "PEDIATRÍA",
+    "location": "No especificada",
+    "phone": "",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "COLLADO BARRERA, JOSE JOAQUIN CLÍNICA HOSPITAL SAN JUAN BAUTISTA",
+    "specialty": "PEDIATRÍA",
+    "location": "No especificada",
+    "phone": "996-2360",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "DÍAZ, FERNANDO CLÍNICA HOSPITAL SAN JUAN BAUTISTA",
+    "specialty": "PEDIATRÍA",
+    "location": "No especificada",
+    "phone": "996-4448",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "BERNAL MORENO, WALTER FERNELY CLÍNICA HOSPITAL SAN JUAN BAUTISTA",
+    "specialty": "PEDIATRÍA",
+    "location": "No especificada",
+    "phone": "996-4448",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "CORTES SANTANA, EDUARDO JOSE CLÍNICA HOSPITAL SAN JUAN BAUTISTA",
+    "specialty": "PEDIATRÍA",
+    "location": "No especificada",
+    "phone": "996-4448",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "CHIARI, ANA LORENA CLÍNICA HOSPITAL SAN JUAN BAUTISTA",
+    "specialty": "PEDIATRÍA",
+    "location": "No especificada",
+    "phone": "996-4448",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "GALVEZ G., ERIC N. CLÍNICA HOSPITAL SAN JUAN BAUTISTA",
+    "specialty": "PEDIATRÍA",
+    "location": "No especificada",
+    "phone": "996-0017",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "GONZALES BARRIOS, JACINTO CENTRO MÉDICO LOS SANTOS",
+    "specialty": "PEDIATRÍA",
+    "location": "No especificada",
+    "phone": "399-1384",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "MC LEAN CASTILLO, GAMALIEL NEFTALI CLINICA VACOR",
+    "specialty": "PEDIATRÍA",
+    "location": "No especificada",
+    "phone": "923-2086",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "VERGARA A, FRANCISCO J.CLINICA HOSPITAL DR. VENANCIO VILLARREAL",
+    "specialty": "PEDIATRÍA",
+    "location": "No especificada",
+    "phone": "994-7221",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "HO, MILENA YAVELCLÍNICA HOSPITAL SAN JUAN BAUTISTA",
+    "specialty": "PEDIATRÍA",
+    "location": "No especificada",
+    "phone": "996-2360",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "BROCE GUILLEN, ALBERTO JOSEHOSPITAL VENANCIO VILLARREAL",
+    "specialty": "PEDIATRÍA",
+    "location": "No especificada",
+    "phone": "996-2360",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "BURGOS RIVERA, HORACIO CLÍNICA HOSPITAL SAN JUAN BAUTISTA",
+    "specialty": "PEDIATRÍA",
+    "location": "No especificada",
+    "phone": "996-4689",
+    "province": "CHIRIQUÍ"
+  },
+  {
+    "name": "PINTO, JOSE",
+    "specialty": "CARDIOLOGÍA",
+    "location": "No especificada",
+    "phone": "",
+    "province": "HERRERA"
+  },
+  {
+    "name": "ORTEGA AYALA, RODRIGO GUSTAVO CLINICA HOSPITAL DR. VENANCIO VILLARREAL",
+    "specialty": "PEDIATRÍA / NEONATOLOGÍA",
+    "location": "No especificada",
+    "phone": "970-3200",
+    "province": "HERRERA"
+  },
+  {
+    "name": "CASTILLERO AVILES, PAOLA LUCIA CLÍNICA HOSPITAL SAN JUAN BAUTISTA",
+    "specialty": "PEDIATRÍA / NEONATOLOGÍA",
+    "location": "No especificada",
+    "phone": "996-4448",
+    "province": "HERRERA"
+  },
+  {
+    "name": "MCLEAN ARAGON, MARLENE LILI",
+    "specialty": "PEDIATRÍA / NEONATOLOGÍA",
+    "location": "CLINICA DE ESPECIALIDADES PEDIATRICAS, CHITRÉ",
+    "phone": "910-1250",
+    "province": "HERRERA"
+  },
+  {
+    "name": "GONZALEZ THIBAULT, ALEXANDER CENTRO MÉDICO SAN JUAN BAUTISTA",
+    "specialty": "PEDIATRÍA / NEONATOLOGÍA",
+    "location": "No especificada",
+    "phone": "996-2360",
+    "province": "HERRERA"
+  },
+  {
+    "name": "ORTEGA VEGA, ELIECER ARTURO CLÍNICA HOSPITAL SAN JUAN BAUTISTA",
+    "specialty": "PEDIATRÍA / NEONATOLOGÍA",
+    "location": "No especificada",
+    "phone": "996-4448",
+    "province": "HERRERA"
+  },
+  {
+    "name": "HIM BATISTA, LOURDES IVONNE CLÍNICA HOSPITAL SAN JUAN DE DIOS",
+    "specialty": "PEDIATRÍA / NEONATOLOGÍA",
+    "location": "No especificada",
+    "phone": "933-0059",
+    "province": "HERRERA"
+  },
+  {
+    "name": "SERRANO MIRANDA, LORENA MARISOL CLÍNICA HOSPITAL JESÚS NAZARENO",
+    "specialty": "PEDIATRÍA / NEONATOLOGÍA",
+    "location": "No especificada",
+    "phone": "998-1581",
+    "province": "HERRERA"
+  },
+  {
+    "name": "VALDELAMAR, ALEXISCLÍNICA HOSPITAL JESÚS NAZARENO",
+    "specialty": "PEDIATRÍA / NEONATOLOGÍA",
+    "location": "No especificada",
+    "phone": "998-1581",
+    "province": "HERRERA"
+  },
+  {
+    "name": "PINTO, JOSE",
+    "specialty": "PEDIATRÍA / NEONATOLOGÍA",
+    "location": "CLÍNICA VILLALBA, SANTIAGO",
+    "phone": "998-4969",
+    "province": "HERRERA"
+  },
+  {
+    "name": "CLÍNICA VILLALBA, SANTIAGO",
+    "specialty": "PEDIATRÍA / NEONATOLOGÍA",
+    "location": "No especificada",
+    "phone": "998-4969",
+    "province": "HERRERA"
+  },
+  {
+    "name": "AIZPURUA NAVARRO, ORLANDOCLÍNICA HOSPITAL JESÚS NAZARENO",
+    "specialty": "PEDIATRÍA / NEONATOLOGÍA",
+    "location": "No especificada",
+    "phone": "998-1581",
+    "province": "HERRERA"
+  },
+  {
+    "name": "CASTILLO GOMEZ, BISMARCK ARTURO CLÍNICA HOSPITAL JESÚS NAZARENO",
+    "specialty": "PEDIATRÍA / NEONATOLOGÍA",
+    "location": "No especificada",
+    "phone": "998-1581",
+    "province": "HERRERA"
+  },
+  {
+    "name": "GONZALEZ CORNEJO, AUDRID DINALYNCLÍNICA HOSPITAL JESÚS NAZARENO",
+    "specialty": "PEDIATRÍA / NEONATOLOGÍA",
+    "location": "No especificada",
+    "phone": "998-1581",
+    "province": "HERRERA"
+  },
+  {
+    "name": "YAP LEE, FREDY ONEL CLÍNICA HOSPITAL JESÚS NAZARENO",
+    "specialty": "PEDIATRÍA / NEONATOLOGÍA",
+    "location": "No especificada",
+    "phone": "998-4860",
+    "province": "HERRERA"
+  },
+  {
+    "name": "CORDOBA ADAMES, LIZBETH YARELYS CLÍNICA HOSPITAL SAN JUAN DE DIOS",
+    "specialty": "PEDIATRÍA / NEONATOLOGÍA",
+    "location": "No especificada",
+    "phone": "998-5583",
+    "province": "HERRERA"
+  },
+  {
+    "name": "MELILLO, DOMENICO CLÍNICA HOSPITAL JESÚS NAZARENO",
+    "specialty": "PEDIATRÍA / NEONATOLOGÍA",
+    "location": "No especificada",
+    "phone": "998-1581",
+    "province": "HERRERA"
+  },
+  {
+    "name": "PONCE, AXEL MANUEL CENTRO MÉDICO MELILLO",
+    "specialty": "PEDIATRÍA / NEONATOLOGÍA",
+    "location": "No especificada",
+    "phone": "998-1177",
+    "province": "HERRERA"
+  },
+  {
+    "name": "URIBE GIL, SOLEDAD CLÍNICA HOSPITAL SAN JUAN DE DIOS",
+    "specialty": "PEDIATRÍA / NEONATOLOGÍA",
+    "location": "No especificada",
+    "phone": "998-5583",
+    "province": "HERRERA"
+  },
+  {
+    "name": "BOTACIO, ETELBERTO CLÍNICA HOSPITAL JESÚS NAZARENO",
+    "specialty": "PEDIATRÍA / NEONATOLOGÍA",
+    "location": "No especificada",
+    "phone": "998-1581",
+    "province": "HERRERA"
+  },
+  {
+    "name": "CONCEPCION SANCHEZ, RICARDO A. CENTRO MÉDICO INTERAMERICANO",
+    "specialty": "PEDIATRÍA / NEONATOLOGÍA",
+    "location": "No especificada",
+    "phone": "998-0901",
+    "province": "HERRERA"
+  },
+  {
+    "name": "MARIN ESCOBAR, DIONISIA CLÍNICA HOSPITAL SAN JUAN DE DIOS",
+    "specialty": "PEDIATRÍA / NEONATOLOGÍA",
+    "location": "No especificada",
+    "phone": "997-3127",
+    "province": "HERRERA"
+  },
+  {
+    "name": "TIRADO DELGADO, RAFAEL ANTONIO CLÍNICA HOSPITAL SAN JUAN DE DIOS",
+    "specialty": "PEDIATRÍA / NEONATOLOGÍA",
+    "location": "No especificada",
+    "phone": "933-0060",
+    "province": "HERRERA"
+  },
+  {
+    "name": "TRISTÁN, RAFAEL CLÍNICA HOSPITAL SAN JUAN DE DIOS",
+    "specialty": "PEDIATRÍA / NEONATOLOGÍA",
+    "location": "No especificada",
+    "phone": "933-0060",
+    "province": "HERRERA"
+  },
+  {
+    "name": "GONZALEZ AGUDO, CEFERINO CLÍNICA HOSPITAL SAN JUAN DE DIOS",
+    "specialty": "PEDIATRÍA / NEONATOLOGÍA",
+    "location": "No especificada",
+    "phone": "998-1177",
+    "province": "HERRERA"
+  },
+  {
+    "name": "JOVANE CARRIZO, SAUL ANTONIO CLÍNICA HOSPITAL SAN JUAN DE DIOS",
+    "specialty": "PEDIATRÍA / NEONATOLOGÍA",
+    "location": "No especificada",
+    "phone": "998-5583",
+    "province": "HERRERA"
+  },
+  {
+    "name": "LUQUE GONZALEZ, JOSE ABDIEL CENTRO MÉDICO GÉNESIS",
+    "specialty": "PEDIATRÍA / NEONATOLOGÍA",
+    "location": "No especificada",
+    "phone": "958-5081",
+    "province": "HERRERA"
+  },
+  {
+    "name": "TEJADA AGUILAR, GESAID DENAZARETH CLÍNICA HOSPITAL JESÚS NAZARENO",
+    "specialty": "PEDIATRÍA / NEONATOLOGÍA",
+    "location": "No especificada",
+    "phone": "998-1581",
+    "province": "HERRERA"
+  },
+  {
+    "name": "VILLALAZ, FERNANDO CLÍNICA HOSPITAL JESÚS NAZARENO",
+    "specialty": "PEDIATRÍA / NEONATOLOGÍA",
+    "location": "No especificada",
+    "phone": "998-4965",
+    "province": "HERRERA"
+  },
+  {
+    "name": "\"Esta red médica está sujeta a cambios, se deberá consultar en nuestra página web para confirmar el proveedor",
+    "specialty": "PEDIATRÍA",
+    "location": "Regulado y Supervisado por la Superintendencia de Seguros y Reaseguros de Panamá.",
+    "phone": "",
+    "province": "HERRERA"
+  }
+]

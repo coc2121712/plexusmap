@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -75,16 +76,15 @@ export default function LoginPage() {
     <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
-          <a href="/" className="inline-flex items-center gap-2">
-            <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
-                <circle cx="12" cy="12" r="3" />
-                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
-              </svg>
-            </div>
-            <span className="text-xl font-bold text-gray-900">
-              Plexus<span className="text-primary">Map</span>
-            </span>
+          <a href="/" className="inline-block">
+            <Image
+              src="/logo-plexusmap.png"
+              alt="PlexusMap"
+              width={120}
+              height={120}
+              className="h-[120px] w-auto mx-auto"
+              priority
+            />
           </a>
           <h1 className="text-xl font-semibold text-gray-900 mt-6">
             {showForgot ? 'Recuperar contraseña' : 'Iniciar sesión'}

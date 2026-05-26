@@ -2,15 +2,20 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { prisma } from '@/lib/prisma';
 import { StatsOverview } from '@/components/dashboard/StatsOverview';
+import { ExportCsvButton } from '@/components/dashboard/ExportCsvButton';
 
 export default async function DashboardPage() {
   const session = await getServerSession(authOptions);
   const professionalId = session?.user?.professionalId;
+  const isAdmin = (session?.user as { role?: string })?.role === 'ADMIN';
 
   if (!professionalId) {
     return (
       <div>
-        <h1 className="text-2xl font-bold text-gray-900">Panel de administración</h1>
+        <div className="flex items-center justify-between">
+          <h1 className="text-2xl font-bold text-gray-900">Panel de administración</h1>
+          {isAdmin && <ExportCsvButton />}
+        </div>
         <p className="text-gray-500 mt-2">
           Bienvenido, {session?.user?.name}. Tu cuenta no está vinculada a un perfil profesional.
         </p>
@@ -42,13 +47,16 @@ export default async function DashboardPage() {
 
   return (
     <div className="space-y-8">
-      <div>
-        <h1 className="text-2xl font-bold text-gray-900">
-          Hola, {professional.name.split(' ')[0]}
-        </h1>
-        <p className="text-gray-500 mt-1">
-          {professional.specialty.icon} {professional.specialty.name}
-        </p>
+      <div className="flex items-start justify-between">
+        <div>
+          <h1 className="text-2xl font-bold text-gray-900">
+            Hola, {professional.name.split(' ')[0]}
+          </h1>
+          <p className="text-gray-500 mt-1">
+            {professional.specialty.icon} {professional.specialty.name}
+          </p>
+        </div>
+        {isAdmin && <ExportCsvButton />}
       </div>
 
       <StatsOverview

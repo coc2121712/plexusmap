@@ -31,10 +31,17 @@ const nextConfig: NextConfig = {
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com",
               "img-src 'self' data: https://*.googleapis.com https://*.gstatic.com",
-              "connect-src 'self' https://maps.googleapis.com",
+              "connect-src 'self' https://maps.googleapis.com https://*.gstatic.com https://*.google.com",
               "frame-ancestors 'none'",
             ].join("; "),
           },
+        ],
+      },
+      // SEO: Ensure public pages are cacheable by Google (override Next.js dynamic defaults)
+      {
+        source: "/:slug((?!api|_next|login|dashboard).*)",
+        headers: [
+          { key: "Cache-Control", value: "public, s-maxage=300, stale-while-revalidate=600" },
         ],
       },
       {

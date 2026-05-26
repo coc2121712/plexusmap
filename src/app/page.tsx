@@ -1,11 +1,13 @@
 import { prisma } from '@/lib/prisma';
 import { unstable_cache } from 'next/cache';
 import { HomePage } from '@/components/HomePage';
+import { SSRProfessionalList } from '@/components/search/SSRProfessionalList';
 import type { ProfessionalSummary } from '@/types';
 
-// Force dynamic rendering — homepage needs live DB data for SSR
-// Without this, Next.js pre-renders during Docker build (no DB) and caches empty results
-export const dynamic = 'force-dynamic';
+// ISR: revalidate every 5 minutes — gives Google a public, cacheable page
+// The key fix: force-dynamic sent "Cache-Control: private, no-store" which told
+// Google the page was personalized/ephemeral → Google skipped indexing.
+export const revalidate = 300;
 
 // Cache specialties for 1 hour (rarely change)
 const getSpecialties = unstable_cache(
@@ -88,10 +90,14 @@ export default async function Home() {
   ]);
 
   return (
-    <HomePage
-      specialties={specialties}
-      insurances={insurances}
-      initialProfessionals={initialProfessionals}
-    />
+    <>
+      <HomePage
+        specialties={specialties}
+        insurances={insurances}
+        initialProfessionals={initialProfessionals}
+      />
+      {/* SSR-rendered content visible to crawlers that don't fully hydrate React */}
+      <SSRProfessionalList professionals={initialProfessionals} />
+    </>
   );
 }

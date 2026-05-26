@@ -1,0 +1,23 @@
+{
+  "inserted": 430,
+  "skipped": 0,
+  "withApiCoords": 361,
+  "geocoded": 32,
+  "defaultCoords": 37,
+  "errors": 0,
+  "specialtyMapping": {
+    "pediatria": 35,
+    "dermatologia": 7,
+    "medicina-general": 258,
+    "fisioterapia": 14,
+    "ortopedia": 22,
+    "cardiologia": 19,
+    "ginecologia": 57,
+    "oftalmologia": 7,
+    "neurologia": 3,
+    "psicologia": 4,
+    "odontologia-general": 3,
+    "traumatologia": 1
+  },
+  "insuranceAdded": 1163
+}

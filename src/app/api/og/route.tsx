@@ -1,9 +1,18 @@
 // GET /api/og — Dynamic OG image as PNG (1200×630)
 import { ImageResponse } from 'next/og';
-
-export const runtime = 'edge';
+import { readFile } from 'fs/promises';
+import { join } from 'path';
 
 export async function GET() {
+  let logoBase64 = '';
+  try {
+    const logoPath = join(process.cwd(), 'public', 'logo-plexusmap.png');
+    const logoData = await readFile(logoPath);
+    logoBase64 = `data:image/png;base64,${logoData.toString('base64')}`;
+  } catch {
+    // Logo not available — render without it
+  }
+
   return new ImageResponse(
     (
       <div
@@ -16,23 +25,24 @@ export async function GET() {
           justifyContent: 'center',
           backgroundColor: '#0F7B5F',
           fontFamily: 'system-ui, sans-serif',
+          position: 'relative',
         }}
       >
-        {/* Logo circle */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: 120,
-            height: 120,
-            borderRadius: 60,
-            backgroundColor: 'rgba(255,255,255,0.15)',
-            marginBottom: 32,
-          }}
-        >
-          <span style={{ fontSize: 56, fontWeight: 700, color: 'white' }}>PM</span>
-        </div>
+        {/* Logo top-left */}
+        {logoBase64 && (
+          <img
+            src={logoBase64}
+            alt=""
+            width={100}
+            height={100}
+            style={{
+              position: 'absolute',
+              top: 32,
+              left: 40,
+              borderRadius: 16,
+            }}
+          />
+        )}
         {/* Title */}
         <span
           style={{
@@ -52,7 +62,7 @@ export async function GET() {
             marginTop: 16,
           }}
         >
-          Directorio de profesionales de salud en Panamá
+          Directorio de profesionales de salud en Panam&aacute;
         </span>
         {/* Bottom bar */}
         <div
