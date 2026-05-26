@@ -655,6 +655,54 @@ El ecosistema Augur ya tiene infraestructura de email operativa: `noreply@joinau
 3. Aplicar a TODOS los flujos que generan tokens: claim (#1), forgot-password (este issue), futuras notificaciones.
 4. Eliminar leak de URL en dev mode en ambos endpoints — usar logs o fixtures de test en su lugar.
 
+#### #12 — Auth drift: NextAuth+bcrypt local vs estándar JWT @augur/auth del ecosistema
+
+**Severidad:** 🟡 Medio
+**Categoría:** Ecosistema (auth)
+**Archivos:** `src/app/api/auth/[...nextauth]/route.ts:1-66`, `package.json`
+**Estado:** OPEN
+**Vinculado a:** Hipótesis 4.C.1 | Sección 7.1 (decisión arquitectónica) | Ver también #8 (User.emailVerifiedAt)
+
+**Evidencia:**
+
+```ts
+// route.ts:1-3 — imports locales, sin @augur/auth
+import NextAuth, { AuthOptions } from 'next-auth';
+import CredentialsProvider from 'next-auth/providers/credentials';
+import { compare } from 'bcryptjs';
+
+// route.ts:62-65 — JWT strategy propia de NextAuth con secret local
+session: {
+  strategy: 'jwt',
+  maxAge: 7 * 24 * 60 * 60, // 7 days
+},
+secret: process.env.NEXTAUTH_SECRET,
+
+// route.ts:39-45 — custom claims específicos de PlexusMap
+async jwt({ token, user }) {
+  if (user) {
+    token.role = u.role;
+    token.professionalId = u.professionalId;
+    token.professionalSlug = u.professionalSlug;
+  }
+  return token;
+},
+
+// grep -rn "@augur/auth" src/ → 0 resultados
+// package.json → sin dependencia @augur/auth
+```
+
+**Análisis:**
+
+PlexusMap es el único producto del ecosistema Augur que NO usa el patrón estándar `@augur/auth` (consolidado en Kairos durante audit del 15-may, adoptado por Praetor y Exactor). Usa NextAuth 4.24 con `CredentialsProvider` + bcryptjs local y JWT strategy propia. Funcionalmente es similar (ambos JWT), pero los tokens NO son compartibles cross-app: claims structure diferente (`role`/`professionalId`/`professionalSlug` vs claims de `@augur/auth`), signing secret diferente (`NEXTAUTH_SECRET` vs JWT_SECRET del ecosistema), y session maxAge diferente (7 días). Implicación práctica: SSO entre PlexusMap y Kairos es imposible hoy. Un profesional que reclama perfil en PlexusMap y después activa Kairos tiene dos accounts/logins separados con potencialmente el mismo email. La decisión de migrar o no se delega a Sección 7.1.
+
+**Recomendación:**
+
+1. Evaluar migración a `@augur/auth` como parte de la decisión arquitectónica de Sección 7.1.
+2. Si se migra: reescribir `authorize`, session callbacks, y creación de User en `verify/complete` (#1).
+3. Si se mantiene NextAuth: documentar explícitamente la divergencia y aceptar dos logins separados como trade-off.
+4. En ambos casos: unificar email como identificador cross-app para que Kairos pueda vincular el profesional al reclamar.
+
 ### 4.0.5 Buenas prácticas reconocidas
 
 Durante la verificación del audit se identificaron prácticas correctamente implementadas que vale documentar como referencia para el ecosistema Augur:
