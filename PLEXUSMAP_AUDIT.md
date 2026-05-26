@@ -218,6 +218,41 @@ No existe infraestructura de envío de email en el codebase. El token de verific
 2. Eliminar retorno del token en respuesta API incluso en dev (usar logs o fixtures de test).
 3. Si `NODE_ENV` se misconfigura en prod, el token se filtra — agregar safeguard adicional (verificar explícitamente `NODE_ENV === 'production'` en serverside, no asumir).
 
+#### #2 — Sin comparación de email entre solicitante y profesional
+
+**Severidad:** 🔴 Crítico
+**Categoría:** Seguridad (claim flow)
+**Archivos:** `src/app/api/claim/route.ts:16-19`, `src/app/api/claim/verify/complete/route.ts:19-22`
+**Estado:** OPEN
+**Vinculado a:** Hipótesis 4.A.2 | Ver también issues del mismo bloque 4.A (#1, #5)
+
+**Evidencia:**
+
+```ts
+// route.ts:16-19 — Professional.email NO se incluye en select
+const professional = await prisma.professional.findUnique({
+  where: { id: professionalId },
+  select: { id: true, isClaimed: true, name: true },
+});
+
+// verify/complete/route.ts:19-22 — mismo patrón, email excluido
+professional: {
+  select: { id: true, slug: true, name: true, isClaimed: true },
+},
+
+// Ninguno de los 3 endpoints del claim flow consulta Professional.email
+```
+
+**Análisis:**
+
+El flujo de claim acepta cualquier email proporcionado por el solicitante sin validarlo contra el email publicado del profesional (`Professional.email`). El campo `Professional.email` ni siquiera se fetch-ea en los queries de ninguno de los tres endpoints. Combinado con #1, esto permite que cualquier persona con acceso al token (trivial en dev) tome control de cualquier perfil, incluso aquellos con email publicado que serviría como factor de verificación.
+
+**Recomendación:**
+
+1. Fetch `Professional.email` en `POST /api/claim`.
+2. Si `Professional.email` existe: enviar token SOLO a esa dirección (no al solicitante).
+3. Si `Professional.email` es null: flag para revisión admin (#4) o verificación alternativa (#5).
+
 ### 4.A Vector primario — claim flow
 
 - **[POR VERIFICAR]** Token de verificación enviado al email del **solicitante** en lugar de al email **publicado del Professional**. Si se confirma, permite takeover trivial: cualquiera con email arbitrario puede reclamar un perfil ajeno.
