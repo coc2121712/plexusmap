@@ -760,6 +760,71 @@ El momento correcto para crear/sincronizar `kairosTenantId` es post-claim (#1): 
 4. Considerar reemplazar `kairosEnabled: Boolean` por enum `kairosStatus: ACTIVE|PENDING|DISABLED|ERROR` para reflejar estados reales de la integración.
 5. Implementar flujo de provisioning post-claim: crear tenant en Kairos → obtener tenantId real → persistir en PlexusMap.
 
+#### #14 — Sin logging estructurado ni observability — telemetría ciega
+
+**Severidad:** 🟡 Medio
+**Categoría:** Ecosistema (observability)
+**Archivos:** `src/` (22+ archivos), `src/middleware.ts:92-101`, `src/lib/kairos-mock.ts:61`, `package.json`, `.env.example`, `.env.production.example`
+**Estado:** OPEN
+**Vinculado a:** Hipótesis 4.C.3 (aspecto standalone) | Cross-ref forense con #1 (claim takeover), #4 (sin admin), #11 (email muerto) | Aspecto cross-ecosystem DEFERRED en 5.4
+
+**Evidencia:**
+
+```ts
+// Patrón uniforme en 15+ API routes — catch genérico con console.error sin estructura
+// appointments/route.ts:76
+console.error('Error creating appointment:', error);
+// claim/route.ts:72
+console.error('Error creating claim:', error);
+// auth/reset-password/route.ts:120
+console.error('Error resetting password:', error);
+
+// middleware.ts:92-101 — rate limit 429 retornado SIN logging
+if (isRateLimited(bucket, limit.max, limit.window)) {
+  return NextResponse.json(
+    { error: 'Demasiadas solicitudes. Intenta más tarde.' },
+    { status: 429, headers: { 'Retry-After': '60' } }
+  );
+}
+// No existe: console.warn(`Rate limited: ${ip} on ${pathname}`);
+
+// kairos-mock.ts:61 — único log con prefijo, pero es console.log en mock
+console.log(`[KairosMock] Created appointment: ${appointmentId} ...`);
+```
+
+```bash
+# Dependencias de observability en package.json — 0 resultados
+$ grep -i "pino\|winston\|datadog\|sentry\|newrelic\|bunyan" package.json
+# (sin resultados)
+
+# Variables de observability en .env.example y .env.production.example — 0 resultados
+$ grep -i "SENTRY_DSN\|DATADOG\|LOG_LEVEL\|NEWRELIC" .env.example .env.production.example
+# (sin resultados)
+
+# Helpers de logging en src/lib/ — 0 resultados
+$ ls src/lib/logger* src/lib/log* 2>/dev/null
+# (sin resultados)
+```
+
+**Análisis:**
+
+PlexusMap no tiene infraestructura de observability: cero dependencias de logging estructurado, cero helpers de logging, cero variables de configuración de observability. Los 22+ puntos de error handling usan `console.error` con strings ad-hoc sin correlation ID, request ID, user ID, ni severity level. El rate limiter en middleware retorna 429 silenciosamente — sin logging del evento. Esto tiene impacto directo en la capacidad forense para los issues de seguridad documentados:
+
+- **#1 (claim takeover):** un takeover exitoso no deja trail auditable más allá de los registros en DB. Sin logs de quién intentó reclamar, desde qué IP, cuántas veces.
+- **#4 (sin admin):** incluso si existiera panel admin, no habría logs de acciones administrativas.
+- **#11 (email muerto):** sin telemetría de intentos de envío fallidos, imposible diagnosticar si el email "casi funciona" o nunca se intentó.
+- **Rate limiting:** 429s van unlogged — imposible detectar patrones de brute-force post-facto o ajustar umbrales basándose en datos reales.
+
+La consistencia de este patrón con el resto del ecosistema Augur (Kairos, Praetor, Exactor) NO es verificable desde esta sesión — ver DEFERRED en 5.4.
+
+**Recomendación:**
+
+1. Implementar helper compartido `src/lib/logger.ts` con logs JSON estructurados (mínimo: timestamp, severity, message, requestId, userId, context).
+2. Logear explícitamente eventos de rate limiting (429) con IP + pathname + presencia de token (no valor).
+3. Decidir adopción de librería (pino o winston) como parte de la re-auditoría de Kairos/Praetor — potencial estándar del ecosistema.
+4. Agregar variable `LOG_LEVEL` a `.env.example` y `.env.production.example`.
+5. Considerar integración con servicio de error tracking (Sentry o equivalente) para alertas en tiempo real.
+
 ### 4.0.5 Buenas prácticas reconocidas
 
 Durante la verificación del audit se identificaron prácticas correctamente implementadas que vale documentar como referencia para el ecosistema Augur:
