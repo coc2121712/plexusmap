@@ -703,6 +703,63 @@ PlexusMap es el único producto del ecosistema Augur que NO usa el patrón está
 3. Si se mantiene NextAuth: documentar explícitamente la divergencia y aceptar dos logins separados como trade-off.
 4. En ambos casos: unificar email como identificador cross-app para que Kairos pueda vincular el profesional al reclamar.
 
+#### #13 — Integración Kairos: tenantId fallback inseguro + apiKey vacío
+
+**Severidad:** 🟠 Alto
+**Categoría:** Ecosistema (integración cross-app)
+**Archivos:** `prisma/schema.prisma:78-79`, `src/app/api/appointments/route.ts:39`, `src/app/api/appointments/availability/route.ts:52`, `src/lib/kairos-client.ts:123-131`
+**Estado:** OPEN
+**Vinculado a:** Hipótesis 4.C.2 | Ver también #1, #11 (timing de integración post-claim)
+
+**Evidencia:**
+
+```prisma
+// schema.prisma:78-79 — plain nullable string sin relación, sin constraint, sin validación
+kairosEnabled   Boolean            @default(false)
+kairosTenantId  String?
+```
+
+```ts
+// appointments/route.ts:39 — fallback inseguro: usa UUID interno de PlexusMap como tenantId de Kairos
+const tenantId = professional.kairosTenantId || professional.id;
+
+// availability/route.ts:52 — mismo fallback inseguro
+const tenantId = professional.kairosTenantId || professional.id;
+```
+
+```ts
+// kairos-client.ts:123-131 — factory con DOBLE fallback inseguro
+const baseUrl = process.env.KAIROS_API_URL;
+const apiKey = process.env.KAIROS_API_KEY || '';  // fallback a string vacío
+
+if (baseUrl) {
+  _client = new KairosClient(baseUrl, apiKey);  // client con apiKey potencialmente ''
+} else {
+  const { KairosMockClient } = require('@/lib/kairos-mock');
+  _client = new KairosMockClient() as KairosClientInterface;
+}
+```
+
+**Análisis:**
+
+Tres vectores de fallo latente en la misma integración, actualmente mitigados por el mock client (KAIROS_API_URL no configurado en producción), pero que se activarán simultáneamente cuando la integración real entre en servicio:
+
+**(a) Sin validación de existencia de tenantId:** `kairosTenantId` es un string libre sin validación contra la API de Kairos. Si Kairos elimina un tenant, PlexusMap queda con `kairosEnabled = true` y un tenantId huérfano. No hay endpoint en dashboard que permita editar estos campos, ni mecanismo de sincronización bidireccional.
+
+**(b) Fallback `|| professional.id` — bomba de tiempo:** cuando `kairosTenantId` es null (default para todos los profesionales), el sistema usa `professional.id` (UUID v4 de PlexusMap) como tenantId de Kairos. Este UUID no existe en Kairos — generará 404s en el mejor caso, o (si por colisión estadísticamente improbable pero no imposible) escribirá en un tenant ajeno.
+
+**(c) apiKey fallback a string vacío:** si `KAIROS_API_KEY` no está configurado cuando `KAIROS_API_URL` sí lo está, las requests irán con header `X-Kairos-Key: ''`. Kairos rechazará (401) pero PlexusMap no distinguirá entre "tenant no existe" y "API key inválida" — ambos caen en el catch genérico con `console.error`.
+
+El momento correcto para crear/sincronizar `kairosTenantId` es post-claim (#1): cuando un profesional reclama su perfil y decide activar Kairos, PlexusMap debería crear el tenant en Kairos y persistir el ID real. Hoy esa secuencia no existe.
+
+**Recomendación:**
+
+1. Eliminar fallback `|| professional.id` — fail explícito si `kairosTenantId` es null cuando `kairosEnabled` es true.
+2. Validar `kairosTenantId` contra API de Kairos antes de persistirlo (health check del tenant).
+3. Fail explícito si `KAIROS_API_KEY` no está configurado cuando `KAIROS_API_URL` sí — no fallback silencioso a ''.
+4. Considerar reemplazar `kairosEnabled: Boolean` por enum `kairosStatus: ACTIVE|PENDING|DISABLED|ERROR` para reflejar estados reales de la integración.
+5. Implementar flujo de provisioning post-claim: crear tenant en Kairos → obtener tenantId real → persistir en PlexusMap.
+
 ### 4.0.5 Buenas prácticas reconocidas
 
 Durante la verificación del audit se identificaron prácticas correctamente implementadas que vale documentar como referencia para el ecosistema Augur:
