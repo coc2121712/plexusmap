@@ -508,6 +508,61 @@ El modelo `User` no tiene campo de verificación de email (`emailVerifiedAt`, `i
 3. Agregar check en NextAuth `authorize`: rechazar login si `emailVerifiedAt` es null.
 4. Considerar flujo de re-verificación si el User cambia su email post-claim.
 
+#### #9 — PasswordReset.usedAt sin DB constraint (TOCTOU)
+
+**Severidad:** 🟢 Bajo
+**Categoría:** Seguridad (auth) — defense in depth
+**Archivos:** `src/app/api/auth/reset-password/route.ts:30-35, 76-81, 105-114`, `prisma/schema.prisma:210-220`
+**Estado:** OPEN
+**Vinculado a:** Hipótesis 4.B.3
+
+**Evidencia:**
+
+```ts
+// reset-password/route.ts:30-35 — GET handler: check usedAt (app-level)
+if (reset.usedAt) {
+  return NextResponse.json(
+    { error: 'Este enlace ya fue utilizado' },
+    { status: 409 }
+  );
+}
+
+// reset-password/route.ts:76-81 — POST handler: mismo check (app-level)
+if (reset.usedAt) {
+  return NextResponse.json(
+    { error: 'Este enlace ya fue utilizado' },
+    { status: 409 }
+  );
+}
+
+// reset-password/route.ts:105-114 — marca como usado en transacción
+await prisma.$transaction([
+  prisma.user.update({
+    where: { id: user.id },
+    data: { password: hashedPassword },
+  }),
+  prisma.passwordReset.update({
+    where: { id: reset.id },
+    data: { usedAt: new Date() },
+  }),
+]);
+```
+
+```prisma
+// schema.prisma:214 — usedAt es nullable sin constraint de DB
+usedAt    DateTime?
+// No existe: @@unique([token, usedAt]) parcial ni CHECK constraint
+```
+
+**Análisis:**
+
+La app verifica correctamente `usedAt` en ambos handlers (GET y POST) y marca el token como usado en una transacción atómica con el password update. Sin embargo, la prevención de reuso depende 100% de lógica de aplicación — no hay constraint de DB (índice parcial, check constraint, o equivalent). Esto crea una ventana TOCTOU (time-of-check-time-of-use): dos requests concurrentes con el mismo token podrían pasar el check `usedAt === null` simultáneamente antes de que cualquiera setee `usedAt`. Impacto práctico negligible: el atacante ya necesita el token de 256 bits, y ambos requests setearían passwords diferentes con el último ganando. Es un hallazgo de disciplina de defense-in-depth, no de explotabilidad real.
+
+**Recomendación:**
+
+1. Agregar partial unique index o check constraint a nivel Prisma/PostgreSQL que impida `UPDATE ... SET usedAt` si `usedAt IS NOT NULL`.
+2. Alternativamente, usar `SELECT ... FOR UPDATE` en la transacción para serializar accesos concurrentes al mismo token.
+
 ### 4.A Vector primario — claim flow
 
 - **[PROMOVIDA → #1]** Token de verificación nunca enviado al profesional. Peor que la hipótesis: no existe infraestructura de email. En dev, token retornado en respuesta HTTP. En prod, flujo muerto.
