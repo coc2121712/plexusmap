@@ -333,6 +333,40 @@ No existen rutas `/admin` en la aplicación. El único uso del rol `ADMIN` es pa
 2. Alternativa mínima: auto-aprobación con grace period de 7 días + notificación al email publicado del profesional, permitiendo disputa.
 3. Casos donde `Professional.email` es null deben requerir aprobación admin obligatoria (ver #5).
 
+#### #5 — Sin verificación de identidad para perfiles sin email publicado
+
+**Severidad:** 🔴 Crítico
+**Categoría:** Seguridad (claim flow)
+**Archivos:** `src/app/api/claim/route.ts:16-19`
+**Estado:** OPEN
+**Vinculado a:** Hipótesis 4.A.5 | Colapsa en #1 y #2 para el estado actual; se independiza al remediar #1/#2
+
+**Evidencia:**
+
+```ts
+// route.ts:16-19 — Professional.email no se incluye en select, no hay branch por presencia/ausencia
+const professional = await prisma.professional.findUnique({
+  where: { id: professionalId },
+  select: { id: true, isClaimed: true, name: true },
+});
+// No existe: if (!professional.email) { /* flujo alternativo */ }
+```
+
+```prisma
+// schema.prisma:72 — email es nullable, muchos perfiles importados lo tienen en null
+email           String?            // public contact email (NOT auth)
+```
+
+**Análisis:**
+
+Perfiles importados desde Google Places y algunas redes de aseguradoras carecen de email publicado (`Professional.email = null`). El flujo de claim trata estos perfiles de forma idéntica a los que sí tienen email: el solicitante proporciona cualquier dirección, y el flujo prosigue sin distinción. Actualmente esto colapsa en #1/#2 (ya que `Professional.email` nunca se consulta para ningún perfil). Cuando #1 y #2 se remedien, los perfiles sin email quedarán sin ruta de verificación posible por email, necesitando un mecanismo alternativo.
+
+**Recomendación:**
+
+1. Cuando `Professional.email` es null, requerir aprobación admin obligatoria (ver #4).
+2. Implementar verificación alternativa: número de idoneidad profesional, cédula, o documento de identidad.
+3. Considerar enriquecimiento proactivo del directorio: campañas para que profesionales registren su email antes de necesitar reclamar.
+
 ### 4.A Vector primario — claim flow
 
 - **[POR VERIFICAR]** Token de verificación enviado al email del **solicitante** en lugar de al email **publicado del Professional**. Si se confirma, permite takeover trivial: cualquiera con email arbitrario puede reclamar un perfil ajeno.
