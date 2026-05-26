@@ -563,6 +563,43 @@ La app verifica correctamente `usedAt` en ambos handlers (GET y POST) y marca el
 1. Agregar partial unique index o check constraint a nivel Prisma/PostgreSQL que impida `UPDATE ... SET usedAt` si `usedAt IS NOT NULL`.
 2. Alternativamente, usar `SELECT ... FOR UPDATE` en la transacción para serializar accesos concurrentes al mismo token.
 
+#### #10 — GET /api/auth/reset-password sin rate limit estricto
+
+**Severidad:** 🟢 Bajo
+**Categoría:** Seguridad (rate limiting) — defense in depth
+**Archivos:** `src/middleware.ts:77-79`
+**Estado:** OPEN
+**Vinculado a:** Hipótesis 4.B.4 | Ver también #7 (mismo patrón de cobertura inconsistente)
+
+**Evidencia:**
+
+```ts
+// middleware.ts:77-79 — exención blanket para todos los GET /api/auth/*
+if (pathname.startsWith('/api/auth/') && request.method === 'GET') {
+  return NextResponse.next();
+}
+// Intención: skip rate limiting para session checks de NextAuth (GET /api/auth/session, /csrf, /providers)
+// Efecto real: también exime GET /api/auth/reset-password?token=xxx (oráculo de validación de token)
+```
+
+**Análisis:**
+
+La exención de rate limiting para `GET /api/auth/*` fue diseñada para evitar limitar los session checks de NextAuth (`/api/auth/session`, `/api/auth/csrf`, `/api/auth/providers`). Sin embargo, el patrón `startsWith('/api/auth/')` es over-broad e incluye accidentalmente `GET /api/auth/reset-password?token=xxx`, que funciona como oráculo de validación: retorna 200 para token válido, 404 para inválido, 409 para usado, 410 para expirado. Un atacante podría consultar este endpoint sin límite de rate. El token de 256 bits (64 hex chars) hace brute-force impracticable, pero la exención viola el principio de least privilege. La cobertura de rate limiting en general es adecuada — la tabla de cobertura verificada durante el bloque 4.B:
+
+| Endpoint | Protección | Estado |
+|---|---|---|
+| `POST /api/auth/forgot-password` | STRICT_POST_PATHS (10/min) | Correcto |
+| `GET /api/geocode/autocomplete` | STRICT_ALL_PATHS + per-user rateLimit(30/min) + auth | Triple protección |
+| `GET /api/geocode/details` | STRICT_ALL_PATHS + per-user rateLimit(20/min) + auth | Triple protección |
+| `GET /api/export/csv` | Auth ADMIN-only + general (100/min) | Aceptable |
+| `POST /api/professionals/[slug]/sync-ical` | Auth owner/admin + general (100/min) | Aceptable |
+| `GET /api/auth/reset-password` | **Sin rate limit (exención blanket)** | **Gap** |
+
+**Recomendación:**
+
+1. Narrowar la exención de GET a solo los paths de NextAuth: `/api/auth/session`, `/api/auth/csrf`, `/api/auth/providers`, `/api/auth/callback`.
+2. Alternativamente, agregar `/api/auth/reset-password` a `STRICT_ALL_PATHS`.
+
 ### 4.A Vector primario — claim flow
 
 - **[PROMOVIDA → #1]** Token de verificación nunca enviado al profesional. Peor que la hipótesis: no existe infraestructura de email. En dev, token retornado en respuesta HTTP. En prod, flujo muerto.
