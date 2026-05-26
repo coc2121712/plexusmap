@@ -253,6 +253,40 @@ El flujo de claim acepta cualquier email proporcionado por el solicitante sin va
 2. Si `Professional.email` existe: enviar token SOLO a esa dirección (no al solicitante).
 3. Si `Professional.email` es null: flag para revisión admin (#4) o verificación alternativa (#5).
 
+#### #3 — Sin trazabilidad forense directa del claim en Professional
+
+**Severidad:** 🟡 Medio
+**Categoría:** Seguridad (claim flow)
+**Archivos:** `prisma/schema.prisma:77`, `src/app/api/claim/verify/complete/route.ts:75-78`
+**Estado:** OPEN
+**Vinculado a:** Hipótesis 4.A.3
+
+**Evidencia:**
+
+```prisma
+// schema.prisma:77 — Professional solo tiene boolean, sin timestamp ni FK al user que reclamó
+isClaimed       Boolean            @default(false)
+// No existe: claimedAt DateTime?
+// No existe: claimedByUserId String?
+```
+
+```ts
+// verify/complete/route.ts:75-78 — solo se setea el boolean
+await tx.professional.update({
+  where: { id: claim.professional.id },
+  data: { isClaimed: true },
+});
+```
+
+**Análisis:**
+
+El modelo `Professional` registra el claim como un boolean sin metadata. No hay `claimedAt` ni `claimedByUserId` directamente en el registro. Existe trazabilidad indirecta vía `User.professionalId` y `ClaimRequest.reviewedAt`, pero es frágil: si el `User` se elimina, `isClaimed` queda en `true` sin forma de trazar quién lo reclamó ni cuándo. En un escenario de disputa o investigación de takeover, la reconstrucción forense requiere joins entre tres tablas sin garantía de integridad referencial post-eliminación.
+
+**Recomendación:**
+
+1. Agregar `claimedAt DateTime?` y `claimedByUserId String?` al modelo `Professional`.
+2. Setear ambos campos en la transacción de `verify/complete`.
+
 ### 4.A Vector primario — claim flow
 
 - **[POR VERIFICAR]** Token de verificación enviado al email del **solicitante** en lugar de al email **publicado del Professional**. Si se confirma, permite takeover trivial: cualquiera con email arbitrario puede reclamar un perfil ajeno.
