@@ -367,6 +367,54 @@ Perfiles importados desde Google Places y algunas redes de aseguradoras carecen 
 2. Implementar verificación alternativa: número de idoneidad profesional, cédula, o documento de identidad.
 3. Considerar enriquecimiento proactivo del directorio: campañas para que profesionales registren su email antes de necesitar reclamar.
 
+#### #6 — ClaimRequest sin expiración de token
+
+**Severidad:** 🟠 Alto
+**Categoría:** Seguridad (claim flow)
+**Archivos:** `prisma/schema.prisma:189-204`, `src/app/api/claim/verify/route.ts:17-39`, `src/app/api/claim/verify/complete/route.ts:16-37`
+**Estado:** OPEN
+**Vinculado a:** Hallazgo emergente durante verificación de bloque 4.A | Amplifica #1, #2, #4, #5
+
+**Evidencia:**
+
+```prisma
+// schema.prisma:189-204 — ClaimRequest no tiene campo expiresAt
+model ClaimRequest {
+  id             String       @id @default(uuid())
+  professionalId String
+  name           String
+  email          String
+  phone          String
+  message        String?
+  status         ClaimStatus  @default(PENDING)
+  token          String       @unique
+  createdAt      DateTime     @default(now())
+  reviewedAt     DateTime?
+  // No existe: expiresAt DateTime
+}
+```
+
+```ts
+// verify/route.ts:34-39 — solo valida status, no edad del token
+if (claim.status !== 'PENDING') {
+  return NextResponse.json(
+    { error: 'Esta solicitud ya fue procesada' },
+    { status: 409 }
+  );
+}
+// No existe: if (claim.createdAt < Date.now() - TTL) { /* expired */ }
+```
+
+**Análisis:**
+
+Los tokens de claim no tienen expiración: no hay campo `expiresAt` en el modelo ni validación de edad en los endpoints de verificación. Un token generado hace meses o años permanece válido indefinidamente mientras el `ClaimRequest.status` sea `PENDING`. Esto amplifica todos los issues anteriores del claim flow: si un token se filtra por cualquier vía (logs, backups, respuesta HTTP en dev), permanece explotable sin límite temporal. Contraste con `PasswordReset`, que sí tiene `expiresAt` (schema línea 215).
+
+**Recomendación:**
+
+1. Agregar `expiresAt DateTime` a `ClaimRequest` con default a 24-48 horas desde creación.
+2. Validar `expiresAt` en ambos endpoints de verificación (`verify` y `verify/complete`).
+3. Job periódico o check en middleware para marcar como `REJECTED` los claims expirados.
+
 ### 4.A Vector primario — claim flow
 
 - **[POR VERIFICAR]** Token de verificación enviado al email del **solicitante** en lugar de al email **publicado del Professional**. Si se confirma, permite takeover trivial: cualquiera con email arbitrario puede reclamar un perfil ajeno.
