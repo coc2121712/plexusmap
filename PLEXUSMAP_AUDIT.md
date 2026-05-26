@@ -867,9 +867,11 @@ Estas prácticas son **replicables a otros productos del ecosistema** (Kairos au
 
 ### 4.C Ecosistema Augur
 
-- **[POR VERIFICAR]** Drift de auth: PlexusMap NextAuth+bcrypt vs estándar JWT `@augur/auth` consolidado en Kairos. Decisión arquitectónica relevante (ver Sección 7).
-- **[POR VERIFICAR]** `kairosTenantId` sin FK cross-app — referencia débil que puede dejar tenantIds huérfanos si Kairos elimina un tenant.
-- **[POR VERIFICAR]** Sin convención compartida de logging/observability con resto del ecosistema.
+- **[PROMOVIDA → #12]** Drift de auth confirmado. NextAuth 4.24 + CredentialsProvider + bcryptjs vs estándar JWT `@augur/auth`. Tokens no compartibles cross-app, SSO imposible. Severidad: 🟡 Medio (decisión arquitectónica delegada a Sección 7.1).
+- **[PROMOVIDA → #13]** `kairosTenantId` sin FK + fallback inseguro `|| professional.id` + apiKey fallback `''`. Tres vectores de fallo latente mitigados hoy por mock client. Severidad: 🟠 Alto (bomba latente cuando se active integración real).
+- **[PROMOVIDA → #14 (aspecto standalone) + DEFERRED en 5.4 (aspecto cross-ecosystem)]** Logging/observability. PlexusMap sin logging estructurado verificado: 22+ console.error ad-hoc, 0 dependencias, 0 helpers. Consistencia con resto del ecosistema NO verificable desde esta sesión. Severidad standalone: 🟡 Medio (amplifica forensics de #1, #4, #11).
+
+**Hallazgos emergentes promovidos durante verificación del bloque 4.C:** ninguno (cross-block observation sobre apiKey vacío absorbida en #13).
 
 ### 4.D DevOps y continuidad
 
@@ -928,6 +930,7 @@ Las entradas aquí se promueven a Sección 4 con número de issue. Esta tabla so
 | Hipótesis | Razón del defer | Sesión |
 |---|---|---|
 | 4.B.2 — `PasswordReset.expiresAt` sin default a nivel schema | Campo es required (non-nullable). App setea 1h correctamente en `forgot-password/route.ts:44`. Ambos handlers de `reset-password/route.ts` verifican expiración. Prisma no soporta `@default` para tiempos relativos (now + offset). No hay gap de seguridad — el patrón actual (required sin default) es el correcto. | 4.B |
+| 4.C.3 — Consistencia de logging/observability con resto del ecosistema | Aspecto cross-ecosystem no verificable desde esta sesión: solo PlexusMap fue auditado, y los audits previos de Kairos/Praetor/Exactor no documentaron su patrón de observability. Para confirmar drift o alineación se requiere lectura cross-repo. **Razón metodológica, no no-issue** — el aspecto standalone (PlexusMap sin logging estructurado) ya fue promovido a #14. | 4.C |
 
 ---
 
