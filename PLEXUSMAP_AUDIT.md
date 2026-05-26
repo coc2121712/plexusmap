@@ -445,6 +445,69 @@ El endpoint `GET /api/claim/verify?token=xxx` no tiene rate limiting estricto. C
 1. Agregar `/api/claim/verify` a `STRICT_ALL_PATHS` (rate limit estricto en GET y POST).
 2. Alternativamente, crear categoría `STRICT_GET_PATHS` si se quiere granularidad por método.
 
+#### #8 — User.emailVerifiedAt no existe en schema
+
+**Severidad:** 🟡 Medio
+**Categoría:** Seguridad (auth)
+**Archivos:** `prisma/schema.prisma:14-26`, `src/app/api/claim/verify/complete/route.ts:65-73`, `src/app/api/auth/[...nextauth]/route.ts:14-35`
+**Estado:** OPEN
+**Vinculado a:** Hipótesis 4.B.1 | Ver también #1, #2 (amplificación cross-flow)
+
+**Evidencia:**
+
+```prisma
+// schema.prisma:14-26 — modelo User sin campo de verificación de email
+model User {
+  id             String   @id @default(uuid())
+  email          String   @unique
+  password       String   // bcrypt hash
+  name           String
+  role           UserRole @default(PROFESSIONAL)
+  professionalId String?  @unique
+  professional   Professional? @relation(fields: [professionalId], references: [id])
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+// No existe: emailVerifiedAt DateTime?
+```
+
+```ts
+// verify/complete/route.ts:65-73 — User creado con email no verificado del solicitante
+await tx.user.create({
+  data: {
+    email: claim.email,      // email arbitrario del ClaimRequest
+    password: hashedPassword,
+    name: claim.name,
+    role: 'PROFESSIONAL',
+    professionalId: claim.professional.id,
+  },
+});
+
+// auth/[...nextauth]/route.ts:14-25 — authorize sin check de verificación
+async authorize(credentials) {
+  if (!credentials?.email || !credentials?.password) return null;
+  const user = await prisma.user.findUnique({
+    where: { email: credentials.email },
+  });
+  if (!user) return null;
+  const isValid = await compare(credentials.password, user.password);
+  if (!isValid) return null;
+  return { id: user.id, email: user.email, ... };
+  // No existe: if (!user.emailVerifiedAt) return null;
+}
+```
+
+**Análisis:**
+
+El modelo `User` no tiene campo de verificación de email (`emailVerifiedAt`, `isEmailVerified`, ni equivalente). El User se crea en el claim flow con `claim.email` — el email que proporcionó el solicitante — sin ninguna verificación de propiedad. NextAuth `authorize` valida solo email+password, sin check de verificación de email. El User puede loguearse inmediatamente tras completar el claim. Combinado con #1 (token no enviado al profesional) y #2 (email no comparado con `Professional.email`), la cuenta se crea con un email arbitrario no verificado que se convierte en credencial de login permanente. Si #1 y #2 se remedian (token enviado al email correcto), la verificación se vuelve implícita vía recepción del token, pero no explícita — un campo `emailVerifiedAt` sigue siendo necesario para auditoría, revocación, y consistencia con estándares de auth.
+
+**Recomendación:**
+
+1. Agregar `emailVerifiedAt DateTime?` al modelo `User`.
+2. Setear `emailVerifiedAt` en la transacción de claim complete (implícitamente verificado al recibir el token).
+3. Agregar check en NextAuth `authorize`: rechazar login si `emailVerifiedAt` es null.
+4. Considerar flujo de re-verificación si el User cambia su email post-claim.
+
 ### 4.A Vector primario — claim flow
 
 - **[PROMOVIDA → #1]** Token de verificación nunca enviado al profesional. Peor que la hipótesis: no existe infraestructura de email. En dev, token retornado en respuesta HTTP. En prod, flujo muerto.
