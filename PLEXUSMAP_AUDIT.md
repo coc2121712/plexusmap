@@ -1037,6 +1037,61 @@ Rogelio debe verificar manualmente en producción:
 4. Considerar `SEED_MODE=production` sin usuarios admin — crear el primer admin manualmente post-deploy con password generado.
 5. Unificar bcrypt cost factor a 12 en todos los flujos (seed incluido).
 
+#### #20 — SSRF en POST /api/professionals/[slug]/sync-ical
+
+**Severidad:** 🔴 Crítico
+**Categoría:** Seguridad (SSRF)
+**Archivos:** `src/app/api/professionals/[slug]/sync-ical/route.ts:44-53`, `src/lib/ical-parser.ts:24-29`, `src/lib/validations.ts:31`
+**Estado:** OPEN
+**Vinculado a:** Hipótesis 4.E.3 | Cross-ref con #19 (admin trivial amplifica superficie de explotación)
+
+**Evidencia:**
+
+```ts
+// validations.ts:31 — URL validada solo por formato, acepta http://, https://, file://, ftp://
+cliniwebIcalUrl: z.string().url('URL inválida').trim().optional().nullable().or(z.literal('')),
+// z.string().url() usa WHATWG URL standard — no restringe protocolo ni destino
+```
+
+```ts
+// ical-parser.ts:24-29 — fetch nativo sin validación de protocolo/IP/allowlist
+const controller = new AbortController();
+const timeout = setTimeout(() => controller.abort(), 15_000);
+
+const res = await fetch(url, {
+  signal: controller.signal,
+  headers: { Accept: 'text/calendar' },
+});
+// Sin validación de: protocolo (solo https), IP destino (privadas, loopback),
+// DNS (Docker network hostnames), allowlist de dominios de calendario
+```
+
+```ts
+// Vectores de ataque comprobados contra la topología Docker de PlexusMap:
+// http://127.0.0.1:5432      → PostgreSQL (loopback)
+// http://postgres:5432        → PostgreSQL (Docker network plexusmap-net)
+// http://redis:6379           → Redis (Docker network plexusmap-net)
+// http://plexusmap:3000/api/* → Self-hit (amplificación, lectura de endpoints internos)
+// http://169.254.169.254/...  → Metadata service (portable a cloud en migración futura)
+```
+
+**Análisis:**
+
+Auth + ownership existen: el endpoint requiere sesión autenticada (`route.ts:17-20`) y ownership check (`route.ts:38-42`), limitando la superficie a profesionales con claim o admin. La URL se obtiene de `professional.cliniwebIcalUrl` seteada vía `PUT /api/dashboard/profile` con `z.string().url()` que valida formato pero NO restringe protocolo ni destino. El fetch nativo de Node.js (`ical-parser.ts:27`) ejecuta contra la URL sin validación de IP, protocolo, ni allowlist. El timeout de 15 segundos limita DoS pero no SSRF. El servidor procesa el contenido completo vía `res.text()` ANTES del check `BEGIN:VCALENDAR` — si un endpoint interno devuelve texto con líneas iCal válidas (`BEGIN:VCALENDAR\nBEGIN:VEVENT...`), eventos arbitrarios pueden persistir en la DB del professional como Appointments.
+
+El Docker network (`plexusmap-net`) expone directamente postgres (puerto 5432), redis (6379), y la propia app en `plexusmap:3000`. Un atacante con ownership puede hacer que el servidor resuelva y conecte a cualquiera de estos servicios. Timing side-channel: un timeout de 15s vs respuesta inmediata revela existencia/ausencia de servicios internos. Aunque es blind SSRF (el contenido raw NO se retorna al cliente — solo conteos de eventos sincronizados), el vector de write-side es real: si un endpoint interno o servicio controlado devuelve contenido con estructura iCal válida, el endpoint persiste `Appointment` records arbitrarios en la DB del professional (`route.ts:85-95`).
+
+**Interacción con #19 (admin trivial):** en escenario base, la superficie se limita a profesionales con claim (cientos). Pero si las credenciales admin de #19 (`admin@plexusmap.com / admin123`) están activas, un atacante admin puede setear `cliniwebIcalUrl` en CUALQUIER professional del directorio vía `PUT /api/dashboard/profile` (el admin bypass de ownership aplica en `sync-ical/route.ts:39`), y luego ejecutar el fetch con el slug de cualquier profesional. La superficie pasa de "profesionales con claim" a "todos los professionals del directorio" (2,685+). Esta amplificación cross-issue es la razón principal del escalamiento a 🔴 Crítico.
+
+**Recomendación:**
+
+1. Reemplazar `z.string().url()` por validador estricto que solo acepte `https://` (y opcionalmente `http://` para development).
+2. Resolución DNS pre-fetch + bloqueo explícito de IPs privadas (10/8, 172.16/12, 192.168/16, 127/8, 169.254/16) y de hostnames internos del Docker network (postgres, redis, plexusmap).
+3. Allowlist explícita de dominios de calendario conocidos (calendar.google.com, outlook.live.com, p[N]-caldav.icloud.com, fastmail.com, etc.) — más restrictivo que blacklist.
+4. Mantener timeout 15s y agregar límite de tamaño de respuesta (10 MB max) + validación de Content-Type (`text/calendar` o `text/plain`).
+5. Mover fetch a un proxy/worker separado con red restringida si la complejidad de allowlist crece.
+6. **Mitigación inmediata:** considerar disable temporal del endpoint sync-ical hasta implementar (1)+(2). Cross-ref con #19: rotar credenciales admin reduce inmediatamente la superficie de amplificación.
+
 ### 4.0.5 Buenas prácticas reconocidas
 
 Durante la verificación del audit se identificaron prácticas correctamente implementadas que vale documentar como referencia para el ecosistema Augur:
