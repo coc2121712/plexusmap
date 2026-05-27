@@ -1122,6 +1122,18 @@ Estas prácticas son **replicables a otros productos del ecosistema** (Kairos au
 
 Estas prácticas son **replicables a otros productos del ecosistema** (Kairos, Praetor, Exactor) durante sus deploys a producción.
 
+**Validación:**
+
+- **Cobertura Zod completa en endpoints con body**: 9 esquemas en `src/lib/validations.ts` cubren los 9 endpoints POST/PUT del API (`claimRequestSchema`, `claimCompleteSchema`, `profileUpdateSchema`, `scheduleUpdateSchema`, `reviewReplySchema`, `publicReviewSchema`, `createAppointmentSchema`, `forgotPasswordSchema`, `resetPasswordSchema`). Helper `parseBody()` estandariza el patrón de validación con error handling consistente. Cero gaps verificados. Evidencia: `src/lib/validations.ts`, grep de `parseBody` en 9 route files.
+
+- **Validación manual apropiada en endpoints GET**: paginación con `Math.min/Math.max` cap'd a 50 (`professionals/route.ts:16`), regex para fecha (`/^\d{4}-\d{2}-\d{2}$/` en `appointments/availability/route.ts:19`), auth + rate limit per-user en geocode endpoints (30/min autocomplete, 20/min details). Endpoints read-only (health, specialties, insurances, claim/verify GET) sin input de riesgo. Evidencia: revisión completa de los 20 route files durante bloque 4.E.
+
+- **Queries parametrizadas vía Prisma**: cero SQL crudo identificado en `src/`. Imposibilidad estructural de SQL injection por uso consistente de Prisma Client. Evidencia: cobertura del audit en bloques 4.A-4.E.
+
+⚠️ **Excepción reconocida**: la única validación Zod insuficiente está documentada en #20 — `z.string().url()` para `cliniwebIcalUrl` acepta protocolos no-HTTP, habilitando SSRF. No desmerece la cobertura general, pero requiere remediación específica.
+
+Estas prácticas son **replicables a otros productos del ecosistema** — verificar adopción consistente de Zod + `parseBody` en Kairos/Praetor/Exactor durante las re-auditorías pendientes.
+
 ### 4.A Vector primario — claim flow
 
 - **[PROMOVIDA → #1]** Token de verificación nunca enviado al profesional. Peor que la hipótesis: no existe infraestructura de email. En dev, token retornado en respuesta HTTP. En prod, flujo muerto.
