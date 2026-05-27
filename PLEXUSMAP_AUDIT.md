@@ -966,6 +966,77 @@ $ grep -i "output" .gitignore
 4. Si el repo se va a hacer público alguna vez: reescribir history con BFG Repo-Cleaner o `git filter-repo` para eliminar estos archivos de commits previos.
 5. Política Augur: revisar si otros productos del ecosistema tienen datos intermedios de import versionados.
 
+#### #19 — Credenciales admin triviales en seed, documentadas en plaintext
+
+**Severidad:** 🟠 Alto (con escalamiento condicional a 🔴 — ver verificación pendiente)
+**Categoría:** Seguridad (credenciales)
+**Archivos:** `CLAUDE.md:146-149`, `prisma/seed.ts:1020-1044`
+**Estado:** OPEN
+**Vinculado a:** Hipótesis 4.D.5 | Cross-ref con #4 (sin panel admin — la credencial admin existe pero no hay panel)
+
+**Evidencia:**
+
+```markdown
+<!-- CLAUDE.md:146-149 — credenciales en plaintext en archivo versionado -->
+| Rol | Email | Password |
+|-----|-------|----------|
+| Admin | admin@plexusmap.com | admin123 |
+| Profesional | gponce@plexusmap.com | demo123 |
+```
+
+```ts
+// seed.ts:1019-1027 — admin user creado en TODOS los modos (dev, production, google-places)
+// Admin user (all modes)
+await prisma.user.create({
+  data: {
+    email: 'admin@plexusmap.com',
+    password: hashSync('admin123', 10),  // cost factor 10 (vs 12 en auth endpoints)
+    name: 'Admin PlexusMap',
+    role: 'ADMIN',
+  },
+});
+```
+
+```ts
+// seed.ts:1029-1044 — usuario fundador en production mode — NO documentado en CLAUDE.md
+if (SEED_MODE === 'production' || SEED_MODE === 'google-places') {
+  const founder = await prisma.professional.findFirst({
+    where: { slug: FOUNDER_SLUG },
+  });
+  if (founder) {
+    await prisma.user.create({
+      data: {
+        email: 'fundador@plexusmap.com',
+        password: hashSync('founder2026!', 10),
+        name: 'Clínica Óptica Central',
+        role: 'PROFESSIONAL',
+        professionalId: founder.id,
+      },
+    });
+  }
+}
+```
+
+**Análisis:**
+
+Dos credenciales con passwords triviales documentadas en el repositorio. `admin@plexusmap.com / admin123` se crea en TODOS los modos del seed (incluido production), está documentada en plaintext en CLAUDE.md, y otorga rol ADMIN que autoriza `GET /api/export/csv` (exportación completa del directorio). `fundador@plexusmap.com / founder2026!` se crea solo en production/google-places mode y NO está documentada en CLAUDE.md. Si producción fue seeded con `SEED_MODE=production` (probable, dado que `.env.production.example:30` lo configura), estas credenciales están potencialmente activas. Cualquier contributor con acceso al repo (o al CLAUDE.md) tiene acceso admin. Inconsistencia menor adicional: seed usa bcrypt cost factor 10 vs 12 en los endpoints de auth.
+
+**⚠️ Verificación pendiente del propietario (fuera del audit):**
+
+Rogelio debe verificar manualmente en producción:
+
+1. Intentar login con `admin@plexusmap.com / admin123`. Si funciona → **escalar este issue a 🔴 Crítico y rotar la credencial INMEDIATAMENTE.**
+2. Intentar login con `fundador@plexusmap.com / founder2026!`. Mismo procedimiento.
+3. Si AMBOS fallan: mantener severidad 🟠. El riesgo es latente — el próximo redeploy con `SEED_MODE=production` re-crearía estas credenciales si el seed no se modifica.
+
+**Recomendación:**
+
+1. Rotar AMBAS credenciales inmediatamente (asumir activas hasta verificar lo contrario).
+2. Reemplazar passwords triviales en `seed.ts` con `randomBytes(16).toString('hex')` y forzar reset al primer login.
+3. Eliminar tabla de credenciales de CLAUDE.md — documentar referencia a `seed.ts` en su lugar.
+4. Considerar `SEED_MODE=production` sin usuarios admin — crear el primer admin manualmente post-deploy con password generado.
+5. Unificar bcrypt cost factor a 12 en todos los flujos (seed incluido).
+
 ### 4.0.5 Buenas prácticas reconocidas
 
 Durante la verificación del audit se identificaron prácticas correctamente implementadas que vale documentar como referencia para el ecosistema Augur:
