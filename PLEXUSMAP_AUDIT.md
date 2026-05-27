@@ -1101,12 +1101,14 @@ Estas prácticas son **replicables a otros productos del ecosistema** (Kairos, P
 
 ### 4.D DevOps y continuidad
 
-- **[VERIFICADO durante audit, REMEDIADO durante audit]** Remote inexistente al iniciar audit. Resuelto en Tarea B (push a `https://github.com/coc2121712/plexusmap.git`). Se documenta igualmente como issue de **gobernanza** — no debió llegar a producción sin remote.
-- **[VERIFICADO durante audit, REMEDIADO durante audit]** `CLAUDE.md` describía Praetor (drift documental crítico). Resuelto en commit `52a53ca`. Backup del archivo erróneo preservado en `.claude/CLAUDE.md.backup-praetor`.
-- **[VERIFICADO durante audit, REMEDIADO durante audit]** 16 archivos modificados + 80 archivos nuevos sin commitear en `master` al iniciar audit. Resuelto en commit `164fd95` como snapshot WIP pre-audit.
-- **[POR VERIFICAR]** Archivos de `scripts/output/` (datos cross-reference de aseguradoras) commiteados al repo — pendiente decisión sobre `.gitignore` para futuras iteraciones.
-- **[POR VERIFICAR]** Credenciales de seed (`admin@plexusmap.com / admin123`, `gponce@plexusmap.com / demo123`) documentadas en `CLAUDE.md` versionado.
-- **[POR VERIFICAR]** Configuración de infra (`nginx/default.conf`, `scripts/vps-setup.sh`, `scripts/ssl-setup.sh`) versionada junto con código de aplicación — revisar presencia de secrets, IPs, hostnames hardcodeados.
+- **[REMEDIADO durante setup → #15 (VERIFIED-CLOSED)]** Remote git inexistente. Severidad 🟠 Alto (pre-remediación). Resuelto en Tarea B del setup del audit.
+- **[REMEDIADO durante setup → #16 (VERIFIED-CLOSED)]** CLAUDE.md describía Praetor. Severidad 🟡 Medio (pre-remediación). Resuelto en commit `52a53ca`.
+- **[REMEDIADO durante setup → #17 (VERIFIED-CLOSED)]** 96 archivos sin commitear en master. Severidad 🟠 Alto (pre-remediación). Resuelto en commit `164fd95`.
+- **[PROMOVIDA → #18]** `scripts/output/` con PII de profesionales reales (477 celulares WhatsApp) commiteado al repo sin `.gitignore`. Severidad 🟠 Alto.
+- **[PROMOVIDA → #19]** Credenciales admin triviales (`admin123`, `founder2026!`) en seed.ts, documentadas en CLAUDE.md. Activas en producción pendiente de verificación del propietario. Severidad 🟠 Alto (escalamiento condicional a 🔴).
+- **[VERIFIED-NO-ISSUE]** Configuración de infra (`nginx/default.conf`, `scripts/*.sh`, `docker-compose.yml`, `Dockerfile`) verificada: sin secrets, sin IPs hardcoded, env vars correctamente parametrizados. Documentado como buena práctica en sección 4.0.5.
+
+**Hallazgos emergentes durante verificación del bloque 4.D:** ninguno. Hipótesis 4.D.6 cerrada sin issue, documentada como buena práctica.
 
 ### 4.E Validación y superficie no documentada
 
