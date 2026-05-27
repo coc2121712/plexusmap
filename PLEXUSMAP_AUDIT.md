@@ -1179,10 +1179,14 @@ Estas prácticas son **replicables a otros productos del ecosistema** — verifi
 
 ### 4.E Validación y superficie no documentada
 
-- **[POR VERIFICAR]** Cobertura de validación Zod fuera de claim routes. `validations.ts` existe pero su uso en `/api/dashboard/*`, `/api/appointments/*`, `/api/professionals/[slug]/reviews`, etc. es desconocido.
-- **[POR VERIFICAR]** 11 endpoints nuevos no documentados en `AUDIT-BRIEF.md` (`/api/geocode/*`, `/api/export/csv`, `/api/og`, `/api/icon`, `/api/professionals/[slug]/sync-ical`, `/api/appointments/*`, `/api/auth/reset-password`, `/api/claim/verify/complete`) — superficie de ataque no auditada en brief anterior.
-- **[POR VERIFICAR]** `POST /api/professionals/[slug]/sync-ical` — fetch de URL externa controlada por el dueño del Professional → posible vector SSRF si el endpoint no valida destination.
-- **[POR VERIFICAR]** `GET /api/export/csv` — endpoint público que exporta datos del directorio → revisar rate limiting y posible scraping a gran escala.
+- **[VERIFIED-NO-ISSUE]** Cobertura Zod completa. 9 esquemas en `validations.ts` cubren los 9 endpoints POST/PUT. GET endpoints con validación manual apropiada. Queries parametrizadas vía Prisma. Documentado como buena práctica en sección 4.0.5.
+- **[NOTA METODOLÓGICA]** 11 endpoints adicionales al AUDIT-BRIEF abril 2026 identificados y cubiertos durante bloques 4.A-4.F. Ver nota al cierre del bloque.
+- **[PROMOVIDA → #20]** SSRF en sync-ical. Fetch nativo a URL arbitraria sin validación de protocolo/IP/allowlist. Docker network expone postgres, redis, y app. Cross-ref #19 amplifica superficie. Severidad: 🔴 Crítico.
+- **[VERIFIED-NO-ISSUE]** `GET /api/export/csv` requiere auth + rol ADMIN + rate limit general (100/min). Ya evaluado como aceptable en #10. Seguridad efectiva depende de resolución de #19 (credenciales admin triviales).
+
+**Nota metodológica (4.E.2):** AUDIT-BRIEF.md (versión abril 2026) describía ~9 endpoints. La auditoría identificó 20 route files en `src/app/api/`, con 11 endpoints adicionales no documentados en el brief original (`/api/geocode/*`, `/api/export/csv`, `/api/og`, `/api/icon`, `/api/professionals/[slug]/sync-ical`, `/api/appointments/*`, `/api/auth/reset-password`, `/api/claim/verify/complete`, `/api/health`). La cobertura de auditoría se extendió a todos durante los bloques 4.A-4.F. Recomendación para futuros productos del ecosistema Augur: regenerar AUDIT-BRIEF como paso inicial del audit, no asumir vigencia del previo.
+
+**Observación emergente para bloque 4.F:** durante revisión de `POST /api/professionals/[slug]/reviews` se identificó que el per-name rate limit es bypassable con nombres distintos. Revisar en bloque 4.F como issue de integridad/spam, no de seguridad de superficie.
 
 ### 4.F Modelo de datos e integridad
 
