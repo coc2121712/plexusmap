@@ -889,6 +889,37 @@ Regenerado completamente en commit `52a53ca` con identidad correcta de PlexusMap
 1. CLAUDE.md debe regenerarse al forkear/clonar/derivar un proyecto. Considerar check en CI que valide que CLAUDE.md menciona el nombre del repo.
 2. Agregar verificación de CLAUDE.md como paso obligatorio en el checklist de setup de nuevos productos Augur.
 
+#### #17 — 96 archivos sin commitear en master al inicio del audit
+
+**Severidad:** 🟠 Alto (pre-remediación)
+**Categoría:** DevOps (gobernanza)
+**Archivos:** 16 archivos modificados + 80 archivos untracked en `master` al inicio del audit
+**Estado:** VERIFIED-CLOSED (remediado en commit `164fd95`)
+**Vinculado a:** Hipótesis 4.D.3
+
+**Evidencia (estado original al inicio del audit):**
+
+```bash
+# git status al iniciar audit (25-may-2026):
+# 16 modified:  schema.prisma, seed.ts, components, layouts, API routes
+# 80 untracked: scripts/import-*.ts, scripts/output/*, scripts/google-places-*,
+#               geocode endpoints, OG endpoints, dashboard updates, etc.
+# Último commit pre-audit: 01935f6 (10-may-2026) — 16 días sin commitear
+```
+
+**Análisis:**
+
+~96 archivos de trabajo significativo sin trazabilidad en version control: migraciones Prisma modificadas, 30+ scripts de import de aseguradoras, datos de cross-reference, componentes nuevos de dashboard, endpoints de geocoding y OG image. El último commit (`01935f6`, 10-may-2026) tenía 16 días de antigüedad. Un `git checkout .` accidental, pérdida de disco, o ransomware habría destruido todo el trabajo acumulado sin posibilidad de recuperación — incluyendo los scripts que importaron los 500+ profesionales reales al directorio.
+
+**Remediación aplicada:**
+
+Snapshot WIP en commit `164fd95` previo al inicio del audit. Commit honesto sobre la naturaleza no-cohesiva del bundle: "bundling uncommitted work prior to audit/plexusmap-initial".
+
+**Lección para el ecosistema:**
+
+1. Política de commit frequency: al menos un commit diario en branches de trabajo activo.
+2. Considerar git hook que advierta si han pasado >3 días sin commit local.
+
 ### 4.0.5 Buenas prácticas reconocidas
 
 Durante la verificación del audit se identificaron prácticas correctamente implementadas que vale documentar como referencia para el ecosistema Augur:
