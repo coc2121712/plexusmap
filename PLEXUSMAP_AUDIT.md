@@ -825,6 +825,38 @@ La consistencia de este patrón con el resto del ecosistema Augur (Kairos, Praet
 4. Agregar variable `LOG_LEVEL` a `.env.example` y `.env.production.example`.
 5. Considerar integración con servicio de error tracking (Sentry o equivalente) para alertas en tiempo real.
 
+#### #15 — Remote git inexistente al inicio del audit
+
+**Severidad:** 🟠 Alto (pre-remediación)
+**Categoría:** DevOps (continuidad)
+**Archivos:** `.git/config` (al inicio del audit: sin sección `[remote]`)
+**Estado:** VERIFIED-CLOSED (remediado durante Tarea B del setup del audit, 25-may-2026)
+**Vinculado a:** Hipótesis 4.D.1
+
+**Evidencia (estado original al inicio del audit):**
+
+```bash
+# Al iniciar el audit (25-may-2026), git remote -v retornó vacío
+$ git remote -v
+# (sin output — no existía remote configurado)
+
+# El repo solo existía en disco local del entorno de desarrollo
+# git log mostraba commits desde d67d974 (Initial commit) sin push a ningún remote
+```
+
+**Análisis:**
+
+Producto en producción activa (Hostinger VPS con DNS y SSL configurados) sin respaldo del código fuente en ningún remote. El repo solo existía en disco local. No había code review posible, no había disaster recovery del código (los backups de DB existían, pero no del código), y no había trazabilidad cross-ecosystem. Un fallo de disco, `rm -rf` accidental, o ransomware habría perdido la historia completa del proyecto — incluyendo 3 migraciones Prisma, 30+ scripts de import, y la configuración de infraestructura.
+
+**Remediación aplicada:**
+
+`git remote add origin https://github.com/coc2121712/plexusmap.git` + push de `master` y `audit/plexusmap-initial` durante Tarea B del setup del audit (25-may-2026).
+
+**Lección para el ecosistema:**
+
+1. Política Augur: remote obligatorio desde day-1 en todo producto. Considerar pre-commit hook que rechace commits en repos sin remote configurado.
+2. Verificar que los otros productos del ecosistema (Kairos, Praetor, Exactor) tengan remotes activos con push reciente.
+
 ### 4.0.5 Buenas prácticas reconocidas
 
 Durante la verificación del audit se identificaron prácticas correctamente implementadas que vale documentar como referencia para el ecosistema Augur:
