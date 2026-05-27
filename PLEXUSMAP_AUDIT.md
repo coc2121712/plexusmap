@@ -1053,6 +1053,20 @@ Durante la verificación del audit se identificaron prácticas correctamente imp
 
 Estas prácticas son **replicables a otros productos del ecosistema** (Kairos auth, Praetor auth) durante las re-auditorías pendientes.
 
+**Infraestructura y deploy:**
+
+- **Configuración Nginx sin secrets ni IPs hardcoded**: `nginx/default.conf` referencia solo el hostname público `plexusmap.com` y el upstream Docker (`plexusmap:3000`). Sin API keys, tokens, ni valores sensibles versionados. Evidencia: `nginx/default.conf`.
+
+- **Docker Compose con env vars parametrizados**: secrets gestionados via `${POSTGRES_PASSWORD}` y `env_file: .env.production`, sin valores hardcoded. Dockerfile usa dummy `DATABASE_URL` para build, explícitamente comentado como tal. Evidencia: `docker-compose.yml`, `Dockerfile:34`.
+
+- **Scripts de deploy sin secrets**: `vps-setup.sh`, `ssl-setup.sh`, `deploy.sh`, `backup-db.sh` — todos verificados sin API keys, tokens, ni passwords hardcoded. IP del VPS obtenida dinámicamente vía `$(curl -s ifconfig.me)`, no hardcoded. Única IP en scripts: `127.0.0.1` (loopback). Evidencia: `scripts/*.sh`.
+
+- **Healthcheck de Docker activo**: `wget -q --spider http://localhost:3000/api/health` con reintentos configurados. Backup automatizado de PostgreSQL con `pg_dump` + gzip + retención de 14 días. Evidencia: `docker-compose.yml:16-21`, `scripts/backup-db.sh`.
+
+- **Security headers en Nginx**: `X-Frame-Options: DENY`, `X-Content-Type-Options: nosniff`, `Referrer-Policy: strict-origin-when-cross-origin`. Evidencia: `nginx/default.conf:79-81`.
+
+Estas prácticas son **replicables a otros productos del ecosistema** (Kairos, Praetor, Exactor) durante sus deploys a producción.
+
 ### 4.A Vector primario — claim flow
 
 - **[PROMOVIDA → #1]** Token de verificación nunca enviado al profesional. Peor que la hipótesis: no existe infraestructura de email. En dev, token retornado en respuesta HTTP. En prod, flujo muerto.
