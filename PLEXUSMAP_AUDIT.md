@@ -920,6 +920,52 @@ Snapshot WIP en commit `164fd95` previo al inicio del audit. Commit honesto sobr
 1. Política de commit frequency: al menos un commit diario en branches de trabajo activo.
 2. Considerar git hook que advierta si han pasado >3 días sin commit local.
 
+#### #18 — scripts/output/ con PII de profesionales reales commiteado al repo
+
+**Severidad:** 🟠 Alto
+**Categoría:** DevOps (gobernanza de datos)
+**Archivos:** `scripts/output/` (35 archivos, 9.3 MB), `.gitignore`
+**Estado:** OPEN
+**Vinculado a:** Hipótesis 4.D.4
+
+**Evidencia:**
+
+```bash
+# scripts/output/ — 35 archivos, 9.3 MB de datos intermedios de import
+$ ls scripts/output/
+assa-raw.json          bcbs-raw.json          mapfre-raw.json
+assa-matched.json      bcbs-matched.json      mapfre-matched.json
+assa-new.json          bcbs-new.json          mapfre-new.json
+palig-raw.json         sura-raw.json          campaign-whatsapp.csv
+palig-matched.json     sura-matched.json      sura-red-medica.pdf (3.8 MB)
+palig-new.json         sura-new.json          sura-red-ap.pdf (511 KB)
+# ... + stats, insert-results, raw-text por aseguradora
+```
+
+```csv
+# campaign-whatsapp.csv — 477 filas con celulares personales de profesionales reales
+name,slug,whatsappPhone,specialty,fullUrl
+# (477 filas con nombre real, número WhatsApp personal, especialidad, URL de perfil)
+```
+
+```bash
+# scripts/output/ NO está en .gitignore
+$ grep -i "output" .gitignore
+# (sin resultados)
+```
+
+**Análisis:**
+
+35 archivos de datos intermedios de import de 5 aseguradoras panameñas (ASSA, BCBS, MAPFRE, PALIG, SURA) + una campaña de WhatsApp están versionados en el repositorio sin exclusión en `.gitignore`. Los archivos contienen nombres, teléfonos de consultorio, ubicaciones, y especialidades de profesionales reales de salud de Panamá — datos originados de directorios semi-públicos de aseguradoras. Sin embargo, `campaign-whatsapp.csv` contiene 477 **números de celular WhatsApp personales** asociados a nombres reales — estos NO son datos públicos del directorio (el directorio muestra teléfono de consulta, no celular personal). Adicionalmente, 2 PDFs de Sura (4.3 MB combinados) son directorios de red médica completos. Aunque el repo es privado actualmente, la mitigación es frágil: un cambio accidental a público, un colaborador externo invitado, o un fork interno expone 477 personas. Los 9.3 MB de datos intermedios tampoco deberían estar versionados — son regenerables desde los scripts de import.
+
+**Recomendación:**
+
+1. Agregar `scripts/output/` a `.gitignore` inmediatamente.
+2. `git rm --cached -r scripts/output/` + commit para desversionar sin eliminar de disco local.
+3. Mover los datos a un bucket privado (S3, Cloudflare R2) o regenerarlos on-demand desde los scripts de import.
+4. Si el repo se va a hacer público alguna vez: reescribir history con BFG Repo-Cleaner o `git filter-repo` para eliminar estos archivos de commits previos.
+5. Política Augur: revisar si otros productos del ecosistema tienen datos intermedios de import versionados.
+
 ### 4.0.5 Buenas prácticas reconocidas
 
 Durante la verificación del audit se identificaron prácticas correctamente implementadas que vale documentar como referencia para el ecosistema Augur:
