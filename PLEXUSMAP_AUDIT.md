@@ -857,6 +857,38 @@ Producto en producción activa (Hostinger VPS con DNS y SSL configurados) sin re
 1. Política Augur: remote obligatorio desde day-1 en todo producto. Considerar pre-commit hook que rechace commits en repos sin remote configurado.
 2. Verificar que los otros productos del ecosistema (Kairos, Praetor, Exactor) tengan remotes activos con push reciente.
 
+#### #16 — CLAUDE.md describía Praetor por error (drift documental crítico)
+
+**Severidad:** 🟡 Medio (pre-remediación)
+**Categoría:** DevOps (drift documental)
+**Archivos:** `CLAUDE.md`, `.claude/CLAUDE.md.backup-praetor`
+**Estado:** VERIFIED-CLOSED (remediado en commit `52a53ca`)
+**Vinculado a:** Hipótesis 4.D.2
+
+**Evidencia (estado original al inicio del audit):**
+
+```markdown
+# Estado del CLAUDE.md ANTES de commit 52a53ca:
+# - Identidad: describía Praetor (plataforma WhatsApp+IA)
+# - Estructura objetivo: rutas y convenciones de Nexus inbox
+# - Referencias a archivos de Ludus (CRM interno)
+# - Cero contenido específico de PlexusMap
+# Backup preservado: .claude/CLAUDE.md.backup-praetor
+```
+
+**Análisis:**
+
+CLAUDE.md es el archivo de contexto primario para agentes IA (Claude Code, Cursor, Codex). El archivo contenía la identidad, estructura, y convenciones de Praetor — un producto completamente diferente del ecosistema Augur. Cualquier agente que usara CLAUDE.md como contexto habría recibido instrucciones incorrectas: rutas de archivos inexistentes, convenciones de otro stack, y decisiones arquitectónicas de otro producto. Esto probablemente ocurrió al copiar la estructura del proyecto desde Praetor sin regenerar CLAUDE.md.
+
+**Remediación aplicada:**
+
+Regenerado completamente en commit `52a53ca` con identidad correcta de PlexusMap: stack real (Next.js 16 + Prisma + NextAuth), vector primario (claim flow), comandos, estructura del proyecto, y política de auditoría Augur. Backup del archivo original preservado en `.claude/CLAUDE.md.backup-praetor`.
+
+**Lección para el ecosistema:**
+
+1. CLAUDE.md debe regenerarse al forkear/clonar/derivar un proyecto. Considerar check en CI que valide que CLAUDE.md menciona el nombre del repo.
+2. Agregar verificación de CLAUDE.md como paso obligatorio en el checklist de setup de nuevos productos Augur.
+
 ### 4.0.5 Buenas prácticas reconocidas
 
 Durante la verificación del audit se identificaron prácticas correctamente implementadas que vale documentar como referencia para el ecosistema Augur:
