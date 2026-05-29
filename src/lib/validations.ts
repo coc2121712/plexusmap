@@ -90,6 +90,29 @@ export const resetPasswordSchema = z.object({
   password: z.string().min(8, 'La contraseña debe tener al menos 8 caracteres'),
 });
 
+// Change password for an authenticated user (issue #21). Stronger policy than the
+// claim/reset flows (min 12 + complexity) — those still use min(8); see issue #22.
+export const changePasswordSchema = z
+  .object({
+    currentPassword: z.string().min(1, 'Contraseña actual requerida'),
+    newPassword: z
+      .string()
+      .min(12, 'La nueva contraseña debe tener al menos 12 caracteres')
+      .max(72, 'La contraseña no puede exceder 72 caracteres') // bcrypt trunca a 72 bytes
+      .regex(/[a-z]/, 'Debe incluir al menos una letra minúscula')
+      .regex(/[A-Z]/, 'Debe incluir al menos una letra mayúscula')
+      .regex(/[0-9]/, 'Debe incluir al menos un número'),
+    confirmPassword: z.string().min(1, 'Confirma tu nueva contraseña'),
+  })
+  .refine((d) => d.newPassword === d.confirmPassword, {
+    message: 'Las contraseñas no coinciden',
+    path: ['confirmPassword'],
+  })
+  .refine((d) => d.newPassword !== d.currentPassword, {
+    message: 'La nueva contraseña debe ser diferente a la actual',
+    path: ['newPassword'],
+  });
+
 // ═══════════════════════════════════════════
 // Helper: parse body with Zod, return error response if invalid
 // ═══════════════════════════════════════════
