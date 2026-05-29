@@ -18,5 +18,6 @@ declare module 'next-auth/jwt' {
     role: string;
     professionalId: string | null;
     professionalSlug: string | null;
+    pwcAt?: number;
   }
 }
