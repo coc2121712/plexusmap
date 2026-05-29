@@ -18,6 +18,10 @@ model User {
   name           String
   role           UserRole @default(PROFESSIONAL)
 
+  // Set whenever the password changes. Sessions whose JWT was issued before this
+  // timestamp are invalidated in the NextAuth session callback (issue #21).
+  passwordChangedAt DateTime?
+
   professionalId String?  @unique
   professional   Professional? @relation(fields: [professionalId], references: [id])
 
