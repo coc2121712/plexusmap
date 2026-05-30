@@ -1122,6 +1122,35 @@ Un usuario autenticado no tenía vía alguna para rotar su contraseña. Combinad
 
 **Trade-off documentado:** la invalidación real con JWT stateless añade 1 lookup indexado por PK por verificación de sesión (callback `session`). Es el costo inherente de invalidar sin store server-side; se aceptó en lugar de rotar `NEXTAUTH_SECRET` (que mataría TODAS las sesiones, incluida la actual).
 
+#### #22 — Política de password inconsistente entre flujos de auth
+
+**Severidad:** 🟡 Medio
+**Categoría:** Seguridad (política de password)
+**Archivos:** `src/lib/validations.ts` (`claimCompleteSchema`, `resetPasswordSchema`, `changePasswordSchema`)
+**Estado:** OPEN
+**Vinculado a:** #21 (su endpoint usa la política fuerte; los otros no) | #11 (cuando forgot-password reviva debe usar la política fuerte)
+
+**Evidencia:**
+
+```ts
+// claimCompleteSchema — min 8, sin complejidad, sin cap
+password: z.string().min(8, 'La contraseña debe tener al menos 8 caracteres'),
+// resetPasswordSchema — min 8, sin complejidad, sin cap
+password: z.string().min(8, 'La contraseña debe tener al menos 8 caracteres'),
+// changePasswordSchema (#21) — min 12 + complejidad + max 72
+.min(12).max(72).regex(/[a-z]/).regex(/[A-Z]/).regex(/[0-9]/)
+```
+
+**Análisis:**
+
+El cambio de password (#21) exige `min(12)` + complejidad (minúscula, mayúscula, dígito) + cap de 72 bytes (límite de bcrypt). Los flujos de **creación** de credencial — `claimCompleteSchema` (claim) y `resetPasswordSchema` (reset) — siguen en `min(8)` sin complejidad ni cap. Inconsistencia: una contraseña que NO se aceptaría al cambiarla SÍ se acepta al crearla en el claim o al resetearla. Además, sin `max(72)`, bcrypt trunca silenciosamente las entradas más largas (ignora bytes >72).
+
+**Recomendación:**
+
+1. Extraer la política de `changePasswordSchema` a un esquema/refinamiento Zod reutilizable y aplicarlo en `claimCompleteSchema` y `resetPasswordSchema`.
+2. Capar las tres entradas a `max(72)`.
+3. Coordinar con #11: al revivir forgot-password, el reset debe nacer con la política fuerte.
+
 ### 4.0.5 Buenas prácticas reconocidas
 
 Durante la verificación del audit se identificaron prácticas correctamente implementadas que vale documentar como referencia para el ecosistema Augur:
