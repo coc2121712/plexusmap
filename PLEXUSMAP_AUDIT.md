@@ -1092,6 +1092,36 @@ El Docker network (`plexusmap-net`) expone directamente postgres (puerto 5432), 
 5. Mover fetch a un proxy/worker separado con red restringida si la complejidad de allowlist crece.
 6. **Mitigación inmediata:** considerar disable temporal del endpoint sync-ical hasta implementar (1)+(2). Cross-ref con #19: rotar credenciales admin reduce inmediatamente la superficie de amplificación.
 
+#### #21 — Sin capacidad de cambio de password para usuario autenticado
+
+**Severidad:** 🟠 Alto (combinado con #11 el impacto práctico es 🔴 — ver Análisis)
+**Categoría:** Seguridad (gestión de credenciales)
+**Archivos:** `src/app/api/auth/change-password/route.ts` (nuevo), `src/components/dashboard/ChangePasswordForm.tsx` (nuevo), `src/app/(dashboard)/dashboard/security/` (nuevo), `src/app/api/auth/[...nextauth]/route.ts`, `src/types/next-auth.d.ts`, `prisma/schema.prisma`
+**Estado:** REMEDIADO (en este audit)
+**Vinculado a:** #11 (forgot-password muerto) | genera #22 (política de password) | #14 (logging — TODO dejado en el endpoint)
+
+**Evidencia (pre-remediación):**
+
+```bash
+# 0 resultados — no existía endpoint ni UI de cambio de password
+$ glob "**/change-password/**"      # vacío
+$ grep -rn "passwordChangedAt"      # vacío
+# DashboardShell NAV_ITEMS: Resumen / Mi Perfil / Horario / Reseñas — sin "Seguridad"
+```
+
+**Análisis:**
+
+Un usuario autenticado no tenía vía alguna para rotar su contraseña. Combinado con #11 (forgot-password no entrega el token en producción por falta de infra de email), el resultado es que **un usuario no podía rotar su credencial por NINGÚN medio**: ni reset por email (muerto), ni cambio autenticado (inexistente). Para el vector primario del producto (takeover vía claim), una víctima de takeover tampoco podía recuperar control rotando la credencial. Es la razón del impacto práctico 🔴 pese a la severidad standalone 🟠.
+
+**Remediación aplicada (este audit):**
+
+1. `User.passwordChangedAt DateTime?` + migración `20260529125943_add_password_changed_at` (commit `f710706`).
+2. `PUT /api/auth/change-password`: auth → 401, rate limit per-user 5/hora → 429, validación Zod (`changePasswordSchema`), verificación de `currentPassword` con `bcrypt.compare`, update con `bcrypt.hash` cost 12 (commit `50bb4f1`).
+3. Invalidación de sesiones (estrategia JWT): claim `pwcAt` en el token, comparado contra `passwordChangedAt` en el callback `session` de NextAuth → retorno `null` fuerza relogin de las OTRAS sesiones; la actual sobrevive vía `update()` del cliente (commit `ed11d18`). **No se usa `token.iat`**: verificado contra `node_modules/next-auth/core/routes/session.js` + `jwt/index.js` que NextAuth 4.24.13 lo re-sella (`.setIssuedAt()`) en cada lectura de sesión, volviéndolo inservible para este propósito.
+4. UI en `/dashboard/security` con indicador de fortaleza, validación en vivo y confirmación al éxito (commit `57c1b36`).
+
+**Trade-off documentado:** la invalidación real con JWT stateless añade 1 lookup indexado por PK por verificación de sesión (callback `session`). Es el costo inherente de invalidar sin store server-side; se aceptó en lugar de rotar `NEXTAUTH_SECRET` (que mataría TODAS las sesiones, incluida la actual).
+
 ### 4.0.5 Buenas prácticas reconocidas
 
 Durante la verificación del audit se identificaron prácticas correctamente implementadas que vale documentar como referencia para el ecosistema Augur:
