@@ -1151,6 +1151,34 @@ El cambio de password (#21) exige `min(12)` + complejidad (minúscula, mayúscul
 2. Capar las tres entradas a `max(72)`.
 3. Coordinar con #11: al revivir forgot-password, el reset debe nacer con la política fuerte.
 
+#### #23 — DB local en Postgres nativo en vez del container Docker declarado
+
+**Severidad:** 🟡 Medio
+**Categoría:** DevOps (drift de configuración local)
+**Archivos:** `docker-compose.yml:28-47`, `.env:8`
+**Estado:** OPEN
+**Vinculado a:** Hallazgo emergente durante el setup de migración de #21 | Sección 7.3 (separación de infra)
+
+**Evidencia:**
+
+```
+- docker-compose.yml define servicio `postgres` (container `plexusmap-db`, DB `plexusmap`) — nunca arrancado localmente.
+- Docker Desktop local: otros productos del ecosistema (Exactor, Praetor, Locus, dental-revenue-engine), NINGÚN container de PlexusMap.
+- Puerto 5432 servido por Postgres NATIVO de Windows: servicio `postgresql-x64-17` (Running, Automatic).
+- .env → DATABASE_URL=postgresql://dental:dental@localhost:5432/plexusmap (credenciales `dental:dental` = leftover de otro proyecto; nombre de DB `plexusmap` correcto).
+- Sub-hallazgo: migraciones legacy `add_premium_plan` y `add_whatsapp_phone` NO estaban aplicadas en la DB local (`_prisma_migrations` atrasado, solo `foundation`). Confirmado vía `migrate status` + `db pull --print` (columnas y enum `PlanType` realmente faltaban — no era desync). Sincronizado en este trabajo con `prisma migrate deploy` (forward-only, aditivo, cero pérdida de datos).
+```
+
+**Análisis:**
+
+El desarrollo local corre sobre un Postgres nativo de Windows, no sobre el container Docker que `docker-compose.yml` declara como fuente canónica. Sin impacto en producción (que sí usa Docker vía `.env.production` + service name `postgres`), pero indica drift entre la configuración declarada y la real, y explica por qué el historial de migraciones local estaba atrasado. El resto del ecosistema corre en Docker localmente.
+
+**Recomendación:**
+
+1. Migrar el desarrollo local al container Docker `plexusmap-db` (`docker compose up postgres`) para alinear con ecosistema y producción.
+2. Corregir las credenciales leftover `dental:dental` en `.env` local.
+3. Documentar el procedimiento de arranque local (servicio Docker + migraciones) — ligado a la deuda de `.env.example` y Sección 7.3.
+
 ### 4.0.5 Buenas prácticas reconocidas
 
 Durante la verificación del audit se identificaron prácticas correctamente implementadas que vale documentar como referencia para el ecosistema Augur:
