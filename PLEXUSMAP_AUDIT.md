@@ -1189,6 +1189,16 @@ El desarrollo local corre sobre un Postgres nativo de Windows, no sobre el conta
   2. Crear índice GIN trigram (`pg_trgm`) sobre `Professional.name` y `address` para acelerar los `contains`.
   3. Evaluar índice compuesto que soporte el `orderBy` por defecto, o materializar el ranking si el dataset crece.
 
+#### #25 — PII (whatsappPhone, patientPhone) sin cifrado at-rest ni separación público/privado a nivel modelo 🟡
+
+- **Evidencia:** `prisma/schema.prisma:75` (`whatsappPhone` en la misma fila que el contacto público), `:137-138` (`Review.patientName/patientPhone`), `:159-160` (`Appointment.patientName/patientPhone`) — todo TEXT en claro, sin cifrado. `Review.patientPhone` no se setea en el flujo público (`src/app/api/professionals/[slug]/reviews/route.ts:49-58`). Verificado que NO hay fuga por la API: el perfil omite `patientPhone` (`src/app/[slug]/page.tsx:58-68`) y la búsqueda solo expone el `phone` landline (`src/app/api/professionals/route.ts:96-116`).
+- **Impacto:** El modelo mezcla PII sensible (celular WhatsApp personal, teléfonos de pacientes) con datos públicos en la misma tabla, sin cifrado at-rest ni separación de columnas públicas/privadas. Es la causa raíz a nivel de datos de #18 (el `campaign-whatsapp.csv` se origina de `whatsappPhone`). No hay fuga activa por la API hoy, pero la ausencia de separación deja la PII expuesta ante cualquier nuevo serializer, export o backup.
+- **Cross-ref:** #18
+- **Recomendación:**
+  1. Separar la PII privada (`whatsappPhone`, `patientPhone`) a tabla/columnas con cifrado at-rest (pgcrypto o cifrado a nivel app).
+  2. Dropear `Review.patientPhone` si se confirma muerto, o documentar su uso (minimización de datos).
+  3. Definir una lista explícita de campos serializables y un tipo `PublicProfessional` que impida exponer PII por accidente.
+
 #### #26 — Pipeline de import sin constraint anti-duplicado 🟡
 
 - **Evidencia:** `scripts/insert-assa-new.ts:147-152` (slug con sufijo `-N` ante colisión → garantiza la inserción aunque el nombre choque), `prisma/seed.ts:858-871` (`generateUniqueSlug`, mismo patrón); `prisma/schema.prisma:65-106` (`Professional` sin unique en `(name, address)` ni `phone`; solo `slug` unique). Dedup es script manual post-hoc por nombre normalizado-ordenado (`scripts/dedup-professionals.ts:73-100`); el matching fuzzy Levenshtein decide new-vs-matched (`scripts/utils/normalize.ts:29-75`).
@@ -1208,6 +1218,16 @@ El desarrollo local corre sobre un Postgres nativo de Windows, no sobre el conta
   1. Eliminar `Math.random()`; usar coordenada determinista (centro de provincia exacto) y marcar el registro como "ubicación aproximada".
   2. Agregar flag `geocodePrecision` (exact/approx/default) al modelo para no tratar aproximados como exactos en UI/SEO.
   3. Cola de re-geocoding para registros `approx/default` cuando haya API key disponible.
+
+#### #30 — Sin soft-delete ni flujo de borrado/rectificación (Ley 81 PA) 🟡
+
+- **Evidencia:** `prisma/schema.prisma` (cero `deletedAt` en los 9 modelos); sin endpoint de borrado de cuenta/datos (`src/app/api/dashboard/` solo expone `profile`, `schedule`, `reviews/[id]/reply`); `ClaimRequest` retiene PII (`name`, `email`, `phone` — `schema.prisma:197-199`) sin expiración (cross-ref #6).
+- **Impacto:** No existe patrón de borrado lógico ni flujo para que un titular ejerza supresión o rectificación de sus datos. Un profesional reclamado puede editar su perfil pero no borrar su cuenta ni su PII; los `ClaimRequest` conservan PII indefinidamente. Gap de cumplimiento ante la Ley 81 de Protección de Datos Personales de Panamá (derechos de supresión y rectificación).
+- **Cross-ref:** #6, #18
+- **Recomendación:**
+  1. Agregar `deletedAt` (soft-delete) a los modelos con PII y filtrarlo en todas las queries públicas.
+  2. Implementar endpoint autenticado de "borrar mi cuenta/datos" con cascada/anonimización (Reviews, Appointments, ClaimRequests).
+  3. Definir política de retención y purga automática de `ClaimRequest`/PII vencida; documentar la base legal Ley 81.
 
 ### 4.0.5 Buenas prácticas reconocidas
 
