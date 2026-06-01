@@ -1179,6 +1179,36 @@ El desarrollo local corre sobre un Postgres nativo de Windows, no sobre el conta
 2. Corregir las credenciales leftover `dental:dental` en `.env` local.
 3. Documentar el procedimiento de arranque local (servicio Docker + migraciones) — ligado a la deuda de `.env.example` y Sección 7.3.
 
+#### #24 — Falta índice inverso en ProfessionalInsurance.insuranceId + sin índice de texto en búsqueda 🟡
+
+- **Evidencia:** `prisma/schema.prisma:120-127` (`ProfessionalInsurance` con `@@id([professionalId, insuranceId])`, sin `@@index([insuranceId])`); `src/app/api/professionals/route.ts:59-68` (filtro por aseguradora vía `insurances.some.insurance.name contains`), `:33-49` (búsqueda `name`/`address` con `contains` mode insensitive → ILIKE `%term%`), `:89` (`orderBy [isPriority, isVerified, rating]`). El índice `[lat,lng]` (`schema.prisma:104`) no lo usa ninguna query (el mapa filtra client-side).
+- **Impacto:** La PK compuesta solo indexa con `professionalId` como prefijo, así que el filtro por aseguradora hace lookup inverso sin índice. Las búsquedas de texto corren ILIKE `%term%` sin índice trigram/GIN → full table scan. Con 2,685+ profesionales el costo crece linealmente por request (la cache de 60s mitiga parcialmente, no elimina).
+- **Cross-ref:** —
+- **Recomendación:**
+  1. Agregar `@@index([insuranceId])` a `ProfessionalInsurance` (migración aditiva).
+  2. Crear índice GIN trigram (`pg_trgm`) sobre `Professional.name` y `address` para acelerar los `contains`.
+  3. Evaluar índice compuesto que soporte el `orderBy` por defecto, o materializar el ranking si el dataset crece.
+
+#### #26 — Pipeline de import sin constraint anti-duplicado 🟡
+
+- **Evidencia:** `scripts/insert-assa-new.ts:147-152` (slug con sufijo `-N` ante colisión → garantiza la inserción aunque el nombre choque), `prisma/seed.ts:858-871` (`generateUniqueSlug`, mismo patrón); `prisma/schema.prisma:65-106` (`Professional` sin unique en `(name, address)` ni `phone`; solo `slug` unique). Dedup es script manual post-hoc por nombre normalizado-ordenado (`scripts/dedup-professionals.ts:73-100`); el matching fuzzy Levenshtein decide new-vs-matched (`scripts/utils/normalize.ts:29-75`).
+- **Impacto:** El unique de `slug` no previene duplicados — se evade por diseño con sufijo numérico. Variaciones de grafía de un mismo profesional entre aseguradoras caen bajo el umbral fuzzy y entran como registros nuevos. La integridad depende de correr manualmente `dedup-professionals.ts --execute`; sin constraint de DB, los duplicados reaparecen en cada import.
+- **Cross-ref:** —
+- **Recomendación:**
+  1. Agregar unique compuesto natural (p.ej. `(normalizedName, phone)` o `(name, address)`) o una clave de deduplicación persistida.
+  2. Mover la lógica de dedup a un upsert idempotente dentro del pipeline de import (no post-hoc).
+  3. Registrar `source`/`externalId` por aseguradora para reconciliación trazable.
+
+#### #27 — Geocoding no determinista persistido 🟡
+
+- **Evidencia:** `scripts/utils/geocode.ts:166-172` (fallback `province.lat + (Math.random()-0.5)*0.02`, persistido con `geocoded:false`), `:6-7` (`DEFAULT_LAT=8.9824, DEFAULT_LNG=-79.5199`) colisiona con la coordenada de un profesional real del seed (`prisma/seed.ts:84`). `scripts/insert-assa-new.ts:155-157` persiste el lat/lng del fallback a la DB.
+- **Impacto:** Cuando el geocoding falla, se persisten coordenadas aleatorias (±~1.1 km) no reproducibles entre corridas — el marcador del mapa es esencialmente ficticio. Re-importar produce ubicaciones distintas para el mismo profesional. El default colisiona con un profesional real, apilando pins en un punto.
+- **Cross-ref:** —
+- **Recomendación:**
+  1. Eliminar `Math.random()`; usar coordenada determinista (centro de provincia exacto) y marcar el registro como "ubicación aproximada".
+  2. Agregar flag `geocodePrecision` (exact/approx/default) al modelo para no tratar aproximados como exactos en UI/SEO.
+  3. Cola de re-geocoding para registros `approx/default` cuando haya API key disponible.
+
 ### 4.0.5 Buenas prácticas reconocidas
 
 Durante la verificación del audit se identificaron prácticas correctamente implementadas que vale documentar como referencia para el ecosistema Augur:
