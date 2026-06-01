@@ -1219,6 +1219,16 @@ El desarrollo local corre sobre un Postgres nativo de Windows, no sobre el conta
   2. Agregar flag `geocodePrecision` (exact/approx/default) al modelo para no tratar aproximados como exactos en UI/SEO.
   3. Cola de re-geocoding para registros `approx/default` cuando haya API key disponible.
 
+#### #29 — Drift schema/migraciones + seed destructivo 🟡
+
+- **Evidencia:** `prisma/migrations/20260403025903_foundation/migration.sql:86` (`patientPhone TEXT NOT NULL`) vs `prisma/schema.prisma:138` (`patientPhone String?` nullable) — ninguna migración reconcilia el cambio; se aplicó vía `db push` (documentado en `AUDIT-BRIEF.md:44`). Migraciones manuales sin el timestamp completo de Prisma: `prisma/migrations/20260409_add_premium_plan/`, `20260414_add_whatsapp_phone/` (vs `20260403025903_foundation`). Seed destructivo: `prisma/seed.ts:880-887` (`deleteMany` de todas las tablas al inicio).
+- **Impacto:** El historial de migraciones no refleja el schema ni el DB vivo. Un `migrate deploy` sobre una DB fresca produce `patientPhone NOT NULL`, y la ruta de reseñas (que no setea `patientPhone`) fallaría al crear reseñas públicas. El seed borra todo al inicio: ejecutarlo contra producción destruye los datos (cross-ref #19).
+- **Cross-ref:** #19
+- **Recomendación:**
+  1. Generar una migración que reconcilie `Review.patientPhone` (nullable) y dejar de usar `db push` en favor de `migrate dev`.
+  2. Regenerar/renombrar las migraciones manuales al formato timestamp de Prisma; verificar `migrate status` limpio.
+  3. Hacer el seed idempotente y no destructivo (upsert), o gatearlo explícitamente para que nunca corra en producción.
+
 #### #30 — Sin soft-delete ni flujo de borrado/rectificación (Ley 81 PA) 🟡
 
 - **Evidencia:** `prisma/schema.prisma` (cero `deletedAt` en los 9 modelos); sin endpoint de borrado de cuenta/datos (`src/app/api/dashboard/` solo expone `profile`, `schedule`, `reviews/[id]/reply`); `ClaimRequest` retiene PII (`name`, `email`, `phone` — `schema.prisma:197-199`) sin expiración (cross-ref #6).
