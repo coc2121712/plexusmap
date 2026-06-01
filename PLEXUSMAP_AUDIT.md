@@ -1249,6 +1249,16 @@ El desarrollo local corre sobre un Postgres nativo de Windows, no sobre el conta
   2. Implementar endpoint autenticado de "borrar mi cuenta/datos" con cascada/anonimización (Reviews, Appointments, ClaimRequests).
   3. Definir política de retención y purga automática de `ClaimRequest`/PII vencida; documentar la base legal Ley 81.
 
+#### #31 — POST /api/appointments sin autenticación ni rate limit 🟠
+
+- **Evidencia:** `src/app/api/appointments/route.ts` (el handler POST no llama `getServerSession`/`authOptions` — verificado: 0 ocurrencias en `api/appointments/`); escribe PII de paciente `patientName`, `patientPhone` (`:54-64`). Gateado hoy por `kairosEnabled` (default false — `prisma/schema.prisma:82`; ningún seed lo activa) → `:32-37` retorna 404 para todos.
+- **Impacto:** El endpoint crea citas con PII de paciente sin autenticación ni rate limit. Latente hoy porque ningún profesional tiene `kairosEnabled=true`. **Nota condicional de severidad (mismo patrón que #19): si `kairosEnabled` se activa para cualquier profesional sin parchear este endpoint, escalar a 🔴 Crítico** — se vuelve un sumidero de PII anónimo y un vector de spam de citas.
+- **Cross-ref:** #13
+- **Recomendación:**
+  1. Exigir sesión autenticada (o un token de booking firmado) y verificar el profesional destino antes de crear la cita.
+  2. Agregar rate limit por IP en `POST /api/appointments`.
+  3. Coordinar con #13: validar `kairosTenantId`/apiKey reales antes de habilitar `kairosEnabled` en cualquier profesional.
+
 ### 4.0.5 Buenas prácticas reconocidas
 
 Durante la verificación del audit se identificaron prácticas correctamente implementadas que vale documentar como referencia para el ecosistema Augur:
