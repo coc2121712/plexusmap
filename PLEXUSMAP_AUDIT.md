@@ -1435,7 +1435,29 @@ PlexusMap no es SaaS comercial: es infraestructura pública con tres roles — (
 
 ## 6. TOP 3 PRIORIDADES DE REMEDIACIÓN
 
-(Por consolidar al cierre del audit, una vez verificadas todas las hipótesis. Criterios de selección: severidad × esfuerzo de remediación × impacto en ecosistema. Preliminarmente se espera que dos de los tres salgan del bloque 4.A claim flow dado que es el vector primario declarado.)
+Criterios: severidad × esfuerzo de remediación × impacto en el ecosistema, leídos contra los tres roles estratégicos (§5.5). El orden es de **ejecución**, no solo de severidad nominal.
+
+**Acción-0 (hoy, antes de cualquier parche) — verificar #19 en producción.** Intentar login con `admin@plexusmap.com / admin123` y `fundador@plexusmap.com / founder2026!`. Si alguna funciona: rotar de inmediato y escalar #19 a 🔴. La verificación es gratuita y **acota el radio de explotación de #20**: mientras las credenciales admin triviales estén activas, el SSRF alcanza a los 2,685+ profesionales del directorio (vía admin bypass de ownership), no solo a los reclamados.
+
+### 1. #20 — SSRF en sync-ical (🔴)
+
+- **Por qué primero:** es lo único explotable HOY en producción (regla 1.3: 🔴 = remediación inmediata). Amplificado por #19 a todo el directorio.
+- **Qué desbloquea:** cierra el agujero activo de la superficie de integración de calendario — el rol 3 (booking Kairos) se construye sobre esa superficie.
+- **Trade-off:** remediación contenida (validación de protocolo `https://` + allowlist de IP/dominios de calendario), bajo esfuerzo / alto retorno. Cross-ref #19: la acción-0 reduce el radio mientras se aplica el parche.
+
+### 2. #11 — Sistema sin infraestructura de email (🔴)
+
+- **Por qué segundo:** es la raíz que mata claim flow y forgot-password, y es **prerrequisito** para cerrar correctamente los críticos de takeover de claim (#1, #2, #5 — no se puede enviar el token de verificación al dueño real sin canal de email).
+- **Qué desbloquea:** el rol 1 (conversión del embudo) y la remediación de tres críticos de una sola vez. Sin email, el producto capta tráfico pero no convierte, y los criticals de claim no tienen fix correcto.
+- **Trade-off:** requiere elegir/integrar un proveedor de email (esfuerzo de infra real), pero es fundacional — todo el funnel depende de ello.
+
+### 3. #18 / #25 — PII (477 celulares WhatsApp + modelo sin cifrado/separación) (🟠/🟡)
+
+- **Por qué tercero:** riesgo legal (Ley 81 PA) y reputacional sobre el moat de datos (rol 2) y la exigencia de marca neutral. Una fuga de PII personal no es un bug técnico: erosiona la credibilidad de directorio independiente de la que depende todo el embudo.
+- **Qué desbloquea:** evita que el activo defensivo (el dataset) se convierta en su mayor pasivo.
+- **Trade-off:** esfuerzo medio — `.gitignore` + `git rm --cached` + scrub de history (BFG/`git filter-repo`) para #18, y cifrado/separación de columnas privadas para #25.
+
+**Por qué estos y no otros:** #13 (tenantId inseguro) y #31 (appointments sin auth) son bombas **latentes** gateadas por la integración Kairos aún inactiva → backlog priorizado, no top-3 hoy. #28 (spam de reviews) golpea la calidad del funnel pero no es explotación de seguridad ni rompe la conversión de raíz → cuarto en prioridad. #19 es crítico condicional pero su acción inmediata es **verificación**, no remediación de código → tratado como acción-0 ligada a #20.
 
 ---
 
