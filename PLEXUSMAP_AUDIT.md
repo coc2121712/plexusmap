@@ -1219,6 +1219,16 @@ El desarrollo local corre sobre un Postgres nativo de Windows, no sobre el conta
   2. Agregar flag `geocodePrecision` (exact/approx/default) al modelo para no tratar aproximados como exactos en UI/SEO.
   3. Cola de re-geocoding para registros `approx/default` cuando haya API key disponible.
 
+#### #28 — Reviews sin moderación ni anti-spam efectivo 🟠
+
+- **Evidencia:** `src/app/api/professionals/[slug]/reviews/route.ts:31-46` (el rate limit filtra por `patientName`, controlado por el usuario → bypasseable cambiando el nombre); `src/lib/validations.ts:64` (`patientName` libre); sin límite por IP en esta ruta. `prisma/schema.prisma:143` (`isVerified` default false, sin estado de moderación) → las reseñas se publican de inmediato. El `rating` alimenta el ranking de búsqueda (`src/app/api/professionals/route.ts:89`) y el `aggregateRating` del JSON-LD (`src/app/[slug]/page.tsx` → `ProfessionalJsonLd`).
+- **Impacto:** Cualquiera puede inflar o deflactar el rating de un profesional creando reseñas con nombres distintos, sin moderación ni verificación. Como el rating ordena los resultados de búsqueda y se emite como `aggregateRating` en el JSON-LD SEO, el spam manipula tanto el ranking interno como la señal de confianza que indexan los buscadores. Por este doble impacto (integridad del directorio + SEO) se escala a 🟠 Alto.
+- **Cross-ref:** 4.E (cobertura de rate limiting / superficie)
+- **Recomendación:**
+  1. Rate limit por IP + device en `POST /reviews` (no por nombre); usar el utilitario `rateLimit()` o el middleware.
+  2. Agregar estado de moderación (`PENDING/APPROVED/REJECTED`) y publicar solo las aprobadas; ligar la verificación a una cita real.
+  3. Excluir las reseñas no verificadas/no moderadas del `aggregateRating` SEO y del ranking.
+
 #### #29 — Drift schema/migraciones + seed destructivo 🟡
 
 - **Evidencia:** `prisma/migrations/20260403025903_foundation/migration.sql:86` (`patientPhone TEXT NOT NULL`) vs `prisma/schema.prisma:138` (`patientPhone String?` nullable) — ninguna migración reconcilia el cambio; se aplicó vía `db push` (documentado en `AUDIT-BRIEF.md:44`). Migraciones manuales sin el timestamp completo de Prisma: `prisma/migrations/20260409_add_premium_plan/`, `20260414_add_whatsapp_phone/` (vs `20260403025903_foundation`). Seed destructivo: `prisma/seed.ts:880-887` (`deleteMany` de todas las tablas al inicio).
