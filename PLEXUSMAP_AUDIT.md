@@ -1357,10 +1357,20 @@ Estas prácticas son **replicables a otros productos del ecosistema** — verifi
 
 ### 4.F Modelo de datos e integridad
 
-- **[POR VERIFICAR]** `Review.helpfulCount` sin tabla de votos individuales → counter trivialmente manipulable vía repetición del endpoint.
-- **[POR VERIFICAR]** `Review.patientPhone` plaintext sin uso claro → pregunta de scope: ¿se usa para algo o se puede dropear del schema?
-- **[POR VERIFICAR]** `Schedule` sin soporte de excepciones (vacaciones, feriados, slots bloqueados puntuales) — limitación funcional, no de seguridad.
-- **[POR VERIFICAR]** `Appointment.patientPhone` sin validación de formato a nivel schema (String simple) — datos potencialmente sucios para sincronización con Kairos vía `kairosAppointmentId`.
+- **[REFUTADO mayormente]** 4.F.1 — Integridad referencial y cascadas. Todas las relaciones hijas de `Professional` (Review, Appointment, Schedule, ProfessionalInsurance, ClaimRequest) tienen `onDelete: Cascade` con constraint a nivel DB (`schema.prisma:135,157,178,121-123,195`; `migration.sql:178-190`); `Specialty → Professional` es `RESTRICT`. Sin huérfanos. **Sub-hallazgo 🟢 (NO genera issue):** `User → Professional` es `onDelete: SET NULL` (`migration.sql:169`) → borrar un `Professional` deja la cuenta `User` huérfana (login vivo, `professionalId=null`); `dedup-professionals.ts:105-109` borra duplicados sin manejar esa relación, y su comentario "cascade not always set" (`:106`) es inexacto (las cascadas SÍ están configuradas).
+- **[PROMOVIDA → #24]** 4.F.2 — Índices y rendimiento. Falta índice inverso en `ProfessionalInsurance.insuranceId` (la PK compuesta solo prefija `professionalId`, `schema.prisma:126`) + sin índice trigram/GIN para los `contains` ILIKE de name/address. Full table scan a 2,685+ profesionales.
+- **[PROMOVIDA → #25]** 4.F.3 — PII a nivel modelo. PII (`whatsappPhone`, `Review/Appointment.patientPhone`) en claro, sin cifrado at-rest ni separación público/privado. **Nota:** el síntoma de #18 NO se reproduce en la API — el perfil omite `patientPhone` (`[slug]/page.tsx:58-68`) y la búsqueda solo expone el `phone` landline (`professionals/route.ts:96-116`); lo promovido es la **causa raíz a nivel de datos**. `Review.patientPhone` además está muerto en el flujo público (la ruta no lo setea, `reviews/route.ts:49-58`) — responde la pregunta de scope carry-forward.
+- **[PROMOVIDA → #26, #27]** 4.F.4 — Integridad de import. #26: sin constraint anti-duplicado (el slug `-N` evade el unique, `insert-assa-new.ts:147-152`; dedup manual post-hoc). #27: geocoding no determinista persistido (`geocode.ts:166-172`, `Math.random()` en el fallback) + `DEFAULT_LAT/LNG` colisiona con un profesional real del seed.
+- **[PROMOVIDA → #28]** 4.F.5 — Reviews + spam. Rate limit per-name bypasseable (`reviews/route.ts:31-46`), sin estado de moderación (`schema.prisma:143`); el `rating` alimenta ranking (`route.ts:89`) y `aggregateRating` JSON-LD SEO. Escalado a 🟠.
+- **[PROMOVIDA → #29]** 4.F.6 — Migraciones e higiene. Drift `Review.patientPhone` NOT NULL en migración (`migration.sql:86`) vs nullable en schema vivo vía `db push` (`schema.prisma:138`) + migraciones manuales sin timestamp Prisma completo + seed destructivo (`seed.ts:880-887`).
+- **[PROMOVIDA → #30]** 4.F.7 — Borrado / Ley 81 PA. Cero `deletedAt` en los 9 modelos, sin flujo de borrado/rectificación; `ClaimRequest` retiene PII indefinidamente (cross-ref #6).
+- **[REFUTADO]** Carry-forward `Review.helpfulCount` "counter trivialmente manipulable vía repetición del endpoint": es campo **muerto** — solo se lee, hardcoded a 0 (`ProfilePage.tsx:28`), sin endpoint que lo incremente. No existe vector.
+- **[NO PROMOVIDO]** Carry-forward `Schedule` sin excepciones (vacaciones/feriados/slots bloqueados): limitación funcional, no de seguridad. No se promueve.
+- **[ABSORBIDO en #31]** Carry-forward `Appointment.patientPhone` sin validación de formato a nivel schema: el endpoint que lo escribe (`POST /api/appointments`) se promueve por authz en #31; la validación de formato sí existe a nivel app (`createAppointmentSchema`, `validations.ts:73-78`).
+
+**Hallazgos emergentes promovidos durante verificación del bloque 4.F:**
+
+- **[EMERGENTE → #31]** `POST /api/appointments` sin autenticación ni rate limit, escribe PII de paciente (`appointments/route.ts`, 0 `getServerSession`). Latente hoy por `kairosEnabled=false`; 🔴 si Kairos se activa sin parche. Cross-ref #13.
 
 ---
 
