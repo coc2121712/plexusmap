@@ -1392,7 +1392,7 @@ Las entradas aquí se promueven a Sección 4 con número de issue. Esta tabla so
 | Hallazgo en brief | Sección 4 |
 |---|---|
 | "Claim verify auto-aprueba sin verificación" (ALTA) | 4.A — claim flow vector primario |
-| (otros — por verificar con Claude Code) | (por asignar) |
+| "Password/token de claim no se comunica al dueño" — mitad **email** del hallazgo (la mitad UI se cerró en 5.1) (ALTA) | 4.A / 4.B — #1 (token nunca enviado), #11 (sin infraestructura de email) |
 
 ### 5.3 PARTIAL — Hallazgos parcialmente resueltos
 
@@ -1407,6 +1407,29 @@ Las entradas aquí se promueven a Sección 4 con número de issue. Esta tabla so
 |---|---|---|
 | 4.B.2 — `PasswordReset.expiresAt` sin default a nivel schema | Campo es required (non-nullable). App setea 1h correctamente en `forgot-password/route.ts:44`. Ambos handlers de `reset-password/route.ts` verifican expiración. Prisma no soporta `@default` para tiempos relativos (now + offset). No hay gap de seguridad — el patrón actual (required sin default) es el correcto. | 4.B |
 | 4.C.3 — Consistencia de logging/observability con resto del ecosistema | Aspecto cross-ecosystem no verificable desde esta sesión: solo PlexusMap fue auditado, y los audits previos de Kairos/Praetor/Exactor no documentaron su patrón de observability. Para confirmar drift o alineación se requiere lectura cross-repo. **Razón metodológica, no no-issue** — el aspecto standalone (PlexusMap sin logging estructurado) ya fue promovido a #14. | 4.C |
+
+### 5.5 Delta vs tesis estratégica Augur
+
+PlexusMap no es SaaS comercial: es infraestructura pública con tres roles — (1) embudo SEO orgánico que genera leads para los productos comerciales, (2) moat de datos defensivo (2,685+ profesionales geolocalizados con redes de aseguradoras, difícil de replicar), (3) base futura del booking integrado con Kairos. Requisito transversal: mantener percepción de marca **independiente y neutral** para conservar credibilidad como directorio. Leídos contra esta tesis, los hallazgos no atacan tanto "¿es seguro el código?" como los tres roles estratégicos.
+
+**Rol 1 — Embudo SEO / lead-gen:**
+
+- **#11 (🔴 sin infraestructura de email)** rompe la conversión de raíz: claim flow y forgot-password muertos → nadie puede reclamar su perfil → el embudo capta tráfico pero no convierte. Es el golpe más directo al rol de funnel.
+- **#28 (🟠 spam de reviews)** envenena `rating` → contamina a la vez el ranking de búsqueda y el `aggregateRating` del JSON-LD → degrada la calidad del lead y la señal de confianza indexada por buscadores.
+- **#14 (🟡 sin logging estructurado)** → sin medición del funnel ni forensics de abuso.
+
+**Rol 2 — Moat de datos defensivo (2,685+ profesionales):**
+
+- **#18 (🟠) + #25 (🟡) + #30 (🟡)** → el moat es a la vez el mayor activo y el mayor pasivo: una fuga o scrape expone PII personal (celular WhatsApp, teléfonos de pacientes — que **no** son datos públicos del directorio) → riesgo legal (Ley 81) y reputacional que erosiona la credibilidad de directorio neutral.
+- **#26/#27 (🟡 duplicados + geocoding no determinista)** → erosionan la calidad del dataset (pins duplicados/mal ubicados) → reducen el valor defensivo del moat.
+
+**Rol 3 — Base futura de booking con Kairos:**
+
+- **#13 (🟠 tenantId fallback inseguro + apiKey vacío)** → el sustrato de integración es inseguro; activar booking sin parchear cablea cada profesional a un tenant adivinable.
+- **#31 (🟠 appointments sin auth)** → bomba latente: al activar `kairosEnabled` el endpoint se vuelve un sumidero de PII anónimo.
+- **#20 (🔴 SSRF en sync-ical)** → la superficie de integración de calendario es explotable, amplificada por #19 a 2,685+ profesionales.
+
+**Síntesis:** la exigencia de neutralidad de marca **eleva las apuestas** de los issues de PII (#18/#25/#30) y de credenciales admin (#19) por encima de su severidad técnica nominal — un takeover de perfil (#1/#2/#5) o una fuga de PII no es solo un bug: es la pérdida del rol de "directorio independiente y confiable" del que depende todo el embudo.
 
 ---
 
