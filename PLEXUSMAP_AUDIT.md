@@ -1481,23 +1481,28 @@ No son issues — son decisiones de rumbo que la auditoría destapa y que Rogeli
 
 (Decisión adicional sugerida por el inventario.) Los datos importados de aseguradoras y Google Places están en producción y commiteados al repo en formatos intermedios. Pendiente: política explícita sobre qué se versiona, qué se mantiene fuera del repo, y proceso de re-import para mantener frescura.
 
+> **Cierre de §7:** estas cuatro decisiones (7.1–7.4) son el output **arquitectónico** del audit — no son issues remediables sino bifurcaciones de rumbo que Rogelio debe resolver conscientemente antes de elevarlas al roadmap del ecosistema Augur.
+
 ---
 
 ## 8. CIERRE DE LA AUDITORÍA
 
-(Por completar al final.)
+Esta auditoría se ejecutó con el **harness multi-agente** del ecosistema Augur (§1.2): Claude web redactó outlines y verificaciones de estructura, Rogelio aprobó cada paso, y Claude Code CLI aplicó los `str_replace` individuales sobre `PLEXUSMAP_AUDIT.md` — sin `--dangerously-skip-permissions` ni allow-all; cada edición y cada commit pasaron por confirmación explícita en sesión.
+
+La **política de trazabilidad** (§1.1) fue estricta: un hallazgo solo se promueve a issue numerado si se verifica contra el código actual del repo con evidencia `archivo:línea`; lo no verificable contra el código de hoy se marca **DEFERRED** y no se reconstruye desde memoria del agente. Bajo esta política quedaron **2 hipótesis DEFERRED con razón documentada** (4.B.2 `PasswordReset.expiresAt` sin default — el patrón required es el correcto, sin gap de seguridad; 4.C.3 logging cross-ecosystem — no verificable sin lectura cross-repo, su aspecto standalone se promovió a #14) y **3 hallazgos cerrados como VERIFIED-CLOSED** (#15 remote git inexistente, #16 CLAUDE.md describía Praetor, #17 96 archivos sin commitear — los tres remediados durante el setup del audit). El alcance cubrió los bloques de verificación 4.A–4.F (claim flow, auth/sesiones, ecosistema Augur, DevOps, validación/superficie, modelo de datos); el vector primario declarado fue el takeover de perfiles vía claim flow.
 
 | Métrica | Valor |
 |---|---|
-| Total de hallazgos | (TBD) |
-| 🔴 Críticos | (TBD) |
-| 🟠 Altos | (TBD) |
-| 🟡 Medios | (TBD) |
-| 🟢 Bajos | (TBD) |
-| VERIFIED-CLOSED | (TBD) |
-| DEFERRED | (TBD) |
-| Total de commits del audit | (TBD) |
-| SHA del último commit | (TBD) |
+| Total de hallazgos numerados | **31** (#1–#31) |
+| └─ OPEN | 28 |
+| └─ VERIFIED-CLOSED | 3 — #15, #16, #17 |
+| 🔴 Críticos (OPEN) | 5 — #1, #2, #5, #11, #20 |
+| 🟠 Altos (OPEN) | 9 |
+| 🟡 Medios (OPEN) | 12 |
+| 🟢 Bajos (OPEN) | 2 |
+| DEFERRED (hipótesis sin número) | 2 — 4.B.2, 4.C.3 |
+| Total de commits del audit | 47 (45 previos + C3 + C4 de cierre) |
+| SHA del último commit | (C4 — commit de cierre; reportado al cierre) |
 | Branch final | `audit/plexusmap-initial` |
 | Remote | `https://github.com/coc2121712/plexusmap.git` |
 
