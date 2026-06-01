@@ -1502,7 +1502,7 @@ La **política de trazabilidad** (§1.1) fue estricta: un hallazgo solo se promu
 | 🟢 Bajos (OPEN) | 2 |
 | DEFERRED (hipótesis sin número) | 2 — 4.B.2, 4.C.3 |
 | Total de commits del audit | 47 (45 previos + C3 + C4 de cierre) |
-| SHA del último commit | (C4 — commit de cierre; reportado al cierre) |
+| SHA del último commit (contenido) | `b683d74` |
 | Branch final | `audit/plexusmap-initial` |
 | Remote | `https://github.com/coc2121712/plexusmap.git` |
 
