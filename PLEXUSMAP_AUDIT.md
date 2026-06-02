@@ -968,10 +968,10 @@ $ grep -i "output" .gitignore
 
 #### #19 — Credenciales admin triviales en seed, documentadas en plaintext
 
-**Severidad:** 🟠 Alto (con escalamiento condicional a 🔴 — ver verificación pendiente)
+**Severidad:** 🔴 Crítico (escalado desde 🟠 — confirmado activo en prod el 2026-06-01)
 **Categoría:** Seguridad (credenciales)
 **Archivos:** `CLAUDE.md:146-149`, `prisma/seed.ts:1020-1044`
-**Estado:** OPEN
+**Estado:** CONFIRMADO ACTIVO EN PROD (2026-06-01) → REMEDIADO (credencial rotada); raíz pendiente (seed)
 **Vinculado a:** Hipótesis 4.D.5 | Cross-ref con #4 (sin panel admin — la credencial admin existe pero no hay panel)
 
 **Evidencia:**
@@ -1021,13 +1021,16 @@ if (SEED_MODE === 'production' || SEED_MODE === 'google-places') {
 
 Dos credenciales con passwords triviales documentadas en el repositorio. `admin@plexusmap.com / admin123` se crea en TODOS los modos del seed (incluido production), está documentada en plaintext en CLAUDE.md, y otorga rol ADMIN que autoriza `GET /api/export/csv` (exportación completa del directorio). `fundador@plexusmap.com / founder2026!` se crea solo en production/google-places mode y NO está documentada en CLAUDE.md. Si producción fue seeded con `SEED_MODE=production` (probable, dado que `.env.production.example:30` lo configura), estas credenciales están potencialmente activas. Cualquier contributor con acceso al repo (o al CLAUDE.md) tiene acceso admin. Inconsistencia menor adicional: seed usa bcrypt cost factor 10 vs 12 en los endpoints de auth.
 
-**⚠️ Verificación pendiente del propietario (fuera del audit):**
+**✅ Verificación + remediación en prod (2026-06-01):**
 
-Rogelio debe verificar manualmente en producción:
+Verificado ejecutando contra producción:
 
-1. Intentar login con `admin@plexusmap.com / admin123`. Si funciona → **escalar este issue a 🔴 Crítico y rotar la credencial INMEDIATAMENTE.**
-2. Intentar login con `fundador@plexusmap.com / founder2026!`. Mismo procedimiento.
-3. Si AMBOS fallan: mantener severidad 🟠. El riesgo es latente — el próximo redeploy con `SEED_MODE=production` re-crearía estas credenciales si el seed no se modifica.
+1. `fundador@plexusmap.com / founder2026!` **abría sesión de admin** en prod → #19 confirmado **activo**. Escalado a 🔴 Crítico.
+2. `admin@plexusmap.com / admin123` **NO** funcionó (cuenta/credencial no activa en prod).
+3. **Remediado:** la contraseña de `fundador@plexusmap.com` se rotó a un valor aleatorio fuerte (bcrypt cost 12) vía Prisma contra la DB de prod. Verificado en el sitio real: la credencial vieja ya no funciona, la nueva sí.
+4. El mecanismo de invalidación de sesión de #21 **no existe en prod** (columna `passwordChangedAt` ausente — ver #29 y #21), así que se reinició el contenedor `plexusmap-app` (`docker compose restart`) para matar las sesiones activas.
+
+**Raíz pendiente:** el seed aún recrea credenciales triviales en cada redeploy con `SEED_MODE=production` (rec. 2 y 4 sin aplicar). Mientras no se corrija, un redeploy revierte esta remediación.
 
 **Recomendación:**
 
@@ -1121,6 +1124,12 @@ Un usuario autenticado no tenía vía alguna para rotar su contraseña. Combinad
 4. UI en `/dashboard/security` con indicador de fortaleza, validación en vivo y confirmación al éxito (commit `57c1b36`).
 
 **Trade-off documentado:** la invalidación real con JWT stateless añade 1 lookup indexado por PK por verificación de sesión (callback `session`). Es el costo inherente de invalidar sin store server-side; se aceptó en lugar de rotar `NEXTAUTH_SECRET` (que mataría TODAS las sesiones, incluida la actual).
+
+**Nota post-cierre (2026-06-01):**
+
+- **El mecanismo de #21 está inerte en producción:** la columna `passwordChangedAt` no existe en la DB de prod (`migrate deploy` no ejecutado — ver #29), así que rotar una contraseña en prod **no** invalida sesiones JWT activas; hubo que reiniciar el contenedor `plexusmap-app` manualmente. La invalidación de sesión solo opera donde la migración esté aplicada.
+- **Gap de cobertura a nivel código:** `reset-password/route.ts:106-109` actualiza solo `password`, **no** `passwordChangedAt` — el flujo de reset por email no invalida otras sesiones aunque la columna exista. Residual menor (además ese flujo está muerto en prod por #11). Cross-ref #29, #11.
+- **Corrección de trazabilidad:** este gap **NO estaba pre-notado en 4.F** (contrario a lo asumido en el brief de la actualización post-cierre); se registra aquí como hecho nuevo confirmado el 2026-06-01.
 
 #### #22 — Política de password inconsistente entre flujos de auth
 
@@ -1233,7 +1242,8 @@ El desarrollo local corre sobre un Postgres nativo de Windows, no sobre el conta
 
 - **Evidencia:** `prisma/migrations/20260403025903_foundation/migration.sql:86` (`patientPhone TEXT NOT NULL`) vs `prisma/schema.prisma:138` (`patientPhone String?` nullable) — ninguna migración reconcilia el cambio; se aplicó vía `db push` (documentado en `AUDIT-BRIEF.md:44`). Migraciones manuales sin el timestamp completo de Prisma: `prisma/migrations/20260409_add_premium_plan/`, `20260414_add_whatsapp_phone/` (vs `20260403025903_foundation`). Seed destructivo: `prisma/seed.ts:880-887` (`deleteMany` de todas las tablas al inicio).
 - **Impacto:** El historial de migraciones no refleja el schema ni el DB vivo. Un `migrate deploy` sobre una DB fresca produce `patientPhone NOT NULL`, y la ruta de reseñas (que no setea `patientPhone`) fallaría al crear reseñas públicas. El seed borra todo al inicio: ejecutarlo contra producción destruye los datos (cross-ref #19).
-- **Cross-ref:** #19
+- **Confirmado en prod (2026-06-01):** `User.passwordChangedAt` existe en el schema del repo (migración `20260529125943_add_password_changed_at`) pero **NO en la DB de prod** — un update con ese campo falló con *"Unknown argument passwordChangedAt"*. Confirma que **`migrate deploy` nunca se ejecutó en prod**: producción corre un schema más viejo que el repo. Eleva #29 de drift teórico a **drift confirmado en producción**.
+- **Cross-ref:** #19, #21
 - **Recomendación:**
   1. Generar una migración que reconcilie `Review.patientPhone` (nullable) y dejar de usar `db push` en favor de `migrate dev`.
   2. Regenerar/renombrar las migraciones manuales al formato timestamp de Prisma; verificar `migrate status` limpio.
@@ -1437,7 +1447,7 @@ PlexusMap no es SaaS comercial: es infraestructura pública con tres roles — (
 
 Criterios: severidad × esfuerzo de remediación × impacto en el ecosistema, leídos contra los tres roles estratégicos (§5.5). El orden es de **ejecución**, no solo de severidad nominal.
 
-**Acción-0 (hoy, antes de cualquier parche) — verificar #19 en producción.** Intentar login con `admin@plexusmap.com / admin123` y `fundador@plexusmap.com / founder2026!`. Si alguna funciona: rotar de inmediato y escalar #19 a 🔴. La verificación es gratuita y **acota el radio de explotación de #20**: mientras las credenciales admin triviales estén activas, el SSRF alcanza a los 2,685+ profesionales del directorio (vía admin bypass de ownership), no solo a los reclamados.
+**Acción-0 — #19 verificado y REMEDIADO en prod (2026-06-01).** Se confirmó que `fundador@plexusmap.com / founder2026!` abría sesión admin en producción (`admin@plexusmap.com / admin123` resultó **no** activa). La credencial se rotó a un valor aleatorio fuerte y se reinició el contenedor `plexusmap-app` para invalidar sesiones. **Efecto sobre el Top 3:** el radio de #20 **ya no está amplificado por #19** (credencial cerrada) — el SSRF queda acotado a profesionales con claim; **#20 sigue siendo prioridad 1** por ser explotable per se. Pendiente de raíz: el seed recrea credenciales triviales en redeploy (#19, rec. 2/4).
 
 ### 1. #20 — SSRF en sync-ical (🔴)
 
@@ -1496,8 +1506,8 @@ La **política de trazabilidad** (§1.1) fue estricta: un hallazgo solo se promu
 | Total de hallazgos numerados | **31** (#1–#31) |
 | └─ OPEN | 28 |
 | └─ VERIFIED-CLOSED | 3 — #15, #16, #17 |
-| 🔴 Críticos (OPEN) | 5 — #1, #2, #5, #11, #20 |
-| 🟠 Altos (OPEN) | 9 |
+| 🔴 Críticos (OPEN) | 6 — #1, #2, #5, #11, #19, #20 |
+| 🟠 Altos (OPEN) | 8 |
 | 🟡 Medios (OPEN) | 12 |
 | 🟢 Bajos (OPEN) | 2 |
 | DEFERRED (hipótesis sin número) | 2 — 4.B.2, 4.C.3 |
@@ -1506,12 +1516,15 @@ La **política de trazabilidad** (§1.1) fue estricta: un hallazgo solo se promu
 | Branch final | `audit/plexusmap-initial` |
 | Remote | `https://github.com/coc2121712/plexusmap.git` |
 
+> **Actualización post-cierre (2026-06-01):** #19 escalado 🟠→🔴 tras confirmarse activo y remediarse en producción; el delta ya está reflejado en las filas de severidad arriba (🔴 5→6, 🟠 9→8). Ver #19.
+
 **Siguientes pasos del ecosistema (post-PlexusMap):**
 
 1. Implementación de remediaciones Top 3 (cross-producto si aplica).
 2. Re-auditoría de Praetor con harness metodológico nuevo (los hallazgos #5-#14 del audit del 14-may no usaron el harness consolidado en Exactor).
 3. Re-auditoría de Kairos con harness metodológico nuevo (mismo razonamiento, audit del 15-may).
 4. Decisiones arquitectónicas de Sección 7 elevadas a roadmap del ecosistema.
+5. **[Operativo, no-seguridad — observado 2026-06-01]** El contenedor `plexusmap-app` lleva ~3 semanas en estado Docker **`unhealthy`** (healthcheck fallando) aunque el sitio responde; revisar el healthcheck. Nota relacionada para futuros scripts de mantenimiento en prod: el contenedor es un build **standalone sin `node_modules/.bin`** (no hay `tsx`, ni Prisma CLI, ni `bcryptjs` para `require`; sí `@prisma/client`).
 
 ---
 
