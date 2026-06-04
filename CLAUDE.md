@@ -147,3 +147,41 @@ Vigente desde 24-may-2026 para todo el ecosistema:
 |-----|-------|----------|
 | Admin | admin@plexusmap.com | admin123 |
 | Profesional | gponce@plexusmap.com | demo123 |
+Audit Harness — Operating Rules
+These rules govern all audit work on this repo. Follow them without being re-told each session.
+Traceability
+
+Every finding MUST point to concrete evidence: file:line + a short code excerpt. No location → it is NOT a finding; record it under "Deferred / unverifiable" instead.
+Never reconstruct a finding from memory or from a prior session's label. If you cannot re-verify it against the current code, defer it.
+Before asserting anything about a file's contents, READ the actual file and confirm. Do not trust your own recall of what a snippet says.
+
+Severity
+
+Use exactly these labels: 🔴 Critical, 🟠 High, 🟡 Medium, 🟢 Low. Justify each in one line.
+When reporting severity totals, RECOUNT manually from the full issue list, item by item. Do not report a remembered or running total — historically these counts come out wrong. Show the per-issue breakdown so the count is auditable.
+
+Commits
+
+Atomic commits: one logical change per commit. Documenting a closed remediation and opening a NEW finding are SEPARATE commits — never combine them.
+Before committing, stage only the intended file(s) and show git diff --cached so the exact staged content is visible.
+Commit message style: audit(plexusmap): <subject> for audit-doc changes, feat(...)/fix(...) for code. Always append:
+Co-Authored-By: Claude <noreply@anthropic.com>
+After committing, run git log --oneline -6 and report the new SHA.
+
+Push — explicit gate
+
+NEVER git push unless the user instructs it in that turn. Commits stay local until the user explicitly says to push. Local commits are reversible; a push is the real boundary.
+
+Edits
+
+For CODE files, propose the edit and let the permission prompt gate it. Never request blanket "allow all edits."
+Apply edits with individual str_replace/Edit calls, not bulk rewrites, so each change is reviewable.
+
+Self-reports on destructive ops
+
+After any delete/move/reset, do NOT trust your own "Done/Deleted" output. Run a follow-up check (e.g. git status, re-list the path) and confirm the result before reporting success.
+
+Decision vs. execution
+
+Decisions (severity, whether something is one issue or two, scope of a commit, architecture) → surface them to the user before acting.
+Pure execution (read-only inspection, staging, committing per the rules above, housekeeping) → just do it and report the outcome once. Do not ask for step-by-step approval on mechanics.
