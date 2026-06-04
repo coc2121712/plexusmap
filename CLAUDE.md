@@ -143,10 +143,13 @@ Vigente desde 24-may-2026 para todo el ecosistema:
 
 ## Credenciales de prueba
 
-| Rol | Email | Password |
-|-----|-------|----------|
-| Admin | admin@plexusmap.com | admin123 |
-| Profesional | gponce@plexusmap.com | demo123 |
+Las credenciales del seed **no se documentan en claro** (issue #19). Se configuran vía variables de entorno:
+
+- `ADMIN_PASSWORD` — admin (`admin@plexusmap.com`). **Requerida** en `SEED_MODE=production`/`google-places`; en dev usa un default local trivial.
+- `FOUNDER_PASSWORD` — fundador (`fundador@plexusmap.com`). **Requerida** en modo prod/google-places.
+
+En modo prod el seed **aborta** si faltan, para no crear credenciales por defecto. Ver `prisma/seed.ts` y `.env.production.example`.
+
 Audit Harness — Operating Rules
 These rules govern all audit work on this repo. Follow them without being re-told each session.
 Traceability

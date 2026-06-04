@@ -876,6 +876,20 @@ function generateUniqueSlug(name: string, usedSlugs: Set<string>): string {
 async function main() {
   console.log(`🌱 Seeding PlexusMap database (v4 — ${SEED_MODE} mode)...\n`);
 
+  // ── Credentials guard (issue #19) ──
+  // Las credenciales del seed vienen del entorno, nunca hardcodeadas. En modo
+  // production/google-places son REQUERIDAS: abortar ANTES de cualquier deleteMany
+  // o create, para no borrar la DB ni caer en credenciales triviales por defecto.
+  const isProdSeed = SEED_MODE === 'production' || SEED_MODE === 'google-places';
+  const adminPassword = process.env.ADMIN_PASSWORD || (isProdSeed ? '' : 'admin123');
+  const founderPassword = process.env.FOUNDER_PASSWORD || '';
+  if (isProdSeed && !adminPassword) {
+    throw new Error('ADMIN_PASSWORD requerida en modo prod/google-places; abortando para no crear credenciales por defecto (issue #19).');
+  }
+  if (isProdSeed && !founderPassword) {
+    throw new Error('FOUNDER_PASSWORD requerida en modo prod/google-places; abortando para no crear credenciales por defecto (issue #19).');
+  }
+
   // Clear (FK order)
   await prisma.appointment.deleteMany();
   await prisma.review.deleteMany();
@@ -1016,11 +1030,11 @@ async function main() {
   }
 
   // 4. Users
-  // Admin user (all modes)
+  // Admin user (all modes) — contraseña vía ADMIN_PASSWORD (ver guard; issue #19)
   await prisma.user.create({
     data: {
       email: 'admin@plexusmap.com',
-      password: hashSync('admin123', 10),
+      password: hashSync(adminPassword, 12),
       name: 'Admin PlexusMap',
       role: 'ADMIN',
     },
@@ -1035,7 +1049,7 @@ async function main() {
       await prisma.user.create({
         data: {
           email: 'fundador@plexusmap.com',
-          password: hashSync('founder2026!', 10),
+          password: hashSync(founderPassword, 12),
           name: 'Clínica Óptica Central',
           role: 'PROFESSIONAL',
           professionalId: founder.id,
@@ -1052,7 +1066,7 @@ async function main() {
       await prisma.user.create({
         data: {
           email: 'gponce@plexusmap.com',
-          password: hashSync('demo123', 10),
+          password: hashSync('demo123', 12),
           name: 'Dra. Gabriela Ponce',
           role: 'PROFESSIONAL',
           professionalId: gabriela.id,
