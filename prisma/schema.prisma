@@ -34,6 +34,21 @@ enum UserRole {
   PROFESSIONAL
 }
 
+// Machine-to-machine credentials for the read-only directory API (/api/v1/directory).
+// The raw key is shown once at creation; only its SHA-256 hash is stored.
+model ApiKey {
+  id         String    @id @default(uuid())
+  name       String    // who/what uses it, e.g. "augur-prod"
+  prefix     String    // first 12 chars of the raw key, to identify it without exposing it
+  keyHash    String    @unique // SHA-256 hex of the raw key
+  scopes     String[]  // "directory:read", "directory:internal"
+  active     Boolean   @default(true)
+  expiresAt  DateTime?
+  lastUsedAt DateTime?
+  revokedAt  DateTime?
+  createdAt  DateTime  @default(now())
+}
+
 enum PlanType {
   FREE
   BASIC
@@ -103,6 +118,7 @@ model Professional {
   @@index([specialtyId])
   @@index([lat, lng])
   @@index([slug])
+  @@index([updatedAt, id]) // keyset cursor for incremental sync (updatedSince)
 }
 
 // ═══════════════════════════════════════════
